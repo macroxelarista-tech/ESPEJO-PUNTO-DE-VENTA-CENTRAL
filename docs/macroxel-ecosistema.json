@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "source": "Macroxel FarmaControl",
+  "purpose": "ecosystem-manifest",
+  "architecture": "central-with-linked-viewers",
+  "centralUrl": "https://macroxelarista-tech.github.io/ESPEJO-PUNTO-DE-VENTA-CENTRAL/",
+  "tiendaId": "FARMACIA_DE_LA_CALLE_DE_ARISTA,_S_A_DE_C_V",
+  "modules": [
+    {
+      "id": "espejo",
+      "name": "Espejo Web",
+      "path": "./",
+      "externalRepo": "ESPEJO-PUNTO-DE-VENTA",
+      "externalStatus": "active"
+    },
+    {
+      "id": "reportes",
+      "name": "Kardex / Financiero / Trazabilidad / Facturación",
+      "path": "reportes/",
+      "externalRepo": "REPORTES-PUNTO-DE-VENTA",
+      "externalStatus": "create-when-needed"
+    },
+    {
+      "id": "mi-farmacia",
+      "name": "Mi Farmacia",
+      "path": "mi-farmacia/",
+      "externalRepo": "MI-FARMACIA-PUNTO-DE-VENTA",
+      "externalStatus": "create-when-needed"
+    }
+  ],
+  "rule": "Los repositorios externos son visores ligeros y dependen del repositorio CENTRAL; no contienen configuración privada ni una copia independiente del sistema."
+}
