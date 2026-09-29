@@ -1,0 +1,1347 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,interactive-widget=resizes-content">
+  <meta name="theme-color" content="#0a4d8c">
+  <meta name="description" content="Mi Farmacia: consulta disponibilidad, precios y envía tu pedido a farmacia.">
+  <title>Mi Farmacia</title>
+  <meta name="mi-farmacia-build" content="single-file-v2.0.1-icono-establecimiento">
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAABGuElEQVR42q29ebw1V1Xn/V276pxzx2fMSAYgCZBAGGWQDIQGQssgGAYVAZWAQAQbkUGliURkaAgNQcUEbPnoawvS2opCKyCKaGQeJQMJPJmTZ77Pc587nnOq9nr/qF1Ve+/adR/s9w3cz73Pveecqtp77TX81m+tJYDyH/5PwreZIZIvIvkiZHNghhgzRCX33qLufYKIqd6v7jNEqu8KKoIc99JSfaf7WkWb31ZXrH5D87O7nIr3d6p7aT5Tgk9sL2zda6X59Pbv3nf/LarVY0p9X+6O3LPXj6IKqtZbVm3uGSzYArUTKNfRYgUtVkEn/Xvyf7eTx3uB9y/JkMEOGOyuNj8bVbfrFtLfgvZBBBXj/T1c+PYa8fW879GPJEQg/p02oqJbPJx6r0v8p1q9WKSR22bnvCtqLdgSyUVwX5r4eK0EwH2auOuFa18LqEXtFC3XYLqETo+Alv9XgtD76t5blQwZnYKMTgYz4z5AEVHvOaXdeAk/VRH3u/YKQvue5jQ2r4vfT3KL2pOdeBLZ4vGbjY2FqRU8cRsU/l6ajRNR79+2fy2VhMZoBSA8DNpoj2Yd1NZL427DVH8sN9HJAXS83xOEH23jmyVLrZ3EsjvcDTNnINkcYCtJVHdqRBCpNrhSdyZ6UNN8oNQbHVyn1YX1mZJ4U+od1q5y7khb94/HPdlpbRIvmme6GgMj7WlV9TYMzwDVn1bfv3ZvI/hd/DoBJ1zq33ezVhlabqDje9DJ4S3Pt0TLo8eVE8kxsw+A4Qnu5RYwiP+kYlplX9txkeY0V/+X3mWtN7wSKLesIo2OiLVG4z4E9mAL76G5l+Bcu5MdaRvx7bwTjmYztNlYPKUcmhHvVDdymzjxCUGrNIF/HrS9d9X2uhpvW7UnIOj0MLpxJ2hx3C3e4q9umbI5ZP5BYOZAp5Xa6T2d4v1TPAGScKm89zZ21z2kJrWPBE5ke5Yiix3oM3GLUq9mu4mtBtKkIHo6qDUP/mmMTl/aIHmbFKt13/Q1wiCRKZDOZ/lmSFpLGQqnO7CU69j1PVCub7nNPX9xmz/Yhsw9CDED1BbVKfdstcSb7xa5EY4+9SsSnBp87zgQf/cvkYRzJ5EjJtHPEmxUe9+aeOJQSOuNEjGhoMSnVqN7Ck56bb+161uoevZXAx+h0RrBlcNnQeuoqjUzraJSZypMFbWs/xCdLv9I5iDc/HwbsvAQb6OkdbRIn+5KQDyb33s1X70TqlKpH0bah/dPtmxtsPyflDikktAON+GnVvcj0tnYWFOEyiA+6ZLc5K4/oYHND8Qj4UQ2Nr9z4lvJqRzx+tK1mc4Axa7dAsWx5HZHv6nV/iyy8LDqBKit4nYBVU/1SyJsa2y/6drfQKpNqBxc/N9V6u2mKBLKGynt4gd86glhbbsllKfgFiVysLqv64qVRM5aK8CVk2wip7Fr9zumPDAvqY32ndHwPY1RasyMbZxHu/b9pDkwXVWYVWpfMhQbrHgbd4vnubdfflwukYC0DqIJTUYT+rWHT1Ny6p9YvPcF2yGkzlV1uk0Yt4t4fou/+Z71l0Ss3tkWdygk1k5ehFDfd3xNjSCnQJOEz1qBRt7rNW0N61C7QZnUghjM3NmIZJ2VNZ1gbPYBkM+hzoMUX+02z9F6t604SKCiNYrBNfBVnGPVCELlW9SaBv/zmjUxjXaRpMqvH1y6zqJ6rzPt66Q34KPROPS5eNoe1tgHS57gRJipUmu+7hOl7ifUo5K+eT8MrbdYSzCzMHNm5zom0MODncjwRNCiXfBICmNUigiviiTAHSNp7L70CXBHi7gH9bUEYaTQvS//Az1nMLhdaR0uWk3U/E/6vIvasfTe08i8eHLnacVet6sWnjCkFM8blOj5Gn0nPrTeamGtD4B4mlEiIRieCPmOwKHOgzh+5ozWbsTAShS64Xnm4mJ/bY6AxG8JAx/x9qgTJJjovdoEbhoLTKD4BN9CtptFAhrWRIAiaQFCEnA1SdgsgAsQRDQB2sQ4XART1x8iicMUeB6tM6OB7xHBPLFQzZ6Brq40iGEDz8nwJCSf9+LkerNMqL6cgycOARTv5Fai0IaKsS0LTaWQlJImRBQnTtH7A9Mg0bL49yHphBO1x58KBds18xWuiHEaUUJzl0AzxSW7qn2UtLMqIMa0ayfxYZOuQEZIlXg32zyz+6zKlJrQHIoBtUi2gAxObD7H1Kef0SkB1CikHJGuHQqcIvEQOWFLWDWwBQG0WmuTlIo30YJIhUhGoaqmFlK9UDXyACQ2a0J4fS8MVYmvL4Gf2v7OJFSgdEyKxD5PEtWULt4SCUESyhZCn0qo0MHRSU5AtFpRyXcg2awTAEn5UQ3WX3vQEm2SSOJESPe9/mqpZ1JrG9ZsTo04+h671E5gtFkSgU4d++6LbBsRSHNfocCqSieE1VTUHi9wZDqls4EtCthumgkjKZEQgZSUELSfIZISHAk1hW8u1VYOYb7dO1LDXSEaoBICD4nwS2t1E0g/XTW2JXDj/Aff7kfRZb1IPlDjRxhdq5wCC8SDr9XzFaSDaaift/BD4OZxtAs4mXbz+nwejTWRpuKYvmRxIovoO5nxwnXETzvuhAxOcAIgAyRbBMrQ45auV9+FKMTHMKObVQ9QkS0jiSASD1ZBumnj6GSTxCaipfO88vYSSuKOW4cygKvFc9X8cDOyx/Vy+5GKSJg78XPWkXMY3Gd8U3E8IKnN1ohIkopMK4iYfAHMAEO+iJph6DVK5PxpCOzE2a8GdyqKCLjxUKpmjYxn5yUIn/3YWyOb1mQJPPMTOonOsTLe/dVqPsAlYn+mC4pqfDa909Y6Wv4eaC822cmBxJssEmpQP5fhb6x7X1mWbWSiNZhABzfpJN4Ez+dQxAyQbBtGsoX27EiPbytt6CRCezo0TAuNdixSbmyitgxQN/V3ucdX8f0En1CT0gg+KNKHPwS2tA6dop3TOMoSCVyfGBCWjlNsEgBU7DanSCgSPZsgbJGXNdVaTzcmbNs2VxFDalMmkHpzY6aD6MkLOlUgm8eQzyVYKiHtKaX2tfGWBckMdm2F3Zf9Amf+8mvR9RXKyRQxxsGbGlxDuv56aAIkchw9Z0vj9GqElfs+inbgZyJoW7Zkk0lAQZPQdEurxTohrbQh7NaglSQhXX+tTJ5RTEuKY8u8/F2v46d+5SWUR4+QZVkHEBdfvvw0hSfsARqSzWLEjALItPX7JGF7/LSkDVAtI8r+ZaF83kt56Hs+yOzOHUyXjyGZaXPccUpFo2xXFFF0wio0MPG1ORAJ8Xg/WunYao2IJT55JYqtw8igzWIG3khks9V3UvuMgu9YS0hw9SmE2SBnsrzCru0LvOkvPsgTf+VFbEje4HeaoMslTmxz7zGCKzKsnED6z0QPBan7gKowyEqOHbDsf+AlPPCaP+KUSy6iOHK0kULrSA3tR0nXSRTZivXnSTUBj8C3gUHqXCKWr0QLo3547mu3VsN0U8JdHL4Dh0schkkPk6fruIoIJjOMDy5x/oWP5k3/+Eec9Jwnc8BarC0iB3CL5Lj/XEqXnGIGGK1Tt54kapIUKAmEIQJpJEOMYf3IJncVp7Drrdfw4NdegYw3KccTJDPh7tRRh4i36NITAIWwZhvrhxxDTWyS7zA2MX6ATUjnEDSCmsQxUunaCIruoWCk8kW+P5NlgrWWydFlfuJXXswrPv0HbN7/dPYf2SAzhsyYBpFtUdhIZXncy8CMxlcTg5FOus5TaxrbxWiTJDy5Nahn8gwdF9x+l2X8U6/koVe/j/ndOyicSWhjMU1g+yQdqm4Sqk0MBXzdNkXZC8WqDwtJi0dIj3aTregnQSIpwktchlMi3oG4rGTIA7SYPGO8vsnICK/8yFU8/f1v4r7SsLE+JctypoDFdEPFBEws3WCdWFdJkA4Wb/E6zln7gMGH+1Qsx3KxCrYE1JALHLhjyt4zL+aBH/gfnHzhE5guHfVInm4rtN+0tLBnRXQQb5NFogSwhxZqIp/uJ3oCOluANBJkIXtpRxKBXRGBoPFLgrX1fAcNcxAmzxgfPsqZ55zBr/79tTzg55/D3ccmqFXUGIoKqYkypBEW4D1DX8IK/FDU+OB6WrpVtsBmIgdLFazFfVdKFbJBxvqhKbeNT2X3b/0u57z6cnR9nWI8QYx4TpNPk9IQFPKyyhoIv+ngAX7uRxqeQRecgjR65nMHWsfSREkxLw73D4NoJ3zHT+Nq+wytdalg6fGhIzzxeU/llz/7EfTRD2Xv0QliMkqEQqFUDZxl30FWjbMJXbJLJ5/kPsP05vEDVWbC8i2VxOGKnTBBq4omTJYh04Lb74Liea/h/Pf+N+Z3LDJdXkGMQ6ZqwEgTQafQ4R+IbMFV0B7Puwf5a4E53TpMSyRragFWIdqMBJgRCYbJDMV0gl1d5wW/fQU/9WfvYe/8DlaOTZE8o1ClUNzpl4bjHFYjaQe78X2XXm5DxwQE6iXOANan1LTqO0g30iRl1EOGxd2xVcViyETZd8eUfQ98Mud+6COc8sRHMz205HHpyuiU+izeuqbOt5saaHCN5FgjQmgCCgi1mBdW1nF+T6Kjs7jiLaVqN2iKBdvkGePlFbYvzPLqj7+X83/jFdyxUjCdFFhjmKoyrTdflRKliCCpGPRVT5+mkEbtZE2kYmc2tj2yJ7VdVY/NU2Pa0sHK3X/WS/HWVy0FSlAr5IOMlX1Tbl45nROu+n0e/OpfwK6uYCdTL0ogDJlqFa5eOpY+E13fW11a1X1DRW6Vlm4uRFR1ulnIHqROvHPk+/4au11+YUpmGB9a4rzHn88Vn/tD5p79JO45MkEFSiPNyS9FGttfOmGonUd/07sOb8Ql1BQGUR0IE6gnIYGTezG2aKhAA9ZKdQakxohUKo+wpPnSUrFTxWQZbBb8cI/BvvC/8Iir38nswgzT5VVMbioyqnoM0cAUiJfSlVRqqot4+dxAMUmz5WcZteNDyZYgf8jS0w4zQQCsYuoQ7/ARLn7Zc/nZT/0+y2edyeEjE0xuKNRtPlAolQaohaF2AvuKUkQiJ48o+SWBQ1//3QTSqq133ZAfYiKU9iQvXaq50eLW08NWKxG2ztyXlfsxMMo9P5yy7+yn8fBrP8wpjzmPyaEj7gG0pVSrhHn0QP4ksBrqp3s7fBDxjJqE1DYvASHHScw2AJFAEIhqH09TMQPDeGPMoCj42Q+8iUuuvZI77ICN1creT1UoUAqEEqF0wFkJFLUjGBNcO3hMjLJql9MSoleOEBI9mx/+K2nUSRMOtXobLtZ59TZCj63bsFKxFgZDw7G9U76//gDOeM+1nHf5T1McO0Y5LZyzbRumUkjX9lKqvvpWEqYpTeGSCIIOnSfp8uv6dlljkocETqLJM8ZLy5xyyi5e+dcf4LQrfoY7jkzBKtYYCnc2SpX6jFSRlLfOZS0AEUdB+iK4ODPvk2XqQ+lzAqMEepPM6xCVpY/2472s1uC2dQdso9E1iMhsCVlmKDcKbrp9QP6Lb+SJ77uS0VAoVtYqUEk0UsfSzbsb6XHOpKGc+2nkGPtokiZOKFToKHaNMpJIr4ps7b0xjA8e5vynPo6Xfe4jTC76MfYtTapn9pxmGzHk1OMeWKdnStrX1WGzptOmaJJS4Ampez6T5Jq5WFU83Lh2poIzpRJkwMA0ISDW/d06v8AJhrgD3WgHKxVwhJBh+cHNU+4791k8/qPXcuojzmZycMkLFW0ysZQizLT58BCDFwmBEPUYRwHI5MXT2tF8PoBVb6J69tkimVDaksmRozz1dS/mmX9xDfftPomVoxOyPPNMVgQN9xTGaBQCdsPTLnSXRq/C3xm/6iZIUkXYgCQlTXsVkCiobe1+HRJWeEmdmXOOogOQbAnDgWH/HRNuGD+Ysz5wLQ996bOZLh3BWlsBR87JCHNyPQqwQyNLolkJRD7UJgHSyFa5+0oITGaYrK0xg/Jz113JI9/zq9y5oUw3CyTP6kcOhdn3xbWbsBLtcfL1ONo5iZe00Y3xw6wkm7ZTORuxebR98MpYVTGL1sbM+j/TFC+q9ZI6Zft3LWA4yJgcnfLdH84xd8Vv8cR3vIFcCyara1UEUWcVm1BPI4ddOhyByp9QDwoOjGPkz0d8g46zbRzO34FgMLlhfPgIpz/gVF72qd9j8aXP4s5DkyqZLdL4wqWCVcGqBHba9wH82ppa1Vv1nqmnwDTQeMkDok2dgOkHu/tz2dLnKfuOnvUxAWm+q8MDmkjBhiitKpQlYAy5WG66qeDg43+aC/7wGk48635Mlo5WDJkWF/PAOYkYpX2MWun07ehpNJBOrUrAQPQIvobJwSUe9cwLeMFnPszSox7K/oOVym+QvDpfUi+TNOek9ZMS5XSV36ZYaxNkGIkqlrWXWOrrbFUNEAyvmCYqa9KUvU0gTurZd20dwRqQUevZL6ut5928VjxnsTolo6Gw944pNw8fyfnXXcuDnn0Rk4OHveYINkAGW4fDB368CqZO+CSJYsyeAxAjznVZdmYoi4Lp8jLP/PWXccnH38/t8ztZXZ5iBpnD8tszYb1DaoFCKqysFgg/91FLV2mrQt3B/Ky3yKnWMpGh7uAGGvIOAiJEp0WZz2KOypxShR+No6eoVcTlAzQOBWsxt/7JF0/aW25/iTCczVhfnvKte3dywlveyxOvrDgGxcYYyaRyIJIqvUN18H36SK7TfnM6/m27epnMMF5ZYy7PeMkf/TZn/PYV3LJiseMCsqwJ32o0rwytYSvwCn3dX2xZMLs4w8b6hBv/9ZvIaIi6Z5ZkVJYo2U/4axWTKyZFRLhhmjRB0hMXaVW91Ce+FgptT7xaaf2AOsyv9aKzcf52lBZMbshswfduKVl91su48Lp3s+OkbUyOrjYcA1WbAOK94ovAPAQk8IgWRn/s7/k7WZ4xPnyE0846lRd96nfRn346tx2YklFBuqVaSs+2lzEmph14JPYJ0bJktGvI+j17+eyzX8OeT/4D2eJ8q009T1E0latQj9AShahSxT9eYickTGjA7deIXROhQWJaE2A1zOpq6xBKrQHK6nU1Yqi2jgik/XcTEKt7izAcwR17Jtx22gU87k+u4/6XPIbJoSMBe1mbhgnaInXeZzVt6ILnTfk02jZtcqfeuhBQRBkfOMSjnnUhz/27a9n7sIew7+CUfJA5B885ebh+ao0mkEAblJ6ptJF5QZWZXUPu++yX+dTTXsb+L3+HfMd2tCxDN0DoNK7yVXjNhNKojEa1cQLD1GWqtUOyCZ8HljSVsJbAtosvMdalkuvvQVGABt8FdUZRPWe8MimjmYyVQ1O+vXwKZ773fTziNT9HsbJCOS0chdq6a2vkzdiO89QpHq0pck4yxa99UIsxYG3B9OhRLn3TL/D4P30vt87uYONYUaV3bYjkWZfL939WzxR0lgHQsmIHjXbk/Ps1/5PPveBX2Vg6Rr5tES2t14Glr1GVdkM/STOdDElHL064mNZ50pAO1qGPBQbO18g+m8ip3cR71LZAkjo4WRuBqcS9VMgHBikKbr5LGLzitTzxmrcxHA2YHFtB8iyMEogpyFELuAAS7pJEasi4iu/XGdqS5113Jfd7+y9z64pFxwVkLsSrN9v/UmnYPBqJobqcS20CbGnJFgbYcpN/efnb+MYbr0ZGI7LRqDr5YcFAOtrpHNw44hE/iS0JcmPKwYtansXQrEiF2NnoKePAVhVT37iGEG8bHmrjOGrgF7jzaGtrIQxyuOvOKUcedylP/NPf436PfDCTg0sew1cTCZp441sNIU161WfQ2SqZc3SFU844mef99Qfg557JbQem5AJqTMWEirz71nqog3Sl+Z0f9tnaxJQlo90Dju25k88841Xs+eNPkp2ws8Id1IaFqhoxGDvFt6mmk+HeqTTYLQGfTHw7lCB/hf19tEuz6eCcDgNQhz6PVx3enkNpQ4GzsT50TF6NyqHcfZQq5APD0r4pt82dzbkf+V0e+pJnMVlaprTWyZlNL1Tg84Xxa0VxqwRCMmF8YImHXfJonvPp3+fgYx7Bgf1TBnnW2vCaEufifaut7VcPQg7oa0CJOp9Jmd095M5PfoHPXXo5R751I/mJu6q8cNA8K+5k4vdySFHBNU1DlsYExLY3vYdtQWI3TNI6MeFtWqCB6xNcKgwE3b+H8cfeCsUyZnaAFGWQYg2DMg/tq0NK73pWobQV93C8OuXGQ7PseOt/5QnvfgNZWTBd28Bk1QlqeDASRX+eULXIZgU9W7WMDy1x0aufzwV//t+5ZfFEVo/U8b26k1zrCXEmwJ12qp9LL7KpIeDGTygsDHLyxZzv/s6Huf5Fb2S6sk62fbH6W9M7SXqbRwUnXElwBOLsYFtfYTTZliwMkUK4UYJCg7CfRws+qIf0SRQNWDNE99xI8WfvpDx4G8wPq1jPJ/9oWFOokWbwM4yoYq0ixpBj2XNnwcazLuPCP3kfu+5/MuOlY845LJuIotOqVbyOnC7vMB1PkI1NnvGe13H/q9/A99YMxWZRkTesNqdc8YpevDCrenxtfQAN4/+itOSLA6Ybx/i3l7yJG972+5j5OWQ4QEubaBQi3dy9n/1TTQN40q3jaEh+4pcmSZTxky7TXDus00jAHNAtbSzUJoVq3N/kmN33R5cOMfmT38He9CVkYeAhhHWPgmoVg1DJ+1ndZ2sEJQ8GwsF9U+69/yN5zJ9+iLOeeSGTg4ebDptqfe/UeifIuvx9zuTYCtsWhjznz97F4Jd/llv3F2RWwZhKVl2YV2cBa5seJmSlIbNUIaG0oWFpyU8YcOSmW7n+GZdz319+luzEXV1Og0pUeEJv/UStXSTKlXTrIlqtnJnZM6/yQZKgP1AjcSbMJ8dNk0TQ6Sbm3Ivh5PNgXLb6omYZuQtKlsH4GPaWb8BwBtRgb/gy2CnZgx5eCZYtq/y++I2m3Vo4yKJmdtU0ADVtCltEyHLDdKNgiXkecNlT2D1v2Puv38BayIZ5dcr9NnZOqiQ3TJaWOf2RD+JpH3sPBx79cA7snzDMTQBi1tlBSVZ6hfx1v4ld5QQLw9059378M3zzpW9g876DZDt3oIXtpKtJMXYSwb6gUaYv2TojxMHqXEDAw4xgkcb58mrzJJkP8NKkARCkYUZQHbt4MA/5PDKziCzsovjip5l84r9ji3UYDSohcFpAfJQwyCxKlHNwSsc6k5AZKAt+uM+S/9LlXPyHv8P89jkmyytI7nMM3JtdMufcn7yIJ/zlB7nttAewfGjKMM+q+F5bbWQbpy5kE1lHVLFOK6gH0NjSYoY5zGXcfOWH+M7lv4mdFGQL82hRC710GV9sQUkUjZxD8VLKYT8CUQ2p7eJzmT0dGiOKImmYISCNNhfxYyH10D5tjaAYGC7AcB7yWcjnkB2nYG+5gclH30F54E6YG7q41ysY0SjRhCb9hIBPKoYsh7vvnXD48RfzhL/8A+73hIczObjkZLtyCq0tKY4u87hfeykP+vC72KPzTFYLTJZRqISyp14YF+H61cYLIRYplEWJ2TZgc/0o33rJ67ntXdditi1gBs7eG3HU8v7OAsnfR1peO0wh7aWyA2Qye+ZVIVBkulIXtYH1mSNa6+PJJtl5F6MnnQeTwoVveI0knAXJMpiuUt75AyTLqvalJqtU8MwcLB/Cfvd62LYDc/+zMJOy0fXiqXiRbrFOXXInpnoMQ9tnKBsaNldLVhZ3cPbzn8bceI19X/4OZjiknEwZinLh+97A3BUv5u6lktzZ+zqTqH7JmKaIn114pDYxWloGu4esfOsmvvui13Hs375Jtntn5SD7p9TvsewDbNJHTI0beNPpKbglfQ8lk9kzriJ27KTLv/MvIp5fIDWoUozJzrsYTjwPxlNUjKedvEKGLINiDXvXHpC8Ao/qUEeBwQCsUl7/8arU6mGPRaznF9DmdrSmtMQtW4znP5l2XU1uYFpwtMg5+VkXcPoDT2bvP1zPwu4dXPjH72TzqZew/0DBwDjSSzD9IySLqB+xJDKPIlI5myIMdufs+/jfcePL3shk/2GyHdscnu94is0MhngPJO4pmeYsaFQYk5p8k/oYgbzTg1Nib6GOYU0UGdRDNcLUY5sD0KCtfQBQiYHBTGV/y8ztmGmF1AxhZp7yr65B99/B4MW/iQxmYbIJgwysq1kUrdBDr+rcKpiydVjVSktOlepU56rcc9+UEy97Fk8680yybQssPeiBrOyfMhhljTcvIlirYVmEt4rWx16idvZalJiZATKEPVd+kHve/1HM3BzZwhwUFjFZP38vYD1LIncRlqC3XeW0M8ssGliE37IOhVyTCFnc4dvPINUtUa07FR0j5GJpjZg0ntCIoPkIafoSeq6pCJSTSiMs7MD+298y2X8nw5e/Ezn5dNjcRLMccTxCsUpmBTUezkBrCtQqWoo/B4JSK21wcN+UtYc9HC1heqhgMGyRvdpbFwkDHxHB2LiGwGsioYKWJYNtA8ZHj3LbK65i6W8+j9m9ozoUJY7kao5zwntLkUg3cIgOvdRwsdLtcVRFZ91jHUmhJnllfoePCNh0Tl4b92snhy5aATaYAWQDyEfu+7D6ygYwmAPJoJgiizvR229kfPXLKW/+CrptBqxtmS7WeeOuzqCGVVusoL6fKvmkngMnmWHjWMFko8AYoSyV0lbwbFWQUXH1S+vQPm3hXvWdTQ9WsEVJdsKA5Ru+z43PvpylT/0j2Ym7mwxo0C4ubqmr8UmNmmKkYF0fsfVTiz3FsVrzJqRh02u3TDbom+Ln1OkMT+pkoOLaQJ8B4VdoZ3m12dkAshFqBpVQ5CM0Gzq2gqk2bm4RWV9h8sHXUfzDJ2DR/d0BOhUY5KIOb+OtDb3kGkhqPHjbYuktM8cDlqxSWnVaQZoQs1RtijhKV71jHTJoThiw/xOf4abnvJyNH9xBtntnFeI5J0+DUvOtaNskKXedpliSwHokRjqlMSUNr8OZklyTOEML9KhG6rujKLwCRT/kk3YRG76I36smyzw5UkQHkLldMwImb729qoQIsZbpn7wbe99tjF7yJkSGUI5B8y6F2lZsB2sFYxRrHcRl2ueyZfVvQ2VCNOln1/Y+7l5chXfGAGWJGQ6QEdz5Ox9i/9XXIbOzGBff1/a+Us2mR7vHtZf9sbfGtl9CXoMGg67CzGB82Ty8nHSmaYZV6Nqlj4l3EWurwg/t1o61fM1aonJqnSzYynOzGZi88bHFaYGGMiYGWdxO+bmPs7nvLkavfjtm94nI5iaYrGIbSZzyr0yDKbWlrFmaRarrF2z9j0R7WKWqa/AHodW/L6cl+bYB5fIyd1/xNpb/5rOY3TvddTzyRlRNLdLlYDYhTk+9od9CuI/pK1tQ2TqJgm5tYGq+TQS1RaUsocnyJn8GPGcvo1eXbEtWCUGWVT+brDULJvOOmqn+bbK27nD7buwNX2HzHS/H3nYDbJuBomx8Dw3IdpUJsmWFDmr03ZaKLWnsvy3dl2pg463LRlovhWCnBWbngLUbb+EHP/Uylj/1ecyJu72IIHMn3tAZs0Nfp69Eg8ZG8BIJt4jMop0Sta0qhnxKmOoWXNhw6FI7PDECJRwLGLfAQeVL0C1U0KzafJUcJEMlcy1fDEpGEOA3d1t1IqO0yOJ2OLSPjXe8msn1n4HtM+66ZZPRq768jSzAFgpTW92f23xbC0ih2NJWoV9dzt44l1L5FE0SyiInDFn65Oe4/fmXM751D2bXdihsG9Z2CkWl04cg0bslQWfeqqJpqyqOgBXZsI/8uNb4HRckbirQcfLCDuIptlF16qx36lvsVKw2eLRI1lbXmKyF7wIoNGwZL35XklLRmTmwyviDb2HzYx9G50bYLMcWpds0V3LmRQPabLTLDtfZyhK0/r3V5n11ZFHW6d+iRDODLgw48J5rue+Vr8dujjELC46v5wpR/WLVaNKaBsiL9B84+ql/IjGLO571EFcVqjdYov3cPF1r1iJ8nUBQ/B4YPozkfAD1DH7zc11gaqrEjsEBP62NrDt0E3ARNZq8pZWDqJWdFKuQ55AvMPnzD2H33s7Mq9+KzCzAeL1CIz07bhVMrS7LyhQZrQCiputNHeaaVke2jS4LzMKI6Xidg2+4krW//ltkx65qnUoH7jTt3+JJK/26tfXyjzP1W3twgWh0nUZVU2FEJ57TKF6DiJiU7l7UMmsT9DLVLsxcky2sbbj+akNuQMsuyrxkqYkqdeLxbl7OK25poyDbdlL88/9h/cqXU+6/A7bNVebA5w1Y62x6BchQeGbAtg0u1BL4DJSKjgtkccTGHXdw78/+PGt//Slk1+4m6qhHwIg/ACKl0SWRIg4cap/qb7cICOImjjENO8zgB1MZ1fcBJK6KsVGRTU+lTOQjVieonSfUwQM6pWU1WUJ62LgJyfKco85837KEbTuwt32f9d/4RcZf+1fYNo+WZYXJ1xvpCler75U5aH6uBaW2/85nKKclZucMq//0L+z9mRczveFmWJxHp4UDtUxUW2FCVS1+yliSQ85TDls44Swk7GrfzPcUHzPy1nx+l4nDiuRIUyVuwNtTLCfdJk9RirlJsATdvL1jYXxkTDvdQfxwptPD1yoyv4iuHWPj7a9l8y//FF2cr0xGWbYefe3c1f7AtNr8sqi+KC0UoNMCawUWZ1n+H3/MoSt+GVbXYWAYnnYO+eIO7GSMmGwLzoYSt3XCr6xWTdZb+MO3JdnzVKJooT+i0GT+WFsNoB6xM9l9QxIkRHfUNUgBeKq+joOdbhVnEiRhz5qMYnNyJBmRqHZB8crFqE6h3VhFJ2MYzSDDEZvXvYu1978Va0CHM+i09Lx9pSxcvyJVtDEHSllWIZ7mI6xalt76Vo6+813IaAYRi3nIkxk8/y2c/PO/ynBhnnJzUqW5oVO5G7bLb/0i6YfyOxFCHOdr7Ah28N5o3nNnUHe7mCbEjqXN6MWaPnXoox45ItrY2GrzfRaPY97YFjkUr8Vs/IHSQ4AIgxOBrGK26/oxFi56BtmuU9C1FSQfIouLTD/1MVavfBXF0cPo7CJ2UrRhammr2yxAp5UQUCp2c4rOzDM9dIil176Kjb/4GLJ9sfJBH/sCBv/ppdjpJhv3O49z3vZB5k7YTbG6huQ5ne5peOVl3r9VU21vYrWtRBQETy68pppB9buXVIuaf4esTmmBoDDzr505dj5zWDWiise1d6X1mkR5MXhT7ePsr9ekoP1g2zB3g0IBTbffksygkymUm5xw+RsZvPDdzP7c7zFzzmOxK4erB915MuV3vsbqr72I6U3fwGzbhk4KtHBYQOE0QmGxU4tuFrC4yMa3v8HRV72Y6be/jmzbjgwXyJ78KswjL0WyArNtjqKYcHj76TzkPR9gxwPOqJph5/kWzcUioC3ugxgoEAkob52pQLoFZtOJDDSw4uJ5UKbPuZMgvYunuuJJP0TSHdX5+Qkb22YMxTlnze+0bDc/aDLQ9aRrcmm5ts5gfsgpv341m496Cct3rTKeOZ3sJX/A7I9fhq6vVFHMtu3owX2sv+WVTD7zSXRhexXvO0CIwsLUQqHYhW2sf+pvOPZrv4Q9sBczM0R2n435T6/BnHkuJiuQuRlkNMTMDJmM19i3cCrn/u7vcfKjzqNYWq4aWzU89m4zh7DvYaI+vDMeNmJedvwf6RYD9QJLfje0gBFEBFiE40xlyzFwAuUYedAl6MJDkMlGy5iVelijU/uDHJEp9uC+ChSyJdgplAVSup9tiRz9ATJdc6FieGokzymXl9l2zhmc/F+v4eDoMYwPjMlGGaolxQSy83+C4cIs01uuh7JEZufBlky++GnseIPhjz2p8lcmE1f9M8COZlj9yNVsXlfV4yEgZz6O7MdfhNm+HTM0mPl5zNyIbGZANpOTzc+iOmVj204e8vyno7fcyNLNe8gW5r2+BV0sIHa8Q06GJikAkqz+8B1BbQA01R4eYaROTAp7im2UeN56O+BREkCVek2fo7FyeH35VBFbQjl1XxUAr1o4gSjS7bNQyAzl0iF2X/BYTrjyOu7dfBDTpQnZjMsr5DkyECara9jHX878S96PmZlHN9YhHyLzC0w/8RHW3vFfKFdXMMM5NJuh3Fhn9e2vY/rxj8DcCBGDedhPYh7zPBjmyChH5maR2QHZzAAzymE0QIaGwfwInWxw+3SWc6/7AA9+5pMoDhx2Rao+1zphyVKt+BJOsHQnTKQ5BE0r/X7UyX+7oU9SOq9uy6XRsClx43zYJsHXkja8+n7fYdRyWm10WX9Nm+9aFm34VwtjnX07cpiTLnsus1dcw513n0B5bIrJs0qlN6GkwQxzitUVpvd/KnMv+yiDkx+Irh5BzBDZcQLFlz7H+lsvp7j7dqZ37mHlN36R4sufR7btQAaLyCOfjzz4AsxQkNkRMjODzIxgOECGOTLMMcMck2eIEcwgRyZjbl3NOOdD7+HhP/10igNLXnRQdUzp7qEmO36FfTnidG44Gi/M9mmI2Cco5H7UmG+Ri2prCyVVdtQdwtCUXKmG1b/Sjj4Dceiaa4NcFlBMKgGwTiPYssk+KhWDyE4LmKxz2iteRXHRq7jnFktmphhjKu/dozo1h2EwoNw4xubiOQx+/qPI376VyY3/hMxuQ7bvwt6zh9W3/xIiGfbwPmQ0gIVTMY96AbLzREymyOxcldufGVaaYJCjeQZZtfHVzAP3qMaQFwW3LA952O/+N2YW5vn6R/+qKvKsOl9FcxHDjh0aFC5Hw68Th1+8WsYOKKTpKYjxh2Uyc8ZV0UyT7vjyJDLn2ysD5RhzzsWVD1BsNB1D2rDFcbbzHGETu/d2hw1MwI6r79MxlJtIOYbVe5ByA8ly7HhMnlnu9/q3svbQF3HohxNyo+0UME1mTN2tZVBMKOyI/GHPIB9Yytu+XuUJZuZgYw2dTpDBALnfj2Ee/lPI4jZkaJC5eWRmpnIEh5Xal2FONswxo5xskCEDQTL3lQsmz8jEsn8inH3ZU9g9XuXOL3yNbH4uQcyMG3R2W8+pY9amkkaaoPk2aGOK2aJdboDpjB/dypP07E0Id4dNI1VJ9Chvwz6xFrHTatPL6kuKTSg3odiAYrOKCLKMcm2V0a4FTn7LB1k66Vkc/eEmgyyq0PAzjnWVs3oDE7McySzFeAoX/xqj573TdSxfq5hGWV5pnMEA2b4TmalUPqNhpe4HOZJXXybLkMxgjLiclT9tpI6PDANrufHAlBN/+01c8usvpzh8pGNOSdr1CEUMNl+j4k7tdf01jtA0XR/gNECqswR0hytrz5hyFwWc/SR04SFQbLhkTR3ueG1a8xzsOva+HyDl1AnAGCk2kVoAyikyWcIePcj8ueew87XXcHDjPDb3rZMPDX67DVVpU8x1tkvxCNK1t1MVvJSr68iJ5zM692LKe7+Dri1VfzMZHPohMllBzr0IMzOqstSDATIakLnTLwNT2f+BweQCuYHMIJlgak1gBDJhIHBg1XLas5/IGSPDnr+/HjM3syXFP4RstD9lHKh+6aaJ4wKTZJQhXp/Azvxn6aF+cfyUpd8NNEEXV2vR6SZabMJ0E5m6jZ+sOwHYxB45xM6LLmLbFdexb98ZTJfWyDODTh3UXLoYvvleoXtS2g4bpsVFDDIwWIGxXUCzkTMfVWWpzO5Ab/s65T9eV9HMZ+dgkCGDvNpkqcCnOl8hRoLhlOrVJmpZ5Z+GArfeN2Xm117JM979euzRlarRlCRq+4k1RBcvDvysHj8hUVdOmFVqw0bTKTJAk95nN1NFAGCo1zQ5KA61NU+gzRNIUVZ+QrEJ0zV0uoZON9Cy+p0e3c8Jl11G/ryr2XfrHKytYVTQqSJFm8qlsGG7rbIlfkgZNnNGLaIluriI7v0G5cdfjN73PWQ4cqq2ai6lM/Nw29co/88H0Axkbr76vTFoloUzBzTs369UhSRa1wjaimY2RNhz34TBa3+BZ77/12FtvSKkdniBfnSlXnCg6egs5l02d2KjQFJ6bLtiNG0kAiJRkqkSET4bhC8mynsebq0VbFnCdB0mazDdqH4u1mC8DhtHOelnX4j98Tdy8JYpptyotNG0qE53aauOIu7UU1hwsG7jEzhWj3hVSoiBhXn45l9iP3EFTFaQmW1Oi7aMJFGFuR3YO29k+mdvh80VZH6xoaQ1WIgrvFD/RNmwrwHW0citMjSGW++dYF/+Mzz32rdhNtYpC+u6l2jCFUg3tI6nAvoj7/ompmxVJ2CCGWZxyKhbtU2V7rhxF/9LUJXRFoT4r9HpKkzXqs0vN9G1oxhd4ZRXvJaN+72ApRuPkElRhXjTsuH7Vfi9yzLWQlCq0whe/UE9wassUZOhwxH289dgP31ldYoHs3VCoWIUu6mnIqZ6htkF7D23Mv7jK9HVw5iFxQqh9OBUrU1lY/JswzIO6hOcnA5zw517p6z9zHN47h+/m5FayskUYySR1tdwGgke3bvjtGsnNa+QLiSJ9tPU076S49f6xo6lTA5hwiiYFBFTxcsSKcaVANgN9Nhhhttn2PmKKznCBazsOUw2qLB63KlXr9+qWmnbbno5B5/oUVVtFNjBLNgJ+levR794LTK7A8mGzp81brKntITTuhLaWmRuAbv/bjb/4M0UB+9Etu1AbZnsGYyjjfsVRErYKLIWgnv3Tlj5yUt5zp+8mxmq6KQZmKXaIds0LKut2gIm8YK+ecz1gVQfCYyTD30hRnx3UdMIr0qnKdtqVHO9MWVl/ynQI3sZnX4iiy+5iqNHH8zmvYfJMoGprVR+c9rrDg22gpGt17GhUfftvymm6HAejt6N/Z+Xozf8PbJwQhuNNETUmIVkXNWu0wQz8+iRg2xe8ybK227AbN+FFkVUKh42ym6toDbFMXXOqyiVQZ5xz70T9j/lSTz3zz/AwsyAYn3TTVpPjOgOMrMcJ3RMRXPxvgW0cA1nyhyvODFGAn1fwGP/hn3RbdOXpxGGYh1d3s/swx/N6Cd/i6W7t1MeOYIxghYuU1j6gmNdzsATButzDx2Tx2kYnV1A7/wq+v+8FL33e8jcLlxlZmvzg+5bHifRhELAaBbWjrF2zZsZ3/hVZOcuRzWLmjM17GPbVEk1SsraimxioSgsg9xwcN+YfRc8gWd/4hq2b5ujWNuoSti12wpfJEGM6ZsaUncxJ/b+1ZuQpn4ySBOt3rXtu9vbQNvHB7TpEt7y8ZWAn106/6DYRNcOMf/4p5A9+c2s3G2QjZXq02oHr6Zm1UV8zUbbtpe8v/n+3NrZBfTbf4F+4tXo+lLl7FnbFmr4J7+mo8cDn3wBsRaGM8hkwsb73szkq19AduxGbdmGfbUWdOZKve4o1uNB2KJiHJW20gQH9425+1GP4if+9++z88QdzZwkf5Kqqu1EC22FVTjqPqbfdRp8RnmFTEY1FOxPw474bBImJbvOqQOC7n8xOnuWA4Ki9KW0M+tlcx8zp5+CPuwX2bj7GKLTahNs1NS5iXMl6ObdKWkXEC0hG0I+g17/fvSf31ehfPnI6TpXbNKMXTcke+75TJpgGpmFPEPUMv3yPyAnnMzw/MfA5jqSGU+ZmKj4V7qa2GvPn2WG9ZUJG6efyuOecQEHP389K/sOk83NVP5GEjDSbvVwD2O7d5C0I4ZkMjr9Kq+tRTxSIME7S/FBqw4h3P8idPbsyrMXk0gjCNiCbHEXuusRTA4eQ4x1bKG6fLt1qOL+xal0RKWmCxguoOUmfO7X0e/+OczurLz7evO9fjIS95aRbkFFO3TKYx6ruohBmH7p87CwjeGjn4BubjRZyHoymd/pQ0gAYl71WpYbxmsFayedyOOefTGHv/AVlu894ITAJgpGowkoqkGCSCIuB9JfO1RpgKAFRmLKjHSzTUFlilBpgDMuRufOqmL7JhsYjXWhqsApN8aVjKiH4TsVLtqTgFINHqhyPEuY3QXLt6N/9ytw15eR+RO8Qaim/cI//XROkCQKoPz2eQ2fwRgkz5l++R8ps4zhYy+s0ExwvYykqZwSr3xT3bM17W0a51nIjLC5NuXojt08/rInc/T6r3Pk9nsrwolrornVRvobrm0cv4UvJ3Uu4Myr2g2WuKlHN7CQ7rwgRZBaAGbPqjJ6fp6jTiDFHm4zNcFtvNXQykT9ckQ8u6cV4sXcbrj7X7F//xpYvgeZ3Vl9nrfxVahHcvMl6IGUCn+9Jpl1OVw9rHI4YvrVL6LTCaMfvwSZTuoxHOGEkrp1Lt1hXn5FuDFCsTHl0PwOHvv8p7D29e9w+NY7yBbmmn5DyZE2vXWdEvkLRJPP62SQ+kOhI7ZKlD0S8UCJ5kSaatNPvwjmz6pMQNN8RKIpptb1sfO6N9i0VenOKHDXshU0y9wuuOlj6Bd+s0ogDRfcafO8/E4XrkQRSgIpE+8EN1pAunOTZHaW6Te+RLmyzOjCp7gUt22GbjcLqr4LFZYIiVcnIEYoNqccGi3wmBc8hfF3v8ehm/ZgFucrp1jiqc7SrY9IsTtSaLA2PgAp5mU3mxTYGcKGUsUmnH4RzHomAH+wcg0S1Se5izDXhYtdE+Q/WllRuwYz6Neuhq9dA4P5xtkLED1MxGeMik8llYjRBOKZ4ku2tkJmZ5l++ysUB/YyetLTXDRUJlvviNdyLhgy6nUnMUaw4ykHszke/cJLKW68mYPfvRWzOB86hiLdCcLJgV79v/eiAILK344q9P8WBAPakkJPv6TyAYqNNpsYzz5rbJ8GhQt1DWOH6uSnpbWA0QLYTfSLb4bv/wXM7nYladLE975al6gfTzASXrfiy6TVbXI+oVaoYXHDt5netYeZiy7FZDlaFO1BcIJoNZFSCbRk9bMRgUnBPh3xiBc+HX5wK/u//f1qXlBpGw3VOrFynHtP/63SAB3DL92ydSEs2PTtlwsDzekXo3MPhMlGN2MokepUXH+8xOzrYIpZrUkKmNkBK3eh//R6uO8rMFcje76TZxpbrYTp2sCn0HhLpSdJ779fve8SIqfWInNzFDd/j+me7zO86KnIcAiFqx+MTUA8pMybqyxat5OpkmD7i5zzX/B0zO172P/Nm6rWsq7DWmMCZAvwLukDatsruDs+3XqlYh0FRmoEWQCFEU62FNVmdGwAVtjS6yOsIbbv97exBYx2wr6vop97Jbp0C8ye0PQdxlP3nvh2/Bc6/MlUgyzxcvLdlHhYzlojiMaViJeYnbuZfPVfOPKW12LX1zEzs1VPAa9KWqNC1QrZbotS1XUuKUoXP2xO+e6S8OAPvZfzX/ifKQ8tYbLcI+dqiuwT1RvYECl0m5vJ8LQuI0j88IeOc+SneMUHgk67EJ17YEXval4fT7IUJOiuqA31qQmYXHwv7qZlZgfc9kn0394KdoIMF2uPqakLDGcYSduxW3oSWwG5KVF/HVDltAvC++683zPQWmR2nvLu25h856vMXPhkssXt2PGm63rmQWwBn1GCyC1oQ4cgRcn+TcNDnv90Bvfezf6v/TtmYc7VHhAdugQDSFMckdoJTBWAiue6a4eOSjAwRqjCwPtdiM4+0CV6WmkLUMG612+nUMJHGqXa/CxH8hm44cPod66pGktnQycwplX9HmIXCIAcJ7PZF1cnJqgpiapcSEcV1iKzc5T33c3mN77M6AkXYXaegG5uho6oajieWON2gNI4hiKGrCzZtwFnX3Yp+b77OPjV72CaApQ+Ao8fBWgKCIoFIFGNuFWXi5psYcfIqRe2TqDXhaLtBqYJmZJQdYtUsO5gDrREv/EO9Af/Cxltd7l7N5zKV/vO8QuGXErbeEI8OEZq9o902+JIciA0YTjrkXEkoSEb/8XaSv0f2Mv4S19g9LgLyU88Bd1Yr0JYoor7SAAoHX7i5ieqG5JlypIDa8oDnvs0Bgf2cuir38XMz+H1tyVe4ZonGUuHiBxHA6TCwy73oDEBnHoB1BpAw2IFkS08Ut+ZpIThIrJ5AP3yb6L7voTM7Ko7UHgq34Qdtr37Fx88ihpTBH6BdAVcUpPHe1SH+N63aDvFokb7rEVGM+jRJTb/9fMMHvVYsvudWVUpiXGDs7zOB34hbVNb0W0SYWzJoXXljGdfSnZgL0tf+3arCcIe0sEKtE9jGrOcMTr9Kolj/+Ap0gvVsZflGKkFYLoRkg9S5JTUnFstYbQLOXID9itvRo7dgYx2OK5V7eHX3bdMhO93cXyNEzEBrCBhIYHIFjSqsElkXUGtPndPuhC61CHiaIRdWWbzi58le+ijyc88C9bXKrzCO1jxsK76+vW88LZ5iyBqObJectqzLiU7uJ8jX/tW4xOEsYt0aoqaKEYhY3TaVXKcRkb9xAM/DBojpzwR5ioouDOLWKQnk1x7QRZGu2DvP8LXr4TpKjLc5hY7c713jBfXm87pF3+wfWdosokaPKdsZA8YlPhtLMeScsNrdWwtMhig6+tMvvgZ8nMeSn72ubC+1mqCGgPQqMdhvfHW671VC6e1HNtQTnrm0zAH9rH89W9j5ueaBJIkmlQ1jE9tnMDTrkolRogVh/QR2b0O36deALMPqEyARKlWSWgSpG3BOdwOez4B/351lXHLZhtkr+kbLFGePjqXQZ5CpFd+pXebJU3HDjSJdnyDgF8T+xB1YYcTAiYTxl/8LNkZZzF8yMOw62u0rZq0My0tpNh5V3e96sVaVjZKTnzGpZhD+zn2jW8jc3NeJ/bo6Zw5rtHYSAAkXSTYOHIePSUuOLBj5JQnOA0w7mGixsOoLGQjyGfgpt+DWz8Kg4WKM1BPIhV/+reJClboCW8InTxtUUbppHujqMHD6DVq6NTp4ikSmLfk+fHl0VokH4AtmPzz3yGnnsHgoY92QkDbU1EjXkTAkyD4Wam4j2sbJbsvfQrZof2sfOtbyOxs2O1d4qRXdWt5461Lz+nGbzWidWc5uqOrLUKGmmHV6FlNOsPjI1b5DNh19JvvhL1fREY7PbKr8aaUmkTBQ+ysaeOpR/THdoiS9PVc08arb02aem5RT64tqpJOW0e/P7CjgOcDEGHlPW9B11aZfe7Pwfpqm0DCa6VnPKzFTVJT71BW/SgHiFqWVy0n/NY7mFo4+DefRha9HgWavr9ctR1nRuwhJ3IKfn6/cYLUtUKfrsLmfpis4E+3qCaLS9gMMcthcxVu/CBy5GZ0ZrdDEdukjfrOXdQrUHugT2mmltTVN9oT82vQdEFisp03UIqOQGlYulXXCPgIaQNn+0Oqq0YZqhayAWZkWP3gb2MnY2Yu+c+wseHqDvCw/jrokcjfqT4zM+2zilr27zXsetVrmBw6zPJXv4LMzjrHMOJ6NMu68GOqdQcPv2NMm505jk/gGStT9f0NIWHt9vgRdQMhNqsC0XyWcPpYOMewa/MTHc57fDf/NeESJDSd991Xn5p4dO2ENKlhzeHzq4PFm+9S10hMMIvb3Qg7bfMbjc2O7q8zKNpnB1Wtd8Uo5apzMjuTYN3H2ZIcnYKM2o2JJwz505HYqk0MVaFn8NDxz+FpFjFo7hVoEBFB4uLU2pb3DVESxTdWkKqIVq+OwUdQvfeqRtgAwei6Lk9B07T56OBIKhFlDIxG6PpqkyPxORTVPGUJSR2BxjYdZ6MZ15NlQRQmHlm0MuVTcrVjkJGTyigrqD2ZMo01QI0bZJ7EamJgkQYeu6qPskli8x0LJy6ClTDGjRKNjswZq26/lE0S/r63UVGrvNSGSnKUKxHBRJPZxYB91JjEQQSYSSfwDFtAR065tlNAyCXweTTCQpvPsJsY7FqU7tRqupaSgIX9frQxKiZhh0uJun77BRceW0Z8Dr7P2JG0pZFErWKQbvJn42yRD/VZNM08I0i/RxOi1EkibTH2JS60JZGidk6iBOioeACTn4eUrunzYhxJVhZrOBNaBOwGOcUqMtSgHFya4gFpa/qQfvKEeK1KJJqe6GmCdlyKhk5VXJqmUWV8YJ4l2GShS9Pqvi7BkYs7oUGTYw9qpYNehjGRSJMRRSMmisd+SvVfMiH1vmfooyIJMCoxxyfWfOp7PVG7OgWKNXLsKmoniBl2vN6Qml23ZPGQPX82kL8ZKa6d37VS/M9MOG8ST9fw6go8h8j33P1kDSoeFS8cdNGuWX8rNu3AuZpgBcWDsyx+n4BO76Z4j2sKvvY0gBDptSbqgVNh3wZNY1qeThQn/KpjKFcwaIGUKzT9+9VzglJ2MOgWkpJRQuctGpgQFmWEeH5/IVrMzunOw1XtNkTtG6+WTESh0GnLrN2SOU03yMQLLImaYXfuye8JKW3jeA0KdftyZzGZlfQ+aSvOGgW/KhkUx0Cnbnp4caQd+yASkUJ/lFyA9OTJJcjQBX2vJVT93dpE6YaZW14vfi09Y+787WgT8Ul3tw7fJJEC723LGWom7ZDLE/1+PIdbOiZR+kO/vryMhvci9ZAj9To8Tg/TxhDFcoXISdalEWncylSTNq+VPNsvKhGcqbpVzklD+pJfJt3XtCLiu3VYMahXaq2JdrRtD+N2Q7aqktZU/o9gkigEk8TpLbjWxpSmp4kdD3Gkp4sL4TOKAbsO5bKfIrMwOeCkw+JP+mxNQk/peB9UKn1ASfg5zaBGUiXQGtx/MCxB23vsjKnTVCltz0J2ZClqha0Rc7OHdKlN2s4rFG18psRaiUSfJg1ZNtZYHZlTTYTXfujuCbGDjtUdaBWDjvc1qGvbzG96EOxa09dXUpKuPYZHE/SDZIeRGCoNs2zqI2j+Ke0hOoZilTAZdVnu1jntrm0PUtmp2Ee7eQhtIw/xe/xLquClx5Ro5MtIXxv5WM5jxFUjcKt+fYaUq9VeNxkX3z0Y3xvCwfSNjek7EdraM9VoEqZTqAGSFdlYTcwnCIQn7EukPkNXNFxEP9SL+hV1tFjKgQ3nsB6/OVrEvO0rr9MebMGz2D0OHZ1CT/F5hTHDycvxqJ8s27y7zbng9wdAoDiKTg6iMnCTp2KijA1tclIdxn3vo2xUr1nT0DHzc9+q3QBjC1soPwqhRftsuaf+4/S4xrF5qnunq+ePFbxq15ZFUp8MAFRTTX8TKfbI9Ep0cCRHJwegOBqYZNPhu0zuRso1pB7t6hEJlC0qTnULh0R7nLWowfHxnBlNzM/VwOZ2uaxhziYRZcR2lb6OXX7387obmiYA4i6a3pY5SI+2ocfJ1giAjZJMXtIqENKmR3M9nSWrHL/NuzoAQWJgRIlu7qnKsKjalSjH89ajCeP0NCyKmxlpyh/oEZLEyIyOs0jHqe+Awu0Qq0T3Pd+hjD5D+FHMVDhJRZPhWI/WI2qupZoQGE2taphw87WPK5xRLWDjhxXnMvrPJFlvdhPd2OOkK4NOy1LtkCglPlWdvyaqHjpqTly5WALw0a31elCE2rHZLVikW6AMQbxSzzkOMALtPGIKvhJNikNXg0aaL63lw6GPHTgiyHzGP7vt3fgBlBtJkof0x3AK2QIyew6Qo5SEPQQkTfUK0rPSY6QlcWnTY1q0R3UmftTIZZDwpIRZcQ2mmm41dzveaEW2iCPlON3V2CJEZUsoN35vDC9LYKZNdeI391SoX89WSz/CUPf0mUFmzkGzOUTb9mjBskoPCpgcgSLpyWOSQPW07zSwZWjX5KP8YdfJtHbbs1c7A9Y0olD0j3MPJSeFx3ubsmUEkgJCtTds1TjL0LCPBlCuwcYesBtbbvMWAkCQ52fmTGRwksuYlcQjimOQNczx9zliUfZQZOvTIQkzk7STkkzHi2cKmpOvLeOj06u/qWLuZtj6l1D5kSC748WVvVqDJh2pHefa5VWmByuHT8vjbvFxBCB68WAXOjoNMfPuw62XbQuxbnVtWZL5nCSHS0LXuVcXS5j57QwuJsHYIcq/azc9FzRBkxC+3nKhtPso9HVz1B7hjh9W+68YhKLWvcpUvlq5CuP7oFjiR97T/4gAVO/IYHAiDE8EM+dsj+2qTJGw4LNPZfqINF5qWaR7Urz0dEPo9P2JlDpO+SdRKjslpW3Zlx7fpvsy4JmcYBpYs6c2vFJE/woFeQufQVzdoypq12F6CCYHkp7+/48CIKG6GeyAfBeSLYAZBqCuBI6K9I+gicqZtaMfosyk/qgoT0L46EmWSCLVnDJHukWeQ7sJZI3nAnRMgAST2tP2nUTWFMRO0HKlyupNj3oo5H9sS//jGiD1NhlANg/5AmLmwMygMnA8eCJnCo+u3aXb+qemnT2lTdu1fgHQH+3RpG+Ong/K2LQT29gdjy8RkBu9phOeKZNE5ijkeDq+v2q66ZNYN1BrE7UblYNXrIJO/j9v5f8LSz59wr4wKOgAAAAASUVORK5CYII=">
+  <style>
+:root{--navy:#073b6f;--blue:#0a5fa8;--blue2:#1677c8;--ink:#122033;--muted:#65758b;--line:#dce5ef;--bg:#f4f7fb;--card:#fff;--ok:#0a8f62;--danger:#bd2543;--shadow:0 18px 45px rgba(15,46,76,.11);--radius:22px;--safe-bottom:max(18px,env(safe-area-inset-bottom))}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-tap-highlight-color:transparent}button,input,textarea{font:inherit}button{cursor:pointer}.app-header{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px max(10px,env(safe-area-inset-left)) 6px max(10px,env(safe-area-inset-right));background:rgba(255,255,255,.94);backdrop-filter:blur(15px);border-bottom:1px solid rgba(211,224,238,.9)}.brand{display:flex;align-items:center;gap:10px;background:transparent;border:0;padding:0;text-align:left;min-width:0}.brand-logo{width:38px;height:38px;border-radius:12px;object-fit:contain;box-shadow:0 7px 18px rgba(0,70,125,.13)}.brand-logo.custom-store-image{object-fit:cover;border:1px solid #d7e4ef}.brand-logo.custom-store-logo{object-fit:contain;border:1px solid #d7e4ef;background:#fff;padding:2px}.brand-copy{display:flex;flex-direction:column;min-width:0}.brand-copy strong{font-size:1rem;color:var(--navy);line-height:1.1}.brand-copy small{font-size:.72rem;color:var(--muted);max-width:50vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:3px}.header-actions{display:flex;align-items:center;gap:8px;position:relative}.status-chip{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 9px;color:var(--muted);font-size:.69rem;font-weight:800}.status-chip i{display:block;width:8px;height:8px;border-radius:50%;background:#e0a229}.status-chip.online i{background:#14a36d}.status-chip.offline i{background:#cf4059}.cart-button{position:relative;width:39px;height:39px;border:0;border-radius:14px;background:var(--navy);color:white;font-size:1.1rem;box-shadow:0 8px 20px rgba(7,59,111,.2)}.cart-button b{position:absolute;top:-5px;right:-5px;display:grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:#e63952;color:#fff;font-size:.68rem;border:2px solid #fff}.config-panel{position:fixed;inset:0;z-index:80;background:rgba(4,24,44,.52);padding:72px 14px 14px;overflow:auto}.config-card{max-width:620px;margin:0 auto;background:#fff;border-radius:22px;box-shadow:var(--shadow);padding:18px}.config-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:15px}.config-head div{display:flex;flex-direction:column}.config-head strong{color:var(--navy)}.config-head small{color:var(--muted);margin-top:4px}.config-card label,.checkout-grid label{display:flex;flex-direction:column;gap:7px;font-size:.77rem;font-weight:800;color:#48596d;margin-top:12px}.config-card input,.checkout-grid input,.checkout-grid textarea{width:100%;border:1px solid #cdd9e7;border-radius:13px;background:#fbfdff;padding:12px 13px;color:var(--ink);outline:none}.config-card input:focus,.checkout-grid input:focus,.checkout-grid textarea:focus{border-color:var(--blue2);box-shadow:0 0 0 3px rgba(22,119,200,.1)}.config-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.config-message{margin:12px 0 0;color:var(--muted);font-size:.74rem;line-height:1.45}.icon-button,.modal-close{border:1px solid var(--line);background:#fff;color:#52657a;width:39px;height:39px;border-radius:12px;display:grid;place-items:center}main{width:min(1180px,100%);margin:0 auto;padding:7px 10px 34px}.search-shell{position:sticky;top:51px;z-index:30;background:linear-gradient(var(--bg) 78%,rgba(244,247,251,0));padding:6px 0 8px}.search-box{height:44px;background:#fff;border:1px solid #d9e4ef;border-radius:16px;display:flex;align-items:center;gap:8px;padding:0 12px;box-shadow:0 8px 22px rgba(19,55,90,.07)}.search-box>span{font-size:1.4rem;color:var(--blue)}.search-box input{min-width:0;flex:1;border:0;outline:0;font-size:.92rem;color:var(--ink)}.search-box button{border:0;background:#eef3f8;color:#63758a;border-radius:10px;width:30px;height:30px;visibility:hidden}.search-box.has-value button{visibility:visible}.category-strip{display:flex;gap:7px;overflow:auto;padding:7px 1px 1px;scrollbar-width:none}.category-strip::-webkit-scrollbar{display:none}.category-chip{border:1px solid #d7e1ec;background:#fff;color:#536579;border-radius:999px;padding:6px 10px;font-size:.68rem;font-weight:800;white-space:nowrap}.category-chip.active{background:var(--navy);border-color:var(--navy);color:#fff}.category-chip.special-offers{border-color:#f3c57e;background:#fff8e9;color:#8f5800}.category-chip.special-offers.active{background:#b86a00;border-color:#b86a00;color:#fff}.category-chip.special-out{border-color:#e5c7cc;background:#fff7f8;color:#9d2940}.category-chip.special-out.active{background:#a72d44;border-color:#a72d44;color:#fff}.store-hours-banner{margin:8px 0 2px;border:1px solid #efd394;border-radius:15px;background:rgba(255,248,226,.96);padding:11px 13px;color:#76520a;box-shadow:0 7px 18px rgba(106,77,14,.06)}.store-hours-banner strong{display:block;font-size:.78rem;color:#895d00}.store-hours-banner p{margin:3px 0 6px;font-size:.7rem;font-weight:700}.store-hours-lines{display:flex;flex-wrap:wrap;gap:5px 10px;font-size:.65rem;font-weight:800}.store-hours-lines span{background:#fff;border:1px solid #ead9b1;border-radius:999px;padding:4px 7px}.promo-pill{display:inline-flex;align-items:center;gap:4px;width:fit-content;max-width:100%;border-radius:8px;background:#fff0db;color:#9b5200;border:1px solid #f2c981;padding:4px 6px;font-size:.57rem;font-weight:950;line-height:1.15}.product-prices{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}.product-price-normal{text-decoration:line-through;color:#8a98a7;font-size:.7rem;font-weight:800}.product-price-offer{font-size:.96rem;color:#b95b00;font-weight:950}.closed-add{background:#eef1f4!important;color:#8997a4!important}.closed-cart-note{margin:8px 0 0;padding:8px 10px;border-radius:10px;background:#fff8e8;color:#805d0b;font-size:.66rem;font-weight:800;border:1px solid #efdaa5}.state-card{display:flex;min-height:260px;align-items:center;justify-content:center;flex-direction:column;gap:8px;text-align:center;color:var(--muted)}.state-card strong{color:#42566d}.state-icon{font-size:2.6rem}.paused-state{min-height:360px;padding:30px 20px}.paused-state .state-icon{font-size:3.3rem}.paused-state strong{font-size:1.15rem;color:#8b5c00}.paused-state span{max-width:520px;font-size:.86rem;line-height:1.55}.cart-button:disabled{opacity:.45;cursor:not-allowed}.spinner{width:34px;height:34px;border-radius:50%;border:4px solid #dbe5ef;border-top-color:var(--blue);animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.product-card{position:relative;display:flex;flex-direction:column;min-width:0;background:var(--card);border:1px solid #e0e8f1;border-radius:15px;overflow:hidden;box-shadow:0 8px 21px rgba(17,54,91,.055);transition:.16s transform,.16s box-shadow}.product-card:active{transform:scale(.985)}.product-image{aspect-ratio:1.18/1;background:linear-gradient(145deg,#f2f7fc,#eaf2f9);display:grid;place-items:center;padding:14px;overflow:hidden}.product-image svg,.product-image img{width:100%;height:100%;max-width:180px;max-height:148px;object-fit:contain}.stock-badge{position:absolute;top:6px;left:6px;z-index:3;background:#e9f8f1;color:#087653;border:1px solid #bfe8d8;border-radius:999px;padding:4px 6px;font-size:.56rem;font-weight:900}.stock-badge.is-low{background:#fff3d6;color:#9a5a00;border-color:#f1cb7a}.stock-inline{display:flex;align-items:center;gap:5px;width:fit-content;max-width:100%;margin-top:2px;border-radius:9px;padding:5px 7px;background:#e9f8f1;color:#087653;border:1px solid #bfe8d8;font-size:.59rem;font-weight:950;line-height:1.2}.stock-inline.is-low{background:#fff3d6;color:#9a5a00;border-color:#f1cb7a}.stock-inline.is-out{background:#fdebed;color:#aa203b;border-color:#f4bfc8}.stock-inline.is-out::before{content:'●';font-size:.65rem}.stock-inline.is-low::before{content:'⚠';font-size:.7rem}.product-body{display:flex;flex-direction:column;gap:4px;flex:1;padding:8px 8px 9px}.product-presentation{font-size:.57rem;color:#6e7f92;font-weight:800;text-transform:uppercase;letter-spacing:.035em;line-height:1.25}.product-name{font-size:.76rem;line-height:1.23;margin:0;color:#17283a;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:2.9em}.product-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:7px;padding-top:4px}.product-price{font-size:.92rem;color:var(--navy);font-weight:900}.add-mini{border:0;border-radius:11px;background:#eaf3fb;color:var(--blue);width:31px;height:31px;font-weight:900;font-size:1.25rem}.modal,.drawer{position:fixed;inset:0;z-index:100}.modal-backdrop,.drawer-backdrop{position:absolute;inset:0;background:rgba(5,22,39,.58);backdrop-filter:blur(2px)}.modal-card{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(560px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:25px 25px 0 0;padding:22px 18px calc(20px + env(safe-area-inset-bottom));box-shadow:0 -20px 55px rgba(0,20,40,.24)}.modal-close{position:absolute;right:15px;top:15px;z-index:1}.quantity-image{height:128px;display:grid;place-items:center;background:#f1f6fb;border-radius:18px;margin-bottom:13px}.quantity-image svg,.quantity-image img{height:110px;width:80%;object-fit:contain}.quantity-copy small{color:var(--muted);font-size:.7rem;font-weight:800;text-transform:uppercase}.quantity-copy h2{font-size:1.22rem;line-height:1.18;margin:5px 45px 8px 0}.quantity-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--ok);font-size:.78rem;font-weight:800}.quantity-meta strong{font-size:1.25rem;color:var(--navy)}.stepper{display:grid;grid-template-columns:48px 1fr 48px;gap:8px;margin:18px 0}.stepper button{border:1px solid #d6e1ec;background:#eef5fb;color:var(--navy);border-radius:13px;font-size:1.4rem;font-weight:900}.stepper input{height:48px;border:1px solid #cbd8e5;border-radius:13px;text-align:center;font-weight:900;font-size:1.05rem;outline:none}.btn{border:0;border-radius:13px;padding:11px 15px;font-weight:900;font-size:.82rem}.btn.primary{background:linear-gradient(135deg,var(--navy),var(--blue2));color:#fff;box-shadow:0 8px 19px rgba(7,59,111,.16)}.btn.ghost{background:#edf3f8;color:#536579}.btn.wide{width:100%;min-height:48px}.drawer-panel{position:absolute;right:0;top:0;bottom:0;width:min(460px,94vw);background:#fff;box-shadow:-20px 0 45px rgba(0,20,40,.2);padding:18px 15px calc(18px + env(safe-area-inset-bottom));display:flex;flex-direction:column}.drawer-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:12px}.drawer-head small{font-size:.64rem;color:var(--blue);font-weight:900;letter-spacing:.1em}.drawer-head h2{margin:2px 0 0}.cart-items{flex:1;overflow:auto;padding:8px 0}.cart-empty{height:100%;min-height:220px;display:grid;place-items:center;text-align:center;color:var(--muted);padding:20px}.cart-row{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:10px;align-items:center;border-bottom:1px solid #edf1f5;padding:10px 1px}.cart-thumb{height:58px;background:#f1f6fa;border-radius:13px;display:grid;place-items:center}.cart-thumb svg,.cart-thumb img{width:54px;height:48px;object-fit:contain}.cart-info{min-width:0}.cart-info strong{display:block;font-size:.78rem;line-height:1.25}.cart-info small{display:block;color:var(--muted);font-size:.65rem;margin-top:3px}.cart-price{color:var(--navy);font-weight:900;font-size:.79rem;margin-top:4px}.cart-controls{display:flex;align-items:center;gap:5px}.cart-controls button{width:29px;height:29px;border:1px solid #d7e1eb;background:#f5f8fb;color:var(--navy);border-radius:9px;font-weight:900}.cart-controls b{min-width:20px;text-align:center;font-size:.75rem}.cart-remove{margin-left:3px!important;color:var(--danger)!important}.cart-summary{border-top:1px solid var(--line);padding:13px 2px}.cart-summary>div{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.77rem;margin:4px 0}.cart-summary .cart-total{align-items:end;margin-top:8px}.cart-total strong{font-size:1.4rem;color:var(--navy)}.checkout-card h2{margin:5px 0 9px}.checkout-grid{display:grid;grid-template-columns:1fr;gap:1px}.checkout-grid label.full{grid-column:1/-1}.checkout-grid textarea{min-height:82px;resize:vertical}.checkout-review{display:flex;justify-content:space-between;align-items:end;margin:17px 0 13px;padding:13px;border-radius:14px;background:#eef5fb;color:#536579;font-size:.78rem}.checkout-review strong{font-size:1.32rem;color:var(--navy)}.checkout-message{min-height:20px;font-size:.74rem;color:var(--danger);font-weight:700}.success-card{text-align:center}.success-mark{width:64px;height:64px;border-radius:50%;margin:4px auto 13px;background:#e7f8f0;color:#0b8b61;display:grid;place-items:center;font-size:2rem;font-weight:900}.success-card h2{margin:4px 0 8px}.success-card>p:not(.eyebrow){color:var(--muted);font-size:.82rem}.order-id{background:#edf4fa;border:1px dashed #aac4dc;color:var(--navy);font-size:1rem;font-weight:900;letter-spacing:.05em;padding:14px;border-radius:13px;margin:16px 0}.toast{position:fixed;z-index:160;left:50%;bottom:calc(78px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:#15293d;color:#fff;border-radius:13px;padding:10px 14px;max-width:calc(100vw - 30px);font-size:.76rem;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}footer{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;padding:24px 15px calc(80px + env(safe-area-inset-bottom));color:#7a8999;font-size:.68rem}footer strong{color:var(--navy);font-size:.8rem}footer small{margin-top:5px}.is-busy{opacity:.65;pointer-events:none}[hidden]{display:none!important}
+
+@media(max-width:719px){input,textarea,select{font-size:16px!important}.product-card,.add-mini,.cart-button,.category-chip,.brand{touch-action:manipulation}footer{margin-top:12px}.state-card{min-height:190px}}
+@media(min-width:720px){main{padding-left:22px;padding-right:22px}.product-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.product-card{border-radius:21px}.product-image{aspect-ratio:1.12/1;padding:18px}.product-image svg,.product-image img{max-width:220px;max-height:180px}.product-body{padding:13px}.modal-card{bottom:50%;transform:translate(-50%,50%);border-radius:24px}.checkout-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1040px){.product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.search-shell{top:51px}}
+@media(max-width:410px){.status-chip span{display:none}.status-chip{padding:7px}.brand-logo{width:36px;height:36px}.product-grid{gap:8px}.product-body{padding:9px}.product-name{font-size:.78rem}.product-price{font-size:.91rem}}
+
+/* Catálogo progresivo para mantener fluidez en celular */
+.load-more-wrap{display:flex;justify-content:center;padding:8px 0 96px}.load-more{min-width:210px;background:#fff}.load-more[hidden]{display:none!important}
+
+/* Mi Farmacia v1.8 · disponibilidad y existencia real */
+.product-card.is-out{opacity:1;filter:none;border-color:#ead7da}
+.product-card.is-out .product-image{background:linear-gradient(145deg,#f6f7f9,#eef1f4)}
+.stock-badge.is-out{background:#f4f4f6;color:#6b7280;border-color:#dadde2}.stock-badge.is-low{background:#fff4dc;color:#a85b00;border-color:#f3d49a;box-shadow:0 4px 12px rgba(168,91,0,.10)}
+.add-mini:disabled{background:#f0f2f5;color:#9aa3ad;cursor:not-allowed}
+.availability-inline{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 9px;background:#e9f8f1;color:#087653;border:1px solid #bfe8d8}
+.availability-inline.is-out{background:#f4f4f6;color:#6b7280;border-color:#dadde2}.availability-inline.is-low{background:#fff4dc;color:#a85b00;border-color:#f3d49a}
+
+  
+/* Mi Farmacia v1.3 · panel de conexión de solo lectura */
+.brand{cursor:pointer}.brand:focus-visible{outline:3px solid rgba(22,119,200,.22);outline-offset:3px;border-radius:13px}
+.connection-panel{position:fixed;inset:0;z-index:120;display:grid;place-items:start center;padding:72px 14px 18px;overflow:auto}.connection-panel[hidden]{display:none!important}.connection-backdrop{position:fixed;inset:0;background:rgba(4,24,44,.55);backdrop-filter:blur(3px)}.connection-card{position:relative;width:min(620px,100%);background:#fff;border:1px solid #dce6ef;border-radius:22px;box-shadow:0 24px 70px rgba(4,35,64,.28);padding:17px}.connection-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.connection-head small{font-size:.63rem;color:#1677c8;font-weight:900;letter-spacing:.11em}.connection-head h2{margin:3px 0 3px;color:var(--navy);font-size:1.2rem}.connection-head p{margin:0;color:var(--muted);font-size:.74rem;line-height:1.4}.connection-status{display:flex;align-items:center;gap:8px;margin:15px 0 10px;padding:9px 11px;background:#f6f9fc;border:1px solid #dfe8f1;border-radius:13px;color:#445a70;font-size:.78rem}.connection-status i{width:9px;height:9px;border-radius:50%;background:#e0a229}.connection-status.online i{background:#14a36d}.connection-status.offline i{background:#cf4059}.connection-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.connection-field{min-width:0;background:#fbfdff;border:1px solid #dfe7ef;border-radius:13px;padding:10px 11px}.connection-field span{display:block;color:#718197;font-size:.61rem;font-weight:900;text-transform:uppercase;letter-spacing:.055em;margin-bottom:5px}.connection-field strong{display:block;color:#17324d;font-size:.76rem;line-height:1.35;overflow-wrap:anywhere}.connection-url-field{grid-column:1/-1}.copy-link{margin-top:8px;border:0;background:#eaf3fb;color:#0b66ae;border-radius:9px;padding:7px 10px;font-size:.68rem;font-weight:900}.connection-note{margin:11px 2px 0;color:#718197;font-size:.67rem;line-height:1.4}@media(max-width:520px){.connection-panel{padding:64px 10px 12px}.connection-card{border-radius:19px;padding:14px}.connection-grid{grid-template-columns:1fr}.connection-url-field{grid-column:auto}.connection-field{padding:9px 10px}}
+
+/* v1.4.0 · perfil local, antibióticos unificados e imágenes reales por código de barras */
+.profile-card{max-width:520px}.profile-card .profile-mark{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;margin:0 0 12px;background:linear-gradient(135deg,#0b4f8c,#1d9ed5);color:#fff;font-size:1.7rem;box-shadow:0 10px 24px rgba(7,59,111,.18)}
+.profile-card h2{margin:3px 45px 6px 0;color:var(--navy)}.profile-card>p{margin:0 0 12px;color:var(--muted);font-size:.8rem;line-height:1.45}.profile-grid{display:grid;gap:10px}.profile-grid label{display:flex;flex-direction:column;gap:7px;font-size:.76rem;font-weight:900;color:#48596d}.profile-grid input{width:100%;border:1px solid #cdd9e7;border-radius:13px;background:#fbfdff;padding:13px;color:var(--ink);outline:none}.profile-grid input:focus{border-color:var(--blue2);box-shadow:0 0 0 3px rgba(22,119,200,.1)}.privacy-note{margin-top:10px!important;font-size:.69rem!important;background:#f4f8fc;border:1px solid #dfeaf4;border-radius:12px;padding:10px;color:#65778b!important}.profile-error{min-height:18px;margin-top:9px;color:#b62f48;font-size:.72rem;font-weight:800}
+.rx-catalog-note{display:flex;align-items:flex-start;gap:8px;margin:9px 1px 1px;padding:9px 11px;border:1px solid #f1d39b;border-radius:13px;background:#fff8e9;color:#72541c;font-size:.7rem;line-height:1.38}.rx-catalog-note strong{color:#65450c}.rx-catalog-note span:first-child{font-size:1rem;line-height:1}
+.rx-inline{margin:11px 0 0;padding:9px 11px;border-radius:12px;border:1px solid #f0cf91;background:#fff8e6;color:#74510f;font-size:.72rem;font-weight:800;line-height:1.4}.rx-badge{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:4px 7px;background:#fff2d4;border:1px solid #edcb83;color:#76500a;font-size:.57rem;font-weight:900;margin-top:2px;width:max-content}.checkout-rx{margin:12px 0 0;padding:10px 12px;border-radius:13px;background:#fff7e2;border:1px solid #efcf8d;color:#6f4b0a;font-size:.73rem;font-weight:800;line-height:1.4}
+.product-image{position:relative}.product-image img.real-product-image,.quantity-image img.real-product-image,.cart-thumb img.real-product-image{filter:drop-shadow(0 9px 12px rgba(30,52,76,.14));object-fit:contain}.image-source-badge{position:absolute;right:7px;bottom:7px;border-radius:999px;background:rgba(255,255,255,.9);border:1px solid #dae5ef;color:#6a7a8b;padding:3px 6px;font-size:.5rem;font-weight:800;backdrop-filter:blur(6px)}
+
+
+/* v1.7 · dirección pública, entrega y seguimiento local de pedidos */
+.store-public-card{display:flex;align-items:flex-start;gap:10px;margin:0 0 10px;padding:11px 13px;border:1px solid #dbe8f2;border-radius:15px;background:#f8fbfe;color:#435a70}.store-public-card>span{font-size:1.15rem;line-height:1.1}.store-public-card strong{display:block;color:var(--navy);font-size:.78rem}.store-public-card small{display:block;margin-top:3px;color:#687b8f;font-size:.69rem;line-height:1.4}.history-button{position:relative;width:39px;height:39px;border:1px solid #d6e3ee;border-radius:14px;background:#fff;color:var(--navy);font-size:1.05rem;box-shadow:0 8px 20px rgba(7,59,111,.10);display:grid;place-items:center}.history-button:active{transform:scale(.97)}.history-drawer .drawer-panel{width:min(520px,94vw)}.history-drawer .order-history{flex:1;min-height:0;margin:10px 0 0;border:0;border-radius:0;overflow:auto;box-shadow:none}.history-drawer .order-history-head{position:sticky;top:0;z-index:2;padding:11px 2px;background:#fff}.history-drawer .order-history-list{padding:9px 1px 18px}.order-history{margin:0 0 12px;border:1px solid #dce8f1;border-radius:16px;background:#fff;overflow:hidden}.order-history-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 13px;border-bottom:1px solid #e6edf3;background:#fbfdff}.order-history-head div strong{display:block;color:var(--navy);font-size:.76rem}.order-history-head div small{display:block;color:#758699;font-size:.61rem;margin-top:2px}.order-history-head button{border:1px solid #cfe0ed;background:#eef6fc;color:#0b66ae;border-radius:10px;padding:7px 9px;font-size:.62rem;font-weight:900}.order-history-actions{display:flex;align-items:center;justify-content:flex-end;gap:6px;flex-wrap:wrap}.order-history-head .order-history-actions button{white-space:nowrap}.order-history-head .order-history-actions .danger-soft{border-color:#f1cbd2;background:#fff3f5;color:#b4243f}.order-history-head .order-history-actions .danger-soft:hover{background:#fde9ed}.order-history-head .order-history-actions .danger-soft:disabled{opacity:.45;cursor:not-allowed}@media(max-width:520px){.order-history-head{align-items:flex-start}.order-history-actions{max-width:58%;justify-content:flex-end}.order-history-head .order-history-actions button{padding:7px 8px;font-size:.58rem}}.order-history-list{display:grid;gap:7px;padding:9px}.order-history-empty{padding:14px;color:#7a8999;font-size:.7rem;text-align:center}.order-history-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:9px 10px;border:1px solid #e7edf3;border-radius:12px;background:#fff;cursor:pointer;transition:.15s}.order-history-item:hover,.order-history-item.open{border-color:#9fc7e9;background:#f8fbfe}.order-history-item strong{display:block;color:#263b50;font-size:.7rem}.order-history-item small{display:block;color:#758699;font-size:.6rem;margin-top:2px;line-height:1.35}.order-history-detail{grid-column:1/-1;border-top:1px solid #e4ebf2;margin-top:4px;padding-top:9px}.order-history-detail h3{margin:0 0 7px;color:var(--navy);font-size:.71rem}.order-history-detail-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:6px 0;border-bottom:1px dashed #e5ebf1}.order-history-detail-row:last-child{border-bottom:0}.order-history-detail-row span{font-size:.62rem;color:#40566b;line-height:1.35}.order-history-detail-row b{font-size:.62rem;color:var(--navy);white-space:nowrap}.order-history-detail-meta{margin-top:7px;padding:7px 8px;border-radius:9px;background:#eef5fb;color:#53697e;font-size:.61rem;line-height:1.4}.order-history-item .history-hint{display:block;margin-top:5px;color:#0b66ae;font-size:.58rem;font-weight:900}.order-status-pill{align-self:start;border-radius:999px;padding:5px 7px;background:#eaf2f8;color:#5e7184;font-size:.56rem;font-weight:900;white-space:nowrap}.order-status-pill.surtido,.order-status-pill.finalizado{background:#e2f7ec;color:#087653}.order-status-pill.cancelado{background:#fdebed;color:#aa203b}.order-status-pill.en-proceso{background:#fff4d8;color:#8b5c00}.order-status-pill.nuevo{background:#e3f4ff;color:#075f9a}\n.order-progress-panel{position:absolute;right:0;top:calc(100% + 10px);width:min(365px,calc(100vw - 20px));border:1px solid #cfe0ed;border-radius:17px;background:rgba(255,255,255,.98);box-shadow:0 18px 45px rgba(7,59,111,.2);padding:12px 13px;color:#31475b;cursor:pointer;backdrop-filter:blur(14px);z-index:65}.order-progress-panel[hidden]{display:none!important}.order-progress-close{position:absolute;right:8px;top:8px;width:25px;height:25px;border:1px solid #d8e4ee;border-radius:9px;background:#fff;color:#65788b;font-size:16px;line-height:1;display:grid;place-items:center;cursor:pointer;z-index:2}.order-progress-close:hover{background:#f3f8fc;color:#163f63}.order-progress-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding-right:27px}.order-progress-title{min-width:0}.order-progress-title strong{display:block;color:var(--navy);font-size:.72rem}.order-progress-title small{display:block;margin-top:2px;color:#7a8999;font-size:.57rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.order-progress-badge{flex:0 0 auto;border-radius:999px;padding:5px 8px;background:#e3f4ff;color:#075f9a;font-size:.56rem;font-weight:950;white-space:nowrap}.order-progress-badge.en-proceso{background:#fff4d8;color:#8b5c00}.order-progress-badge.surtido,.order-progress-badge.finalizado{background:#e2f7ec;color:#087653}.order-progress-badge.cancelado{background:#fdebed;color:#aa203b}.order-progress-message{margin-top:8px;font-size:.65rem;font-weight:800;line-height:1.35;color:#53697e}.order-progress-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:10px}.order-progress-step{position:relative;padding-top:12px;text-align:center;color:#8a98a7;font-size:.51rem;font-weight:900;line-height:1.15}.order-progress-step::before{content:'';position:absolute;top:2px;left:50%;width:8px;height:8px;transform:translateX(-50%);border-radius:50%;background:#d7e1ea;box-shadow:0 0 0 3px #f4f7fa}.order-progress-step:not(:last-child)::after{content:'';position:absolute;top:5px;left:calc(50% + 7px);width:calc(100% - 14px);height:2px;background:#e2e8ee}.order-progress-step.done,.order-progress-step.current{color:#0a5b95}.order-progress-step.done::before,.order-progress-step.current::before{background:#1681c4;box-shadow:0 0 0 3px #dff1fc}.order-progress-step.done:not(:last-child)::after{background:#70b9e4}.order-progress-step.current::before{animation:orderPulse 1.4s ease-in-out infinite}.order-progress-panel.terminal .order-progress-step{color:#087653}.order-progress-panel.terminal .order-progress-step::before{background:#17a36d;box-shadow:0 0 0 3px #dff5eb}.order-progress-panel.terminal .order-progress-step:not(:last-child)::after{background:#74cdaa}.order-progress-panel.cancelled .order-progress-steps{display:none}.order-progress-panel.cancelled .order-progress-message{color:#9d2940}@keyframes orderPulse{0%,100%{box-shadow:0 0 0 3px #dff1fc}50%{box-shadow:0 0 0 7px rgba(22,129,196,.12)}}@media(max-width:520px){.order-progress-panel{right:-1px;top:calc(100% + 8px);width:min(350px,calc(100vw - 12px));padding:11px}.order-progress-message{font-size:.63rem}}.delivery-choice{margin:13px 0 0;padding:12px;border:1px solid #dce7f0;border-radius:14px;background:#f9fbfd}.delivery-choice>strong{display:block;color:var(--navy);font-size:.76rem;margin-bottom:9px}.delivery-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.delivery-option{display:flex!important;align-items:center!important;gap:8px!important;border:1px solid #d5e1eb;border-radius:12px;background:#fff;padding:10px!important;color:#385069!important;font-size:.7rem!important;font-weight:900!important;cursor:pointer}.delivery-option input{width:auto!important;margin:0}.delivery-section{margin-top:10px;padding-top:10px;border-top:1px solid #e1e9f0}.delivery-section label{display:flex;flex-direction:column;gap:6px;color:#4b5e72;font-size:.7rem;font-weight:900}.delivery-section input,.delivery-section textarea{width:100%;border:1px solid #cdd9e7;border-radius:12px;background:#fff;padding:11px;color:var(--ink);outline:none}.delivery-section textarea{min-height:76px;resize:vertical}.delivery-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pickup-address{padding:9px 10px;border-radius:11px;background:#eef5fb;color:#50667b;font-size:.68rem;line-height:1.4;margin-bottom:9px}.pickup-address strong{color:var(--navy)}.delivery-help{margin:6px 1px 0;color:#7a8999;font-size:.61rem;line-height:1.35}.facade-preview{margin-top:9px;display:flex;align-items:center;gap:9px}.facade-preview img{width:92px;height:70px;object-fit:cover;border-radius:10px;border:1px solid #d4e0ea;background:#eef4f8}.facade-preview span{font-size:.62rem;color:#65788b}.connection-address-field{grid-column:1/-1}@media(max-width:520px){.delivery-options,.delivery-row{grid-template-columns:1fr}.connection-address-field{grid-column:auto}}
+
+
+/* v1.8 · Maps, imagen de sucursal ampliada y fondo visual */
+body.store-wallpaper{background:#eef4fa;}
+body.store-wallpaper::before{content:"";position:fixed;inset:51px 0 0;z-index:0;pointer-events:none;background-image:var(--store-wallpaper,none);background-repeat:no-repeat;background-position:center center;background-size:min(980px,88vw) auto;opacity:.13;filter:saturate(.9) contrast(.96);}
+main{position:relative;z-index:1}.app-header{z-index:40}.connection-panel,.modal,.drawer{z-index:120}
+.store-public-card{width:100%;font:inherit;text-align:left;cursor:pointer;appearance:none;-webkit-appearance:none;transition:.16s border-color,.16s background,.16s transform}
+.store-public-card:hover{border-color:#9fc7e9;background:rgba(248,251,254,.92)}.store-public-card:active{transform:scale(.995)}
+.store-public-card small{font-size:.73rem}.store-public-card .maps-hint{display:block;margin-top:3px;color:#0b66ae;font-size:.58rem;font-weight:900}
+.connection-store-photo{margin:13px 0 10px;border:1px solid #dbe6ef;border-radius:16px;background:#f2f7fb;overflow:hidden;display:grid;place-items:center;min-height:120px}
+.connection-store-photo[hidden]{display:none!important}.connection-store-photo img{display:block;width:100%;height:min(320px,42vh);object-fit:contain;background:#f2f7fb}
+@media(max-width:520px){body.store-wallpaper::before{background-size:94vw auto;opacity:.11}.connection-store-photo img{height:min(260px,36vh)}}
+    .delivery-radius-notice{margin:0 0 10px;padding:10px 11px;border:1px solid #b9d9ef;border-radius:12px;background:#eef8ff;color:#31536e;font-size:.67rem;line-height:1.42}
+  .delivery-radius-notice strong{display:block;color:#075f9a;margin-bottom:4px}.delivery-radius-notice.warning{border-color:#f1cc82;background:#fff7df;color:#76520f}.delivery-radius-notice.ok{border-color:#b9e2cf;background:#eefaf4;color:#166447}.delivery-radius-notice.error{border-color:#efbdc6;background:#fff1f3;color:#9d2940}.delivery-location-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:7px}.delivery-location-actions button{border:1px solid #bfd6e8;background:#fff;color:#0b66ae;border-radius:9px;padding:6px 9px;font-size:.61rem;font-weight:900}.delivery-location-status{font-weight:800}.success-privacy-note{margin:10px 0 0;padding:9px 10px;border-radius:11px;background:#eef8f4;color:#166447;font-size:.67rem;font-weight:800;line-height:1.4}
+</style>
+</head>
+<body>
+  <header class="app-header">
+    <button id="brandButton" class="brand" type="button" aria-label="Ver conexión de Mi Farmacia" aria-expanded="false">
+      <img src="data:image/png;base64,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" alt="Mi Farmacia" id="brandLogo" class="brand-logo">
+      <span class="brand-copy"><strong>Mi Farmacia</strong><small id="storeName">Catálogo en línea</small></span>
+    </button>
+    <div class="header-actions">
+      <span id="statusChip" class="status-chip offline"><i></i><span>Conectando</span></span>
+      <button id="orderHistoryButton" class="history-button" type="button" aria-label="Abrir historial de pedidos" title="Historial de pedidos">🧾</button>
+      <button id="cartButton" class="cart-button" type="button" aria-label="Abrir carrito">🛒<b id="cartCount">0</b></button>
+      <section id="orderProgressPanel" class="order-progress-panel" role="button" tabindex="0" aria-live="polite" aria-label="Seguimiento del pedido" hidden></section>
+    </div>
+  </header>
+
+  <div id="connectionPanel" class="connection-panel" hidden>
+    <div class="connection-backdrop" data-close="connection"></div>
+    <section class="connection-card" role="dialog" aria-modal="true" aria-labelledby="connectionTitle">
+      <div class="connection-head">
+        <div><small>CONEXIÓN AUTOMÁTICA</small><h2 id="connectionTitle">Mi Farmacia</h2></div>
+        <button id="closeConnection" class="icon-button" type="button" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="connection-status"><i id="connectionDot"></i><strong id="connectionState">Conectando…</strong></div>
+      <div id="connectionStorePhoto" class="connection-store-photo" hidden><img id="connectionStoreImage" alt="Imagen de la sucursal"></div>
+      <div class="connection-grid">
+        <div class="connection-field"><span>Farmacia</span><strong id="connectionStoreName">Mi Farmacia</strong></div>
+        <div class="connection-field"><span>ID / equipo</span><strong id="connectionStoreId">—</strong></div>
+        <div class="connection-field"><span>Catálogo</span><strong id="connectionCatalog">Esperando sincronización</strong></div>
+        <div class="connection-field connection-address-field"><span>Dirección de la sucursal</span><strong id="connectionStoreAddress">Pendiente de sincronizar</strong></div>
+      </div>
+    </section>
+  </div>
+
+  <main>
+
+    <button id="storePublicCard" class="store-public-card" type="button" aria-label="Abrir ubicación de la sucursal en Google Maps"><span>📍</span><div><small id="storePublicAddress">Dirección pendiente de sincronizar</small><span class="maps-hint">Abrir ubicación en Maps</span></div></button>
+
+    <section id="storeHoursBanner" class="store-hours-banner" hidden aria-live="polite"><strong>La farmacia se encuentra cerrada en este momento.</strong><p>Horario de atención:</p><div id="storeHoursLines" class="store-hours-lines"></div></section>
+
+    <section class="search-shell" aria-label="Buscar productos">
+      <div class="search-box"><span>⌕</span><input id="searchInput" type="search" autocomplete="off" placeholder="Buscar medicamento o producto..."><button id="clearSearch" type="button" aria-label="Limpiar búsqueda">✕</button></div>
+      <div id="categoryStrip" class="category-strip" aria-label="Categorías"></div>
+      <div id="rxCatalogNote" class="rx-catalog-note" hidden><span>⚕</span><div><strong>Antibióticos</strong><br>Se requiere presentar receta médica al recoger el pedido en sucursal.</div></div>
+    </section>
+
+    <section id="pausedState" class="state-card paused-state" hidden><div class="state-icon">🛠️</div><strong>Tienda pausada por mantenimiento</strong><span>Pronto estaremos en línea. Gracias por tu comprensión.</span></section>
+    <section id="loadingState" class="state-card"><div class="spinner"></div><strong>Cargando catálogo…</strong><span>Consultando disponibilidad y precios.</span></section>
+    <section id="emptyState" class="state-card" hidden><div class="state-icon">📦</div><strong>No hay productos para mostrar</strong><span id="emptyMessage">Prueba otra búsqueda.</span></section>
+    <section id="productGrid" class="product-grid" aria-live="polite"></section>
+    <div class="load-more-wrap"><button id="loadMoreProducts" class="btn ghost load-more" type="button" hidden>Mostrar más productos</button></div>
+  </main>
+
+
+  <div id="welcomeModal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-card profile-card" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+      <div class="profile-mark">👤</div>
+      <p class="eyebrow">BIENVENIDO A MI FARMACIA</p><h2 id="welcomeTitle">Identifica tus pedidos</h2>
+      <p>Registra tus datos una sola vez para identificar tus pedidos. Al finalizar el carrito no volveremos a mostrar tu nombre ni tu teléfono en la pantalla de confirmación.</p>
+      <div class="profile-grid">
+        <label>Nombre completo<input id="welcomeName" autocomplete="name" maxlength="80" placeholder="Nombre y apellidos"></label>
+        <label>Teléfono<input id="welcomePhone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="10 dígitos"></label>
+      </div>
+      <button id="saveWelcomeProfile" class="btn primary wide" type="button" style="margin-top:14px">Guardar y continuar</button>
+      <p id="welcomeError" class="profile-error"></p>
+      <p class="privacy-note">Tus datos de contacto se conservan únicamente en este dispositivo para identificar tus pedidos y viajan cifrados a la farmacia. La dirección y la fotografía de entrega se retiran del visor después de enviar.</p>
+    </div>
+  </div>
+
+  <div id="quantityModal" class="modal" hidden>
+    <div class="modal-backdrop" data-close="quantity"></div>
+    <div class="modal-card quantity-card" role="dialog" aria-modal="true" aria-labelledby="quantityTitle">
+      <button class="modal-close" type="button" data-close="quantity">✕</button>
+      <div id="quantityImage" class="quantity-image"></div>
+      <div class="quantity-copy"><small id="quantityPresentation"></small><h2 id="quantityTitle">Producto</h2><div class="quantity-meta"><span id="quantityStock" class="availability-inline"></span><strong id="quantityPrice"></strong></div></div>
+      <div id="quantityRxNotice" class="rx-inline" hidden>⚕ Antibiótico: deberás presentar receta médica al recoger el pedido en sucursal.</div>
+      <div class="stepper" aria-label="Cantidad"><button id="qtyMinus" type="button">−</button><input id="qtyInput" type="number" min="1" value="1" inputmode="numeric"><button id="qtyPlus" type="button">+</button></div>
+      <button id="addToCart" class="btn primary wide" type="button">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <div id="historyDrawer" class="drawer history-drawer" hidden>
+    <div class="drawer-backdrop" data-close="history"></div>
+    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="historyTitle">
+      <div class="drawer-head"><div><small>TUS PEDIDOS</small><h2 id="historyTitle">Historial</h2></div><button class="icon-button" type="button" data-close="history" aria-label="Cerrar historial">✕</button></div>
+      <section id="orderHistoryPanel" class="order-history" aria-label="Historial de pedidos"><div class="order-history-head"><div class="order-history-copy"><strong>Mis pedidos</strong><small>Historial reciente guardado en este dispositivo</small></div><div class="order-history-actions"><button id="deleteOrderHistory" class="danger-soft" type="button">🗑 Eliminar pedidos</button><button id="enableOrderNotifications" type="button">🔔 Activar avisos</button></div></div><div id="orderHistoryList" class="order-history-list"></div></section>
+    </aside>
+  </div>
+
+  <div id="cartDrawer" class="drawer" hidden>
+    <div class="drawer-backdrop" data-close="cart"></div>
+    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="drawer-head"><div><small>TU PEDIDO</small><h2 id="cartTitle">Carrito</h2></div><button class="icon-button" type="button" data-close="cart">✕</button></div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary"><div><span>Productos</span><strong id="cartPieces">0 pzas</strong></div><div class="cart-total"><span>Total estimado</span><strong id="cartTotal">$0.00</strong></div></div>
+      <button id="checkoutButton" class="btn primary wide" type="button">Finalizar pedido</button>
+    </aside>
+  </div>
+
+  <div id="checkoutModal" class="modal" hidden>
+    <div class="modal-backdrop" data-close="checkout"></div>
+    <div class="modal-card checkout-card" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button class="modal-close" type="button" data-close="checkout">✕</button>
+      <p class="eyebrow">DATOS PARA TU PEDIDO</p><h2 id="checkoutTitle">Confirmar pedido</h2>
+      <div class="checkout-grid">
+        <input id="customerName" type="hidden"><input id="customerPhone" type="hidden">
+        <div class="privacy-note full">🔒 Tus datos de contacto ya están registrados en este dispositivo y se enviarán cifrados a la farmacia. No se muestran nuevamente al finalizar el carrito.</div>
+        <label class="full">Observaciones<textarea id="customerNote" maxlength="240" placeholder="Opcional: indicaciones para la farmacia"></textarea></label>
+      </div>
+      <div class="delivery-choice">
+        <strong>¿Cómo quieres recibir tu pedido?</strong>
+        <div class="delivery-options">
+          <label class="delivery-option"><input id="deliveryPickup" type="radio" name="deliveryType" value="RECOGER_SUCURSAL" checked> 🏪 Recoger en sucursal</label>
+          <label class="delivery-option"><input id="deliveryHome" type="radio" name="deliveryType" value="DOMICILIO"> 🚚 Entrega a domicilio</label>
+        </div>
+        <div id="pickupFields" class="delivery-section">
+          <div class="pickup-address"><strong>Dirección:</strong> <span id="pickupStoreAddress">Pendiente de sincronizar</span></div>
+          <div class="delivery-row">
+            <label>Día estimado de recogida <small>(opcional)</small><input id="pickupDate" type="date"></label>
+            <label>Hora estimada <small>(opcional)</small><input id="pickupTime" type="time"></label>
+          </div>
+        </div>
+        <div id="homeDeliveryFields" class="delivery-section" hidden>
+          <div id="deliveryRadiusNotice" class="delivery-radius-notice warning">
+            <strong>📍 Entrega a domicilio únicamente cerca del establecimiento</strong>
+            <span id="deliveryLocationStatus" class="delivery-location-status">Solicita entrega a domicilio solo si te encuentras aproximadamente a no más de 1 km de la sucursal.</span>
+          </div>
+          <label>Dirección de entrega<textarea id="deliveryAddress" maxlength="260" autocomplete="street-address" placeholder="Calle, número, colonia, referencias"></textarea></label>
+          <label style="margin-top:9px">Fotografía de la fachada<input id="deliveryFacade" type="file" accept="image/*" capture="environment"></label>
+          <p class="delivery-help">La fotografía se comprime y viaja protegida junto con los datos privados de tu pedido.</p>
+          <div id="facadePreview" class="facade-preview" hidden><img id="facadePreviewImage" alt="Vista previa de fachada"><span>Fachada lista para enviar.</span></div>
+        </div>
+      </div>
+      <div id="checkoutRxNotice" class="checkout-rx" hidden>⚕ Este pedido incluye antibióticos. Se requiere presentar receta médica al momento de surtir/entregar según corresponda.</div>
+      <div class="checkout-review"><span>Total estimado</span><strong id="checkoutTotal">$0.00</strong></div>
+      <button id="submitOrder" class="btn primary wide" type="button">Enviar pedido a la farmacia</button>
+      <p id="checkoutMessage" class="checkout-message"></p>
+    </div>
+  </div>
+
+  <div id="successModal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-card success-card" role="dialog" aria-modal="true">
+      <div class="success-mark">✓</div><p class="eyebrow">PEDIDO ENVIADO</p><h2>Tu farmacia ya recibió el pedido</h2>
+      <p>Conserva este folio para identificarlo.</p><div id="successOrderId" class="order-id">—</div><div class="success-privacy-note">🔒 Tus datos de contacto no se muestran en el pedido finalizado. La dirección y la fotografía de entrega ya fueron retiradas de esta pantalla.</div>
+      <button id="closeSuccess" class="btn primary wide" type="button">Seguir comprando</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer><strong>Mi Farmacia</strong><span>Disponibilidad y precios sujetos a confirmación al momento de surtir.</span><span>Fotos reales cuando están disponibles por código de barras: Open Food Facts / Open Products Facts.</span><small>Diseñado Por- LIC. J. César Astudillo Guzmán. TEL: 5564216859.</small></footer>
+
+  <script>
+/*
+  MI FARMACIA · CONEXIÓN AUTOMÁTICA
+  ---------------------------------
+  Este archivo se publica una sola vez con GitHub Pages.
+  Cada instalación usa sus propias URLs. No hay Firebase ni GitHub del cliente
+  incrustados en este archivo. La conexión se resuelve desde la configuración
+  publicada para ese cliente y puede cambiar sin recompilar el visor.
+*/
+window.MI_FARMACIA_CONFIG = {
+  bootstrapUrl: '',
+  githubUrl: '',
+  tiendaId: '',
+  nombreTienda: ''
+};
+
+/*
+  IMÁGENES OPCIONALES DE PRODUCTO
+  -------------------------------
+  Puedes usar el código de barras o el ID del producto como llave.
+  Acepta rutas relativas del repositorio o URLs HTTPS.
+
+  Ejemplo:
+  window.MI_FARMACIA_IMAGES = {
+    "7501234567890": "assets/products/7501234567890.webp"
+  };
+
+  Si no hay imagen configurada, Mi Farmacia intenta obtener una foto real
+  por código de barras desde bases públicas y la guarda en caché local.
+  Si no existe una foto confiable, usa la ilustración según presentación.
+*/
+window.MI_FARMACIA_IMAGES = window.MI_FARMACIA_IMAGES || {};
+
+/*
+  CATÁLOGO MAESTRO DE IMÁGENES
+  ----------------------------
+  GitHub mantiene catalogo-imagenes.json y assets/products de forma automática.
+  La página consulta primero ese catálogo por EAN/GTIN y solo usa bases públicas
+  como respaldo cuando todavía no existe una fotografía central.
+*/
+window.MI_FARMACIA_IMAGE_CATALOG = window.MI_FARMACIA_IMAGE_CATALOG || {
+  manifest: 'catalogo-imagenes.json',
+  version: 1
+};
+
+  </script>
+  <script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const STORAGE_RESOLVER = 'mi_farmacia:resolver:v2';
+  const STORAGE_CATALOG = 'mi_farmacia:catalogo:v2';
+  const STORAGE_CART = 'mi_farmacia:cart:v2';
+  const STORAGE_CUSTOMER = 'mi_farmacia:customer:v1';
+  const STORAGE_ORDERS = 'mi_farmacia:orders:v1';
+  const STORAGE_PROGRESS_DISMISS = 'mi_farmacia:progress_dismiss:v1';
+  const STORAGE_ORDER_RATE = 'mi_farmacia:order_rate:v1';
+  const STORAGE_IMAGE_CACHE = 'mi_farmacia:image_cache:v2';
+  const STORAGE_IMAGE_MASTER = 'mi_farmacia:image_master:v1';
+  const CONFIG_FILE = window.MI_FARMACIA_CONFIG || {};
+  const IMAGE_MAP = window.MI_FARMACIA_IMAGES || {};
+  const IMAGE_CATALOG_CONFIG = window.MI_FARMACIA_IMAGE_CATALOG || {};
+  let RUNTIME_CONFIG = {};
+  const MAX_ORDER_QTY = 99;
+    const ORDER_SUBMIT_COOLDOWN_MS = 60 * 1000;
+  const REALTIME_FALLBACK_MS = 30000;
+  const REALTIME_STALE_MS = 90000;
+  const ORDER_PROGRESS_TTL_MS = 10 * 60 * 1000;
+  const MAX_LOCAL_ORDERS = 200;
+  const MAX_STATUS_CHECK_ORDERS = 30;
+  const CONFIG_REQUEST_TIMEOUT_MS = 2500;
+  const FIREBASE_META_TIMEOUT_MS = 4000;
+  const FIREBASE_CATALOG_TIMEOUT_MS = 7000;
+  const IMAGE_CACHE_TTL = 90*24*60*60*1000;
+  const IMAGE_MASTER_TTL = 10*60*1000;
+  const IMAGE_NEGATIVE_CACHE_TTL = 3*24*60*60*1000;
+  const IMAGE_LOOKUP_GAP_MS = 4500;
+  const state = { firebaseUrl:'', bootstrapUrl:'', githubUrl:'', storeId:'', store:null, publication:null, catalogMeta:null, lastResolveAt:0, lastError:'', products:[], productMap:new Map(), cart:new Map(), category:'TODOS', selected:null, loading:false, displayLimit:60, cacheLoaded:false, imageQueue:[], imageBusy:false, imageLastLookup:0, imageMaster:{}, imageMasterLoaded:false, imageMasterRevision:'', facadeData:'', orderStatusBusy:false, historyOrderOpenId:'' };
+  let realtimeCatalogStream=null,realtimeStoreStream=null,realtimeHeartbeatTimer=null,realtimeCatalogRefreshTimer=null;
+  let realtimeOrderStreams=new Map(),realtimeStoreId='',realtimeLastCatalogEventAt=0,realtimeLastOrderEventAt=0;
+  const imageCache = readJsonStorage(STORAGE_IMAGE_CACHE,{});
+  const money = n => Number(n || 0).toLocaleString('es-MX',{style:'currency',currency:'MXN'});
+  const text = v => String(v ?? '').trim();
+  const norm = v => text(v).toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const esc = v => text(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+    const nowISO = () => new Date().toISOString();
+  const clamp = (n,min,max) => Math.min(max,Math.max(min,Number(n)||min));
+
+  function cleanBaseUrl(raw){
+    const value = text(raw).replace(/\/+$/,'');
+    if(!value) return '';
+    try{
+      const u = new URL(/^https?:\/\//i.test(value)?value:`https://${value}`);
+      if(u.protocol!=='https:' || !/(firebaseio\.com|firebasedatabase\.app)$/i.test(u.hostname)) return '';
+      u.pathname = u.pathname.replace(/\.json$/i,'').replace(/\/+$/,'');
+      return `${u.origin}${u.pathname}${u.search}`;
+    }catch(_){ return ''; }
+  }
+
+  function firebaseUrl(path){
+    const base = cleanBaseUrl(state.firebaseUrl);
+    if(!base) throw new Error('La conexión de Mi Farmacia aún no ha sido publicada desde Macroxel.');
+    const u = new URL(base);
+    const root = `${u.origin}${u.pathname}`.replace(/\/+$/,'');
+    const endpoint = new URL(`${root}/${String(path||'').replace(/^\/+|\/+$/g,'')}.json`);
+    // Conserva únicamente parámetros que ya formen parte de la URL configurada.
+    // No agrega parámetros artificiales: Firebase REST puede rechazar consultas desconocidas.
+    endpoint.search = u.search;
+    return endpoint.href;
+  }
+
+  async function fetchConTiempo(url,options={},timeoutMs=FIREBASE_META_TIMEOUT_MS,etiqueta='Conexión'){
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),Math.max(750,Number(timeoutMs)||FIREBASE_META_TIMEOUT_MS));
+    try{
+      return await fetch(url,{...options,signal:controller.signal});
+    }catch(error){
+      if(error?.name==='AbortError') throw new Error(`${etiqueta}: tiempo de espera agotado.`);
+      throw error;
+    }finally{ clearTimeout(timer); }
+  }
+
+  async function request(path,{method='GET',body,timeoutMs=FIREBASE_META_TIMEOUT_MS}={}){
+    const options = {method,cache:'no-store',headers:{Accept:'application/json'}};
+    if(body !== undefined){ options.headers['Content-Type']='application/json'; options.body=JSON.stringify(body); }
+    const r = await fetchConTiempo(firebaseUrl(path),options,timeoutMs,'Firebase');
+    const txt = await r.text();
+    let data = null; try{ data = txt ? JSON.parse(txt) : null; }catch(_){ data=txt; }
+    if(!r.ok) throw new Error((data && data.error) || `Firebase ${r.status}`);
+    return data;
+  }
+
+  function closeRealtimeSource(source){try{source?.close?.()}catch(_){}}
+  function firebaseStreamData(event){try{const packet=JSON.parse(String(event?.data||'{}'));return packet&&Object.prototype.hasOwnProperty.call(packet,'data')?packet.data:packet}catch(_){return null}}
+  function scheduleRealtimeCatalogRefresh(delay=120){
+    clearTimeout(realtimeCatalogRefreshTimer);
+    realtimeCatalogRefreshTimer=setTimeout(()=>{realtimeCatalogRefreshTimer=null;if(document.visibilityState==='visible'&&navigator.onLine)loadCatalog({quiet:true,forceNetwork:true}).then(()=>syncRealtimeStreams()).catch(()=>{})},Math.max(50,Number(delay)||120));
+  }
+  function closeCatalogRealtimeStreams(){closeRealtimeSource(realtimeCatalogStream);closeRealtimeSource(realtimeStoreStream);realtimeCatalogStream=null;realtimeStoreStream=null;realtimeStoreId='';}
+  function startCatalogRealtimeStreams(){
+    if(!('EventSource'in window)||!state.firebaseUrl||!state.storeId)return false;
+    if(realtimeStoreId===state.storeId&&realtimeCatalogStream&&realtimeStoreStream)return true;
+    closeCatalogRealtimeStreams();realtimeStoreId=state.storeId;
+    const onData=()=>{realtimeLastCatalogEventAt=Date.now();scheduleRealtimeCatalogRefresh(90)};
+    try{
+      realtimeCatalogStream=new EventSource(firebaseUrl(`mi_farmacia/catalogo/${state.storeId}/meta`));
+      realtimeCatalogStream.addEventListener('put',onData);realtimeCatalogStream.addEventListener('patch',onData);
+      realtimeCatalogStream.onopen=()=>{realtimeLastCatalogEventAt=Date.now()};
+      realtimeCatalogStream.onerror=()=>{};
+      realtimeStoreStream=new EventSource(firebaseUrl(`mi_farmacia/tiendas/${state.storeId}`));
+      realtimeStoreStream.addEventListener('put',onData);realtimeStoreStream.addEventListener('patch',onData);
+      realtimeStoreStream.onopen=()=>{realtimeLastCatalogEventAt=Date.now()};
+      realtimeStoreStream.onerror=()=>{};
+      return true;
+    }catch(_){closeCatalogRealtimeStreams();return false}
+  }
+
+  function readJsonStorage(key,fallback={}){try{return JSON.parse(localStorage.getItem(key)||'null')??fallback}catch(_){return fallback}}
+  function writeJsonStorage(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch(_){return false}}
+  function cleanWebBaseUrl(raw){
+    const value=text(raw);if(!value)return '';
+    try{const u=new URL(/^https?:\/\//i.test(value)?value:`https://${value}`);if(u.protocol!=='https:')return '';u.search='';u.hash='';if(!u.pathname.endsWith('/'))u.pathname+='/';return u.href}catch(_){return ''}
+  }
+  async function loadRuntimeConfig(){
+    RUNTIME_CONFIG={};
+    const u=new URL('macroxel-config.json',document.baseURI);
+    try{
+      const r=await fetchConTiempo(u.href,{method:'GET',cache:'no-store',headers:{Accept:'application/json'}},CONFIG_REQUEST_TIMEOUT_MS,'Configuración central');
+      if(!r.ok)throw new Error(`macroxel-config.json no está publicado (HTTP ${r.status}).`);
+      const data=await r.json();
+      const firebase=cleanBaseUrl(data?.firebaseUrl||'');
+      if(Number(data?.version||0)!==2 || !firebase){
+        throw new Error('macroxel-config.json está vacío o incompleto. Genera la carpeta GitHub completa desde Macroxel con la conexión actual.');
+      }
+      // El archivo GitHub solo arranca la conexión del cliente. La identidad de
+      // farmacia se obtiene siempre de Firebase para no anclar este visor a un ID.
+      RUNTIME_CONFIG={...data,firebaseUrl:firebase,tiendaId:text(data?.tiendaId||'')};
+      return true;
+    }catch(error){
+      RUNTIME_CONFIG={};
+      throw error;
+    }
+  }
+  function loadBootstrap(){
+    // La conexión operativa llega únicamente del archivo central generado por Macroxel.
+    // No se aceptan URLs guardadas por navegadores anteriores, query strings ni publicaciones remotas.
+    try{localStorage.removeItem(STORAGE_RESOLVER)}catch(_){}
+    state.bootstrapUrl=cleanBaseUrl(RUNTIME_CONFIG.firebaseUrl||CONFIG_FILE.bootstrapUrl||CONFIG_FILE.firebaseUrl||'');
+    state.firebaseUrl=state.bootstrapUrl;
+    state.githubUrl=cleanWebBaseUrl(RUNTIME_CONFIG.githubUrl||CONFIG_FILE.githubUrl||'');
+    // Nunca fijar la tienda desde GitHub: /publicacion de Firebase manda.
+    state.storeId='';
+  }
+  function saveResolver(){
+    // Conservamos solo metadatos no sensibles; nunca la URL Firebase.
+    writeJsonStorage(STORAGE_RESOLVER,{storeId:state.storeId,updatedAt:nowISO()});
+  }
+  function loadCatalogCache(){
+    const c=readJsonStorage(STORAGE_CATALOG,null);
+    if(!c||Number(c.version)!==2||!c.storeId||!c.productos||typeof c.productos!=='object') return null;
+    return c;
+  }
+  function saveCatalogCache(productos,meta){
+    writeJsonStorage(STORAGE_CATALOG,{version:2,storeId:state.storeId,revision:Number(meta?.revision||0)||0,baseRevision:Number(meta?.baseRevision||0)||0,actualizadoEn:text(meta?.actualizadoEn),productos});
+  }
+
+
+  function setStatus(online,label){
+    const el=$('statusChip'); el.classList.toggle('online',online===true); el.classList.toggle('offline',online!==true);
+    el.querySelector('span').textContent=label || (online?'Conectado':'Sin conexión');
+  }
+  const DEFAULT_BRAND_LOGO_SRC=$('brandLogo')?.src||'';
+  const DEFAULT_APP_ICON_SRC=document.querySelector('link[rel~="icon"]')?.href||DEFAULT_BRAND_LOGO_SRC;
+  let installedAppManifestUrl='';
+  let installedAppIconGeneration=0;
+  function ensureAppHeadLink(rel,id){
+    let el=document.getElementById(id)||document.querySelector(`link[rel="${rel}"]`);
+    if(!el){el=document.createElement('link');el.rel=rel;document.head.appendChild(el);}
+    if(!el.id)el.id=id;
+    return el;
+  }
+  function ensureAppMeta(name,content){
+    let el=document.querySelector(`meta[name="${name}"]`);
+    if(!el){el=document.createElement('meta');el.name=name;document.head.appendChild(el);}
+    el.content=content;return el;
+  }
+  function makeSquareAppIcon(src,size){
+    return new Promise((resolve,reject)=>{
+      const image=new Image();
+      image.onload=()=>{
+        try{
+          const canvas=document.createElement('canvas');canvas.width=size;canvas.height=size;
+          const ctx=canvas.getContext('2d',{alpha:false});if(!ctx)throw new Error('Canvas no disponible');
+          ctx.fillStyle='#ffffff';ctx.fillRect(0,0,size,size);
+          const iw=Math.max(1,Number(image.naturalWidth||image.width||1)),ih=Math.max(1,Number(image.naturalHeight||image.height||1));
+          const padding=Math.round(size*.06),usable=size-padding*2,scale=Math.min(usable/iw,usable/ih),dw=iw*scale,dh=ih*scale;
+          ctx.drawImage(image,(size-dw)/2,(size-dh)/2,dw,dh);
+          resolve(canvas.toDataURL('image/png'));
+        }catch(error){reject(error);}
+      };
+      image.onerror=()=>reject(new Error('No se pudo preparar la imagen del establecimiento para el icono.'));
+      image.src=src;
+    });
+  }
+  async function refreshInstalledAppIdentity(src,nombre){
+    const generation=++installedAppIconGeneration;
+    const valid=/^data:image\/(?:jpeg|jpg|png|webp);base64,/i.test(text(src));
+    const source=valid?text(src):DEFAULT_APP_ICON_SRC;
+    const appName=text(nombre||'Mi Farmacia')||'Mi Farmacia';
+    let icon180=source,icon192=source,icon512=source;
+    try{[icon180,icon192,icon512]=await Promise.all([makeSquareAppIcon(source,180),makeSquareAppIcon(source,192),makeSquareAppIcon(source,512)]);}catch(error){console.warn('Mi Farmacia no pudo generar los tamaños del icono:',error);}
+    if(generation!==installedAppIconGeneration)return;
+    const favicon=ensureAppHeadLink('icon','miFarmaciaDynamicIcon');favicon.type='image/png';favicon.href=icon192||source;
+    const apple=ensureAppHeadLink('apple-touch-icon','miFarmaciaAppleTouchIcon');apple.type='image/png';apple.sizes='180x180';apple.href=icon180||source;
+    ensureAppMeta('apple-mobile-web-app-capable','yes');ensureAppMeta('mobile-web-app-capable','yes');ensureAppMeta('apple-mobile-web-app-status-bar-style','default');ensureAppMeta('apple-mobile-web-app-title',appName);ensureAppMeta('application-name',appName);
+    document.title=appName;
+    const base=new URL('./',document.baseURI).href,shortName=appName.length>30?`${appName.slice(0,29)}…`:appName;
+    const manifest={id:base,name:appName,short_name:shortName,start_url:base,scope:base,display:'standalone',background_color:'#f4f8fc',theme_color:'#0a4d8c',icons:[{src:icon192||source,sizes:'192x192',type:'image/png',purpose:'any'},{src:icon512||source,sizes:'512x512',type:'image/png',purpose:'any'}]};
+    if(installedAppManifestUrl){try{URL.revokeObjectURL(installedAppManifestUrl)}catch(_){}}
+    installedAppManifestUrl=URL.createObjectURL(new Blob([JSON.stringify(manifest)],{type:'application/manifest+json'}));
+    ensureAppHeadLink('manifest','miFarmaciaDynamicManifest').href=installedAppManifestUrl;
+  }
+  function storePaused(){return state.store?.pausada===true;}
+  const STORE_DAY_KEYS=['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
+  const STORE_DAY_LABELS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+  function validClock(value,fallback=''){const raw=text(value);if(!/^\d{2}:\d{2}$/.test(raw))return fallback;const [h,m]=raw.split(':').map(Number);return h>=0&&h<=23&&m>=0&&m<=59?raw:fallback}
+  function normalizeStoreSchedule(input={}){
+    // El visor nunca inventa horarios. Solo respeta los días/horas publicados
+    // por el Sistema Principal de ESTA farmacia. Sin configuración, no bloquea pedidos.
+    const src=input&&typeof input==='object'?input:{};const configured=src.configurado===true;const srcDias=src.dias&&typeof src.dias==='object'?src.dias:{};const dias={};
+    STORE_DAY_KEYS.forEach(key=>{const d=srcDias[key]&&typeof srcDias[key]==='object'?srcDias[key]:{};dias[key]={abierto:configured&&d.abierto===true,apertura:validClock(d.apertura,'00:00'),cierre:validClock(d.cierre,'00:00')}});
+    return{version:1,configurado:configured,timezone:text(src.timezone),dias};
+  }
+  function storeTimeParts(date=new Date(),timeZone=''){
+    if(!timeZone)return{day:date.getDay(),hour:date.getHours(),minute:date.getMinutes()};
+    try{const fmt=new Intl.DateTimeFormat('en-US',{timeZone,weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});const parts=Object.fromEntries(fmt.formatToParts(date).map(x=>[x.type,x.value]));return{day:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[parts.weekday],hour:Number(parts.hour),minute:Number(parts.minute)}}catch(_){return{day:date.getDay(),hour:date.getHours(),minute:date.getMinutes()}}
+  }
+  function clockMinutes(value){const [h,m]=validClock(value,'00:00').split(':').map(Number);return h*60+m}
+  function storeScheduleState(date=new Date()){
+    const schedule=normalizeStoreSchedule(state.store?.horario||{});if(!schedule.configurado)return{configured:false,open:true,schedule};
+    const parts=storeTimeParts(date,schedule.timezone),key=STORE_DAY_KEYS[parts.day]||'domingo',day=schedule.dias[key];
+    if(!day?.abierto)return{configured:true,open:false,day:key,schedule};
+    const now=parts.hour*60+parts.minute,start=clockMinutes(day.apertura),end=clockMinutes(day.cierre);const open=start<=end?(now>=start&&now<end):(now>=start||now<end);
+    return{configured:true,open,day:key,schedule};
+  }
+  function storeScheduleLines(){
+    const schedule=normalizeStoreSchedule(state.store?.horario||{});if(!schedule.configurado)return[];const order=[1,2,3,4,5,6,0],groups=[];let current=null;
+    const same=(a,b)=>a&&b&&a.abierto===b.abierto&&(!a.abierto||(a.apertura===b.apertura&&a.cierre===b.cierre));
+    order.forEach(idx=>{const day=schedule.dias[STORE_DAY_KEYS[idx]];if(!current||!same(current.day,day)){current={start:idx,end:idx,day};groups.push(current)}else current.end=idx});
+    return groups.map(g=>{const label=g.start===g.end?STORE_DAY_LABELS[g.start]:`${STORE_DAY_LABELS[g.start]} a ${STORE_DAY_LABELS[g.end]}`;return g.day.abierto?`${label}: ${g.day.apertura}–${g.day.cierre}`:`${label}: Cerrado`});
+  }
+  function storeClosedBySchedule(){const st=storeScheduleState();return st.configured&&!st.open}
+  function storeOrderingAllowed(){return !storePaused()&&!storeClosedBySchedule()}
+  function closedStoreMessage(){return 'La farmacia se encuentra cerrada en este momento. Consulta el horario de atención publicado por la sucursal.'}
+  function refreshHoursBanner(){
+    const banner=$('storeHoursBanner'),lines=$('storeHoursLines');if(!banner||!lines)return;const st=storeScheduleState();banner.hidden=!(st.configured&&!st.open);lines.innerHTML=storeScheduleLines().map(line=>`<span>${esc(line)}</span>`).join('');
+  }
+  function refreshStoreImage(){
+    const img=$('brandLogo');
+    const logo=text(state.store?.logoFarmaciaUrl||'');
+    const foto=text(state.store?.imagenFarmaciaUrl||'');
+    const logoValido=/^data:image\/(?:jpeg|jpg|png|webp);base64,/i.test(logo);
+    const fotoValida=/^data:image\/(?:jpeg|jpg|png|webp);base64,/i.test(foto);
+    const encabezado=logoValido?logo:(fotoValida?foto:DEFAULT_BRAND_LOGO_SRC);
+    const nombre=text(state.store?.nombreActivo||state.store?.nombre||'la farmacia');
+    if(img){img.src=encabezado;img.classList.toggle('custom-store-logo',logoValido);img.classList.toggle('custom-store-image',!logoValido&&fotoValida);img.alt=logoValido?`Logo de ${nombre}`:(fotoValida?`Imagen de ${nombre}`:'Mi Farmacia');}
+    const detalle=$('connectionStoreImage'),contenedor=$('connectionStorePhoto');
+    if(detalle&&contenedor){const detalleSrc=fotoValida?foto:(logoValido?logo:DEFAULT_BRAND_LOGO_SRC);detalle.src=detalleSrc;detalle.alt=fotoValida?`Imagen de ${nombre}`:(logoValido?`Logo de ${nombre}`:'Mi Farmacia');contenedor.hidden=!(fotoValida||logoValido);}
+    if(fotoValida){document.body.classList.add('store-wallpaper');document.body.style.setProperty('--store-wallpaper',`url(${JSON.stringify(foto)})`);}
+    else{document.body.classList.remove('store-wallpaper');document.body.style.removeProperty('--store-wallpaper');}
+    refreshInstalledAppIdentity(logoValido?logo:(fotoValida?foto:DEFAULT_APP_ICON_SRC),nombre).catch(()=>{});
+  }
+  function storeMapsUrl(){
+    const directa=text(state.store?.mapsUrl||state.publication?.mapsUrl||'');
+    if(/^https:\/\//i.test(directa))return directa;
+    const direccion=text(state.store?.direccion||'');
+    return direccion?`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(direccion)}`:'';
+  }
+  function openStoreMaps(){const url=storeMapsUrl();if(!url){toast('La farmacia aún no ha publicado su ubicación.');return;}window.open(url,'_blank','noopener,noreferrer');}
+  function refreshStoreAvailability(){
+    const pausada=storePaused(),cerrada=storeClosedBySchedule();const paused=$('pausedState');if(paused)paused.hidden=!pausada;
+    const search=document.querySelector('.search-shell');if(search)search.hidden=pausada;
+    const grid=$('productGrid');if(grid)grid.hidden=pausada;
+    const loadWrap=$('loadMoreProducts')?.parentElement;if(loadWrap)loadWrap.hidden=pausada;
+    const cart=$('cartButton');if(cart){cart.disabled=pausada;cart.title=pausada?'Tienda pausada por mantenimiento':(cerrada?'La farmacia está fuera de horario; puedes revisar tu carrito, pero no enviar pedidos':'');}
+    refreshHoursBanner();
+    if(pausada){$('loadingState').hidden=true;$('emptyState').hidden=true;closeCart();if(!$('quantityModal').hidden)closeModal('quantityModal');if(!$('checkoutModal').hidden)closeModal('checkoutModal');}
+    if(cerrada&&!$('checkoutModal').hidden)closeModal('checkoutModal');
+    const checkout=$('checkoutButton');if(checkout){checkout.disabled=!cartValues().length||cerrada||pausada;checkout.title=cerrada?closedStoreMessage():'';}
+  }
+
+  function refreshConnectionInfo(){
+    const nombre=text(state.store?.nombreActivo||state.store?.nombre||state.publication?.nombre||CONFIG_FILE.nombreTienda||'Mi Farmacia');
+    const id=text(state.storeId||state.store?.id||CONFIG_FILE.tiendaId||'')||'Pendiente de sincronizar';
+    const revision=Number(state.catalogMeta?.revision||0);
+    const actualizado=text(state.catalogMeta?.actualizadoEn||state.publication?.actualizadoEn||'');
+    $('connectionStoreName').textContent=nombre;
+    $('connectionStoreId').textContent=id;
+    let cat=revision?`Revisión ${revision.toLocaleString('es-MX')}`:(state.products.length?`Catálogo disponible · ${state.products.length.toLocaleString('es-MX')} producto(s)`:'Esperando sincronización');
+    if(actualizado){try{cat+=` · ${new Date(actualizado).toLocaleString('es-MX',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})}`}catch(_){}}
+    $('connectionCatalog').textContent=cat;
+    const direccion=text(state.store?.direccion||'')||'Dirección pendiente de sincronizar';
+    $('connectionStoreAddress').textContent=direccion;
+    const publicAddress=$('storePublicAddress');if(publicAddress)publicAddress.textContent=direccion;
+    $('pickupStoreAddress').textContent=direccion;
+    const maps=storeMapsUrl(),publicCard=$('storePublicCard');
+    if(publicCard){publicCard.disabled=!maps;publicCard.title=maps?'Abrir ubicación en Google Maps':'Ubicación pendiente de sincronizar';}
+    refreshStoreImage();refreshStoreAvailability();
+    const catalogUsable=Number(state.catalogMeta?.revision||0)>0||state.products.length>0||state.cacheLoaded;
+    const online=!!(state.store&&state.firebaseUrl&&navigator.onLine&&catalogUsable);
+    $('connectionState').textContent=online?(storePaused()?'Tienda pausada por mantenimiento':(storeClosedBySchedule()?'Conectado · fuera de horario':'Conectado al sistema principal')):(navigator.onLine?'Sin sincronizar':'Sin internet');
+    $('connectionDot').parentElement.classList.toggle('online',online);
+    $('connectionDot').parentElement.classList.toggle('offline',!online);
+  }
+  function openConnectionPanel(){refreshConnectionInfo();$('connectionPanel').hidden=false;$('brandButton').setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function closeConnectionPanel(){$('connectionPanel').hidden=true;$('brandButton').setAttribute('aria-expanded','false');if($('welcomeModal').hidden&&$('quantityModal').hidden&&$('checkoutModal').hidden&&$('successModal').hidden&&$('cartDrawer').hidden)document.body.style.overflow='';}
+
+  let toastTimer=null;
+  function toast(msg){ const el=$('toast'); el.textContent=msg; el.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('show'),2200); }
+
+  function isAntibiotic(product){
+    const src=norm(`${product?.departamento||''} ${product?.generica||''} ${product?.distintiva||''} ${product?.nombre||''}`);
+    return /ANTIBIOTIC/.test(src);
+  }
+  function categoryOf(product){
+    if(isAntibiotic(product))return 'ANTIBIOTICOS';
+    return norm(product?.departamento)||'OTRO';
+  }
+  function customerProfile(){
+    const c=readJsonStorage(STORAGE_CUSTOMER,{}); return {name:text(c?.name),phone:String(c?.phone||'').replace(/\D/g,'')};
+  }
+  function hasCustomerProfile(){const c=customerProfile();return c.name.length>=3&&c.phone.length>=10;}
+  function showWelcomeIfNeeded(){
+    if(hasCustomerProfile())return false;
+    const c=customerProfile();$('welcomeName').value=c.name||'';$('welcomePhone').value=c.phone||'';$('welcomeError').textContent='';$('welcomeModal').hidden=false;document.body.style.overflow='hidden';setTimeout(()=>$('welcomeName').focus(),80);return true;
+  }
+  function saveWelcomeProfile(){
+    const name=text($('welcomeName').value);const phone=String($('welcomePhone').value||'').replace(/\D/g,'');
+    if(name.length<3){$('welcomeError').textContent='Escribe tu nombre completo.';$('welcomeName').focus();return;}
+    if(phone.length<10){$('welcomeError').textContent='Escribe un teléfono válido de al menos 10 dígitos.';$('welcomePhone').focus();return;}
+    writeJsonStorage(STORAGE_CUSTOMER,{name,phone,updatedAt:nowISO()});$('welcomeModal').hidden=true;$('welcomeError').textContent='';if($('welcomeModal').hidden&&$('quantityModal').hidden&&$('checkoutModal').hidden&&$('successModal').hidden&&$('cartDrawer').hidden&&$('connectionPanel').hidden)document.body.style.overflow='';toast('Datos listos para tu pedido');
+  }
+  function barcodeOf(product){
+    const raw=String(product?.imagenClave||product?.codigo||'').replace(/\D/g,'');
+    return /^(?:\d{8}|\d{12,14})$/.test(raw)?raw:'';
+  }
+  function masterImageKey(product){
+    const code=barcodeOf(product);if(code)return code;
+    const raw=norm(product?.id||product?.codigo||product?.nombre||'PRODUCTO').replace(/[^A-Z0-9_-]+/g,'_').replace(/^_+|_+$/g,'').slice(0,96)||'PRODUCTO';
+    return `ID_${raw}`;
+  }
+  function saveImageCache(){
+    try{localStorage.setItem(STORAGE_IMAGE_CACHE,JSON.stringify(imageCache));}catch(_){/* caché opcional */}
+  }
+  function safeImageUrl(raw){
+    const value=text(raw);if(!value)return '';
+    if(/^data:image\//i.test(value))return value;
+    try{
+      const u=new URL(value,document.baseURI);
+      if(u.protocol==='https:' || (u.protocol==='http:' && /^(?:localhost|127\.0\.0\.1)$/i.test(u.hostname)))return u.href;
+    }catch(_){}
+    return '';
+  }
+  function masterImageEntry(product){
+    const key=masterImageKey(product);
+    const entry=state.imageMaster?.[key];
+    return entry&&typeof entry==='object'?entry:null;
+  }
+  function masterImageForProduct(product){
+    const entry=masterImageEntry(product);if(!entry||entry.status==='not_found')return '';
+    return safeImageUrl(entry.image||entry.url||'');
+  }
+  function rawGithubCatalogCandidates(githubBase){
+    try{
+      const u=new URL(githubBase);const m=String(u.hostname||'').match(/^([A-Za-z0-9-]+)\.github\.io$/i);
+      const repo=String(u.pathname||'').split('/').filter(Boolean)[0]||'';if(!m||!repo)return [];
+      const owner=encodeURIComponent(m[1]),r=encodeURIComponent(repo);
+      return [`https://raw.githubusercontent.com/${owner}/${r}/main/docs/catalogo-imagenes.json`,`https://raw.githubusercontent.com/${owner}/${r}/master/docs/catalogo-imagenes.json`];
+    }catch(_){return [];}
+  }
+  function absolutizeMasterProducts(products,manifestUrl){
+    const out={};
+    for(const [code,value] of Object.entries(products||{})){
+      if(!value||typeof value!=='object'){out[code]=value;continue;}
+      const copy={...value};
+      const raw=text(copy.image||copy.url||'');
+      if(raw){try{const absolute=new URL(raw,manifestUrl).href;if(copy.image)copy.image=absolute;else copy.url=absolute;}catch(_){}}
+      out[code]=copy;
+    }
+    return out;
+  }
+  async function loadMasterImageCatalog({force=false}={}){
+    const configuredManifest=text(state.publication?.imageCatalogUrl||state.store?.imageCatalogUrl||'');
+    const githubBase=cleanWebBaseUrl(state.publication?.githubUrl||state.store?.githubUrl||state.githubUrl||RUNTIME_CONFIG.githubUrl||CONFIG_FILE.githubUrl||'');
+    const manifest=configuredManifest||text(IMAGE_CATALOG_CONFIG.manifest||'catalogo-imagenes.json');
+    if(!manifest)return false;
+    const cached=readJsonStorage(STORAGE_IMAGE_MASTER,null);
+    if(cached?.products&&typeof cached.products==='object'){
+      state.imageMaster=cached.products;state.imageMasterRevision=text(cached.updatedAt||cached.revision||'');state.imageMasterLoaded=true;
+      if(!force && Date.now()-Number(cached.cachedAt||0)<IMAGE_MASTER_TTL)return true;
+    }
+    if(!navigator.onLine)return !!state.imageMasterLoaded;
+    const candidates=[];
+    try{candidates.push(new URL(manifest,githubBase||document.baseURI).href);}catch(_){}
+    for(const raw of rawGithubCatalogCandidates(githubBase))if(!candidates.includes(raw))candidates.push(raw);
+    let lastError=null;
+    for(const candidate of candidates){
+      try{
+        const url=new URL(candidate);url.searchParams.set('ts',String(Date.now()));
+        const response=await fetch(url.href,{method:'GET',cache:'no-store',headers:{Accept:'application/json'}});
+        if(!response.ok)throw new Error(`HTTP ${response.status}`);
+        const data=await response.json();
+        if(!data||Number(data.version||0)!==1||!data.products||typeof data.products!=='object')throw new Error('Formato de catálogo de imágenes no válido');
+        state.imageMaster=absolutizeMasterProducts(data.products,url.href);state.imageMasterRevision=text(data.updatedAt||data.revision||'');state.imageMasterLoaded=true;
+        writeJsonStorage(STORAGE_IMAGE_MASTER,{version:1,updatedAt:state.imageMasterRevision,cachedAt:Date.now(),products:state.imageMaster});
+        if(state.products.length)renderProducts();
+        return true;
+      }catch(error){lastError=error;}
+    }
+    console.info('Catálogo maestro de imágenes aún no disponible:',lastError?.message||lastError||'sin fuente');
+    return !!state.imageMasterLoaded;
+  }
+  function remoteImageCacheEntry(product){
+    const code=barcodeOf(product);if(!code)return null;
+    const hit=imageCache[code];if(!hit||typeof hit!=='object')return null;
+    const ttl=text(hit.url)?IMAGE_CACHE_TTL:IMAGE_NEGATIVE_CACHE_TTL;
+    return Date.now()-Number(hit.ts||0)<=ttl?hit:null;
+  }
+  function cachedRemoteImage(product){
+    const hit=remoteImageCacheEntry(product);return hit?text(hit.url):'';
+  }
+  function setCachedRemoteImage(code,url,source){imageCache[code]={url:text(url),source:text(source),ts:Date.now()};saveImageCache();}
+  function sourceForProduct(product){
+    const dep=norm(product?.departamento||'');
+    return /(BEBIDA|SNACK|ALIMENTO|DULCE|LACTEO|ABARROTE|CEREAL|BOTANA)/.test(dep)?'off':'opf';
+  }
+  async function lookupRemoteImage(product){
+    const code=barcodeOf(product);if(!code)return '';
+    const cached=remoteImageCacheEntry(product);if(cached)return text(cached.url);
+    const flavor=sourceForProduct(product);
+    const host=flavor==='off'?'world.openfoodfacts.org':'world.openproductsfacts.org';
+    try{
+      const url=`https://${host}/api/v2/product/${encodeURIComponent(code)}?fields=product_name,image_front_url,image_url`;
+      const response=await fetch(url,{method:'GET',mode:'cors',cache:'force-cache'});
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      const data=await response.json();const image=text(data?.product?.image_front_url||data?.product?.image_url||'');
+      setCachedRemoteImage(code,/^https:\/\//i.test(image)?image:'',flavor);return /^https:\/\//i.test(image)?image:'';
+    }catch(_){setCachedRemoteImage(code,'',flavor);return '';}
+  }
+  function updateProductImageSlots(product,url){
+    if(!url)return;document.querySelectorAll('[data-image-slot]').forEach(slot=>{if(slot.dataset.imageSlot===product.id)slot.innerHTML=productImage(product,url);});
+  }
+  function queueRealImages(products){
+    const existing=new Set(state.imageQueue.map(p=>p.id));
+    for(const p of products){if(!p||!p.id||existing.has(p.id)||text(p.imagenUrl||IMAGE_MAP[p.id]||IMAGE_MAP[p.codigo]||'')||masterImageForProduct(p)||remoteImageCacheEntry(p)||!barcodeOf(p))continue;state.imageQueue.push(p);existing.add(p.id);}
+    runImageQueue();
+  }
+  async function runImageQueue(){
+    if(state.imageBusy||!state.imageQueue.length||document.visibilityState==='hidden')return;state.imageBusy=true;
+    try{
+      while(state.imageQueue.length&&document.visibilityState!=='hidden'){
+        const wait=Math.max(0,IMAGE_LOOKUP_GAP_MS-(Date.now()-state.imageLastLookup));if(wait)await new Promise(r=>setTimeout(r,wait));
+        const p=state.imageQueue.shift();state.imageLastLookup=Date.now();const url=await lookupRemoteImage(p);if(url)updateProductImageSlots(p,url);
+      }
+    }finally{state.imageBusy=false;}
+  }
+
+  function imageType(product){
+    const src=norm(`${product.tipoImagen||''} ${product.presentacion||''} ${product.nombre||''}`);
+    // Reglas específicas pedidas por el usuario:
+    // - Si dice ml/L/envase/frasco/botella, normalmente mostrar botella.
+    // - Si dice con X tab/tabletas/cápsulas/comprimidos, normalmente mostrar caja.
+    if(/CREMA|UNG[ÜU]ENTO|POMADA|GEL|PASTA|TUBO/.test(src)) return 'tubo';
+    if(/BOLSA|BOLSITA|SACHET|SACH[EÉ]|SOBRE|POLVO/.test(src)) return 'bolsa';
+    if(/GOTA|GOTERO|OFTALM|OTIC/.test(src)) return 'gotero';
+    if(/JARABE|SUSPENSION|EMULSION/.test(src)) return 'jarabe';
+    if(/INYECT|AMPOL|VIAL|JERINGA/.test(src)) return 'inyectable';
+    if(/AEROSOL|INHALADOR|SPRAY/.test(src)) return 'spray';
+    if(/LATA|\bCAN\b/.test(src)) return 'lata';
+    if(/VENDA|GASA|GUANTE|SONDA|MATERIAL|DISPOSITIVO|BATA|CINTA|CURACION|CUBREBOCA/.test(src)) return 'dispositivo';
+    if(/(?:CON\s*)?\d+\s*(?:TAB|TABS|TABLETA|TABLETAS|COMPRIMIDO|COMPRIMIDOS|GRAGEA|GRAGEAS|CAPS|CAPSULA|CAPSULAS|C[ÁA]PSULA|C[ÁA]PSULAS)\b/.test(src)) return 'caja';
+    if(/TABLETA|COMPRIMIDO|GRAGEA|BLISTER|CAPSULA|C[ÁA]PSULA/.test(src)) return 'caja';
+    if(/\b\d+\s*(?:ML|L)\b|\bML\b|\bL\b|BOTELLA|BOT\.?|FRASCO|ENVASE|SOLUCION|LOCION|ENJUAGUE|SHAMPOO|ALCOHOL|ACEITE|AGUA|JUGO|BEBIDA/.test(src)) return 'botella';
+    if(/CAJA|CARTON|ESTUCHE|BOX/.test(src)) return 'caja';
+    return 'caja';
+  }
+
+  function imageSvg(product){
+    const t=imageType(product);
+    const labelRaw=text(product.distintiva||product.generica||product.nombre||'Mi Farmacia').slice(0,18) || 'Mi Farmacia';
+    const label=esc(labelRaw);
+    const sub=esc(text(product.presentacion||'').slice(0,12).toUpperCase());
+    const uid=('u'+(labelRaw+'-'+t).toLowerCase().replace(/[^a-z0-9]+/g,'').slice(0,18)) || 'uimg';
+    const defs=`<defs>
+      <linearGradient id="${uid}g1" x1="0" x2="1"><stop stop-color="#0d5ea5"/><stop offset="1" stop-color="#2db0ea"/></linearGradient>
+      <linearGradient id="${uid}g2" x1="0" x2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#e7eef5"/></linearGradient>
+      <linearGradient id="${uid}g3" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#d6e3ef"/></linearGradient>
+      <linearGradient id="${uid}liq" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#96d8ff"/><stop offset="1" stop-color="#34a7e0"/></linearGradient>
+      <filter id="${uid}shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#6c89a6" flood-opacity="0.22"/></filter>
+    </defs>`;
+    const mark=`<text x="90" y="87" text-anchor="middle" fill="#173d60" font-size="8.6" font-weight="800">${label}</text>${sub?`<text x="90" y="98" text-anchor="middle" fill="#6f8597" font-size="6.2" font-weight="700">${sub}</text>`:''}`;
+    const open=`<svg viewBox="0 0 180 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${label}" shape-rendering="geometricPrecision">${defs}<ellipse cx="90" cy="111" rx="45" ry="8" fill="#d6e4ef"/>`;
+    const variants={
+      caja:`<g filter="url(#${uid}shadow)"><path d="M45 41h64l22 13v45H67L45 86Z" fill="url(#${uid}g2)" stroke="#b4c7d8"/><path d="M109 41l22 13v45l-22-13Z" fill="#dce7f1" stroke="#b4c7d8"/><path d="M45 41h64l22 13H67Z" fill="url(#${uid}g1)" opacity=".96"/><rect x="54" y="61" width="22" height="22" rx="5" fill="#39a8df" opacity=".18"/><path d="M61 72h9M65.5 67.5v9" stroke="#2a9ad8" stroke-width="4" stroke-linecap="round"/></g>${mark}`,
+      blister:`<g filter="url(#${uid}shadow)"><rect x="31" y="36" width="118" height="58" rx="10" fill="url(#${uid}g2)" stroke="#b5c8d9"/><rect x="31" y="36" width="118" height="16" rx="10" fill="url(#${uid}g1)"/><g fill="#f9fbfd" stroke="#bbccda"><circle cx="48" cy="62" r="8.5"/><circle cx="76" cy="62" r="8.5"/><circle cx="104" cy="62" r="8.5"/><circle cx="48" cy="80" r="8.5"/><circle cx="76" cy="80" r="8.5"/><circle cx="104" cy="80" r="8.5"/></g></g><text x="90" y="108" text-anchor="middle" fill="#173d60" font-size="8.6" font-weight="800">${label}</text>`,
+      capsulas:`<g filter="url(#${uid}shadow)"><rect x="32" y="36" width="116" height="56" rx="12" fill="url(#${uid}g2)" stroke="#b7c8d9"/><rect x="32" y="36" width="116" height="16" rx="12" fill="url(#${uid}g1)"/><path d="M55 75a10 10 0 0 1 0-14l10-10a10 10 0 1 1 14 14L69 75a10 10 0 0 1-14 0Z" fill="#2aa8df"/><path d="m61 57 12 12" stroke="#fff" stroke-width="2"/><path d="M89 75a10 10 0 0 1 0-14l10-10a10 10 0 1 1 14 14L103 75a10 10 0 0 1-14 0Z" fill="#85d4ff"/><path d="m95 57 12 12" stroke="#fff" stroke-width="2"/></g>${mark}`,
+      botella:`<g filter="url(#${uid}shadow)"><rect x="71" y="25" width="38" height="15" rx="5" fill="#174f7d"/><rect x="61" y="38" width="58" height="62" rx="16" fill="url(#${uid}g3)" stroke="#aec2d5"/><path d="M64 73h52v20a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16Z" fill="url(#${uid}liq)" opacity=".85"/><rect x="68" y="55" width="44" height="22" rx="7" fill="url(#${uid}g1)"/><text x="90" y="69" text-anchor="middle" fill="#fff" font-size="8" font-weight="800">${label}</text></g>`,
+      jarabe:`<g filter="url(#${uid}shadow)"><rect x="72" y="19" width="36" height="18" rx="5" fill="#6b4120"/><rect x="61" y="35" width="58" height="66" rx="14" fill="#fefefe" stroke="#b3c4d5"/><path d="M65 69h50v20a12 12 0 0 1-12 12H77a12 12 0 0 1-12-12Z" fill="#c57f42" opacity=".82"/><rect x="68" y="53" width="44" height="20" rx="6" fill="url(#${uid}g1)"/><text x="90" y="66" text-anchor="middle" fill="#fff" font-size="8" font-weight="800">${label}</text><rect x="127" y="56" width="10" height="35" rx="4" fill="#f0f5fa" stroke="#b3c3d3"/><path d="M132 56v35" stroke="#cc9d63"/></g>`,
+      gotero:`<g filter="url(#${uid}shadow)"><path d="M82 20h16l5 13H77Z" fill="#174f7d"/><rect x="69" y="31" width="42" height="68" rx="14" fill="url(#${uid}g3)" stroke="#afc2d4"/><path d="M73 69h34v18a12 12 0 0 1-12 12H85a12 12 0 0 1-12-12Z" fill="#45b4eb" opacity=".78"/><rect x="74" y="51" width="32" height="16" rx="6" fill="url(#${uid}g1)"/><text x="90" y="62" text-anchor="middle" fill="#fff" font-size="6.7" font-weight="800">${label}</text><path d="M132 46c6 9 9 16 9 22a9 9 0 0 1-18 0c0-6 3-13 9-22Z" fill="#59b7ec" opacity=".8"/></g>`,
+      tubo:`<g filter="url(#${uid}shadow)"><path d="M58 31h58l10 56H68Z" fill="url(#${uid}g2)" stroke="#b2c5d6"/><path d="M58 31h58l4 19H62Z" fill="url(#${uid}g1)"/><path d="M69 87h58l-6 17H75Z" fill="#cfdce8" stroke="#afc1d2"/><text x="91" y="67" text-anchor="middle" fill="#174c75" font-size="8.2" font-weight="800">${label}</text></g>`,
+      bolsa:`<g filter="url(#${uid}shadow)"><path d="M58 27h64l8 72H50Z" fill="url(#${uid}g2)" stroke="#b5c7d8"/><path d="M58 27h64l3 19H55Z" fill="url(#${uid}g1)"/><path d="M80 57h20v20H80z" fill="#39a8df" opacity=".18"/><path d="M85 67h10M90 62v10" stroke="#28a0dc" stroke-width="4" stroke-linecap="round"/><text x="90" y="85" text-anchor="middle" fill="#174c75" font-size="8" font-weight="800">${label}</text></g>`,
+      lata:`<g filter="url(#${uid}shadow)"><ellipse cx="90" cy="34" rx="31" ry="9" fill="#f4f8fc" stroke="#b6c8d9"/><rect x="59" y="34" width="62" height="60" rx="10" fill="url(#${uid}g2)" stroke="#b6c8d9"/><ellipse cx="90" cy="94" rx="31" ry="9" fill="#dde8f1" stroke="#b6c8d9"/><rect x="62" y="52" width="56" height="20" rx="6" fill="url(#${uid}g1)"/><text x="90" y="65" text-anchor="middle" fill="#fff" font-size="8" font-weight="800">${label}</text></g>`,
+      spray:`<g filter="url(#${uid}shadow)"><rect x="74" y="23" width="26" height="13" rx="4" fill="#174f7d"/><path d="M100 28h13l7 7h-12l-8-4Z" fill="#92a9bc"/><rect x="63" y="35" width="44" height="65" rx="13" fill="url(#${uid}g3)" stroke="#afc2d4"/><rect x="68" y="56" width="34" height="20" rx="6" fill="url(#${uid}g1)"/><text x="85" y="69" text-anchor="middle" fill="#fff" font-size="7.2" font-weight="800">${label}</text></g>`,
+      inyectable:`<g filter="url(#${uid}shadow)"><rect x="48" y="43" width="34" height="47" rx="8" fill="url(#${uid}g2)" stroke="#b6c8d9"/><rect x="55" y="31" width="20" height="14" rx="4" fill="#174f7d"/><path d="M52 70h26v14H52Z" fill="url(#${uid}g1)"/><path d="M104 48h26v8h10v5h-10v8h-26Z" fill="#eef5fb" stroke="#b5c8d8"/><path d="M105 62h34" stroke="#8aa0b2" stroke-width="2"/><path d="M138 66l15-7" stroke="#8aa0b2" stroke-width="2" stroke-linecap="round"/><text x="65" y="101" text-anchor="middle" fill="#173d60" font-size="7.5" font-weight="800">${label}</text></g>`,
+      sobre:`<g filter="url(#${uid}shadow)"><path d="M52 34h76l10 60H42Z" fill="url(#${uid}g2)" stroke="#b5c7d8"/><path d="M52 34h76l4 18H48Z" fill="url(#${uid}g1)"/><text x="90" y="72" text-anchor="middle" fill="#174c75" font-size="8.6" font-weight="800">${label}</text><path d="M50 86h80" stroke="#c8d5e1" stroke-dasharray="4 3"/></g>`,
+      dispositivo:`<g filter="url(#${uid}shadow)"><rect x="38" y="39" width="104" height="48" rx="12" fill="url(#${uid}g2)" stroke="#b6c8d9"/><rect x="49" y="55" width="42" height="16" rx="8" fill="#f0d8be" stroke="#d6b18f"/><path d="M55 63h30" stroke="#d09f7a" stroke-width="3"/><path d="M102 56h22M113 45v22" stroke="#2a9fda" stroke-width="5" stroke-linecap="round"/></g><text x="90" y="100" text-anchor="middle" fill="#173d60" font-size="8.5" font-weight="800">${label}</text>`
+    };
+    return `${open}${variants[t]||variants.caja}</svg>`;
+  }
+
+  function productImage(product,overrideUrl=''){
+    const custom=safeImageUrl(overrideUrl||product.imagenUrl||IMAGE_MAP[product.id]||IMAGE_MAP[product.codigo]||masterImageForProduct(product)||cachedRemoteImage(product)||'');
+    if(custom) return `<img class="real-product-image" src="${esc(custom)}" alt="${esc(product.nombre)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.outerHTML=this.dataset.fallback" data-fallback='${esc(imageSvg(product))}'>`;
+    return imageSvg(product);
+  }
+
+  function b64(bytes){ let bin='';const arr=bytes instanceof Uint8Array?bytes:new Uint8Array(bytes||[]);for(let i=0;i<arr.length;i+=1)bin+=String.fromCharCode(arr[i]);return btoa(bin); }
+  function fromB64(value=''){const bin=atob(String(value||''));const out=new Uint8Array(bin.length);for(let i=0;i<bin.length;i+=1)out[i]=bin.charCodeAt(i);return out;}
+  function canonicalJson(value){
+    if(value===null||typeof value!=='object') return JSON.stringify(value);
+    if(Array.isArray(value)) return `[${value.map(canonicalJson).join(',')}]`;
+    const keys=Object.keys(value).filter(k=>value[k]!==undefined).sort();
+    return `{${keys.map(k=>`${JSON.stringify(k)}:${canonicalJson(value[k])}`).join(',')}}`;
+  }
+  async function checkCatalogIntegrity(meta,productos){
+    const result={available:false,ok:null,reason:''};
+    try{
+      const signature=meta?.firmaCatalogo;
+      const jwk=state.store?.clavePublicaFirmaCatalogo||CONFIG_FILE.clavePublicaFirmaCatalogo;
+      const expectedId=text(state.store?.claveFirmaCatalogoId||CONFIG_FILE.claveFirmaCatalogoId);
+      if(!signature?.value||!signature?.keyId||!jwk?.x||!jwk?.y){result.reason='Firma de integridad no disponible';return result;}
+      result.available=true;
+      if(expectedId&&text(signature.keyId)!==expectedId){result.ok=false;result.reason='La firma publicada corresponde a una clave anterior';return result;}
+      if(!window.crypto?.subtle){result.reason='El navegador no permite comprobar la firma';return result;}
+      const publicKey=await window.crypto.subtle.importKey('jwk',jwk,{name:'ECDSA',namedCurve:'P-256'},false,['verify']);
+      const payload={version:2,tiendaId:state.storeId,revision:Number(meta?.revision||0)||0,productos:productos||{}};
+      result.ok=await window.crypto.subtle.verify({name:'ECDSA',hash:'SHA-256'},publicKey,fromB64(signature.value),new TextEncoder().encode(canonicalJson(payload)));
+      if(!result.ok)result.reason='La firma del catálogo está desfasada respecto a la publicación actual';
+      return result;
+    }catch(error){result.reason=text(error?.message||error);return result;}
+  }
+  async function encryptOrderContent(payload){
+    const jwk=state.store?.clavePublicaPedidos||CONFIG_FILE.clavePublicaPedidos; const keyId=text(state.store?.clavePedidosId||CONFIG_FILE.clavePedidosId);
+    if(!jwk?.n||!jwk?.e||!keyId) throw new Error('La farmacia todavía no publicó su clave segura de pedidos. Sincroniza Mi Farmacia desde Macroxel.');
+    if(!window.crypto?.subtle) throw new Error('Este navegador no permite cifrar el pedido de forma segura.');
+    const publicKey=await window.crypto.subtle.importKey('jwk',jwk,{name:'RSA-OAEP',hash:'SHA-256'},false,['encrypt']);
+    const aesKey=await window.crypto.subtle.generateKey({name:'AES-GCM',length:256},true,['encrypt']);
+    const aesRaw=await window.crypto.subtle.exportKey('raw',aesKey); const iv=window.crypto.getRandomValues(new Uint8Array(12));
+    const plain=new TextEncoder().encode(JSON.stringify(payload));
+    const data=await window.crypto.subtle.encrypt({name:'AES-GCM',iv},aesKey,plain);
+    const wrapped=await window.crypto.subtle.encrypt({name:'RSA-OAEP'},publicKey,aesRaw);
+    return {version:1,alg:'RSA-OAEP+A256GCM',keyId,key:b64(wrapped),iv:b64(iv),data:b64(data)};
+  }
+
+  function normalizeProduct(raw,id){
+    const precio=Math.max(0,Number(raw?.precio||0)||0);
+    const activo=raw?.activo!==false;
+    const existenciaConocida=raw?.existencia!==undefined && raw?.existencia!==null && Number.isFinite(Number(raw.existencia));
+    const existencia=existenciaConocida?Math.max(0,Math.floor(Number(raw.existencia)||0)):(raw?.disponible===false?0:MAX_ORDER_QTY);
+    const disponible=activo && existencia>0 && raw?.disponible!==false;
+    const promociones=Array.isArray(raw?.promociones)?raw.promociones.filter(x=>x&&typeof x==='object').map(x=>({...x})):[];
+    const oferta=raw?.oferta&&typeof raw.oferta==='object'?{...raw.oferta}:null;
+    return {id:text(raw?.id||id),codigo:text(raw?.codigo),generica:text(raw?.generica),distintiva:text(raw?.distintiva),nombre:text(raw?.nombre||[raw?.generica,raw?.distintiva].filter(Boolean).join(' ')),presentacion:text(raw?.presentacion),precio,departamento:text(raw?.departamento||'OTRO'),tipoImagen:text(raw?.tipoImagen),imagenUrl:text(raw?.imagenUrl),imagenClave:text(raw?.imagenClave),imagenModo:text(raw?.imagenModo||'AUTO_EAN'),activo,disponible,existencia,existenciaConocida,promociones,oferta};
+  }
+  function promoScheduleActive(promo,date=new Date()){
+    if(!promo||typeof promo!=='object')return false;const iso=`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+    if(text(promo.fechaInicio)&&iso<text(promo.fechaInicio))return false;if(text(promo.fechaFin)&&iso>text(promo.fechaFin))return false;
+    const dias=Array.isArray(promo.dias)?promo.dias.map(Number).filter(Number.isInteger):[];if(dias.length&&!dias.includes(date.getDay()))return false;
+    const hm=v=>/^\d{2}:\d{2}$/.test(text(v))?text(v).split(':').map(Number).reduce((a,x,i)=>i?a+x:a*60+x):null;
+    const start=hm(promo.horaInicio),end=hm(promo.horaFin),now=date.getHours()*60+date.getMinutes();
+    if(start!==null&&end!==null){if(start<=end){if(now<start||now>end)return false}else if(!(now>=start||now<=end))return false}else if(start!==null&&now<start)return false;else if(end!==null&&now>end)return false;
+    return true;
+  }
+  function activePromotions(product,date=new Date()){return (Array.isArray(product?.promociones)?product.promociones:[]).filter(p=>promoScheduleActive(p,date)).sort((a,b)=>Number(b.prioridad||0)-Number(a.prioridad||0))}
+  function productOfferInfo(product,date=new Date()){
+    const promos=activePromotions(product,date);if(!promos.length)return null;const p=promos[0],normal=Number(product?.precio||0);let offer=0;
+    if(text(p.tipo)==='PORCENTAJE'&&Number(p.porcentaje)>0)offer=Math.max(0,Math.round(normal*(1-Number(p.porcentaje)/100)*100)/100);
+    else if(text(p.tipo)==='PRECIO_CANTIDAD'&&Number(p.cantidadPrecio)===1&&Number(p.precioEspecial)>=0)offer=Number(p.precioEspecial);
+    return{promo:p,normal,offer,rule:text(p.regla||p.nombre||'OFERTA'),name:text(p.nombre||'OFERTA')};
+  }
+
+  function stockInfo(p){
+    const n=Math.max(0,Number(p?.existencia||0)||0);
+    if(!p?.disponible||n<=0)return{label:'AGOTADO',className:'is-out',modal:'Producto agotado por el momento.'};
+    if(p?.existenciaConocida&&n===1)return{label:'ÚLTIMA PIEZA DISPONIBLE',className:'is-low',modal:'Última pieza disponible'};
+    if(p?.existenciaConocida&&n===2)return{label:'ÚLTIMAS 2 PZS DISPONIBLES',className:'is-low',modal:'Últimas 2 piezas disponibles'};
+    return{label:'Disponible',className:'',modal:p?.existenciaConocida?`Disponibles: ${n}`:'Disponible'};
+  }
+  function stockLimit(p,current=0){
+    const sistema=Math.max(0,MAX_ORDER_QTY-Number(current||0));
+    if(!p?.existenciaConocida)return sistema;
+    return Math.max(0,Math.min(sistema,Math.max(0,Number(p.existencia||0)-Number(current||0))));
+  }
+  function insufficientStockMessage(p,requested){
+    const n=Math.max(0,Number(p?.existencia||0)||0);
+    if(n<=0)return `${p?.nombre||'Este producto'} está agotado por el momento.`;
+    return `No hay existencia suficiente de ${p?.nombre||'este producto'}. Solo ${n} pza${n===1?'':'s'} disponible${n===1?'':'s'}.`;
+  }
+
+  async function requestAt(base,path,options={}){
+    const previous=state.firebaseUrl; state.firebaseUrl=cleanBaseUrl(base);
+    try{return await request(path,options)}finally{state.firebaseUrl=previous}
+  }
+  function aplicarTiendaPublica(raw){
+    const store=raw&&typeof raw==='object'?raw:{};
+    if(!text(store.clavePedidosId)) throw new Error('La farmacia aún no ha publicado su configuración. Sincroniza desde Macroxel.');
+    state.store={id:state.storeId,...store};
+    state.githubUrl=cleanWebBaseUrl(state.store.githubUrl||state.githubUrl||'');
+    refreshConnectionInfo();
+    return state.store;
+  }
+
+  async function resolvePublication(){
+    const bootstrap=cleanBaseUrl(state.bootstrapUrl||RUNTIME_CONFIG.firebaseUrl||CONFIG_FILE.bootstrapUrl||CONFIG_FILE.firebaseUrl||'');
+    if(!bootstrap) throw new Error('Mi Farmacia no tiene configuración central. Genera macroxel-config.json desde el sistema principal y publícalo en este GitHub.');
+    state.firebaseUrl=bootstrap;
+
+    // La publicación de Firebase es la autoridad de identidad. De esta forma el
+    // mismo visor sirve para cualquier cliente y sigue automáticamente el nombre
+    // de farmacia/sucursal configurado en el sistema principal.
+    const anterior=text(state.storeId||'');
+    const pub=await requestAt(bootstrap,'mi_farmacia/publicacion',{timeoutMs:FIREBASE_META_TIMEOUT_MS})||{};
+    state.publication=pub;
+    state.githubUrl=cleanWebBaseUrl(pub.githubUrl||state.githubUrl||RUNTIME_CONFIG.githubUrl||CONFIG_FILE.githubUrl||'');
+    state.storeId=text(pub.tiendaId||'');
+
+    // Compatibilidad con instalaciones antiguas que aún no han publicado el
+    // registro /publicacion. El tiendaId del archivo solo se usa como último recurso.
+    if(!state.storeId) state.storeId=text(RUNTIME_CONFIG.tiendaId||CONFIG_FILE.tiendaId||'');
+    if(!state.storeId){
+      const stores=await requestAt(bootstrap,'mi_farmacia/tiendas',{timeoutMs:FIREBASE_META_TIMEOUT_MS})||{};
+      const ids=Object.keys(stores);
+      if(ids.length===1)state.storeId=ids[0]; else throw new Error('No hay una tienda activa publicada desde Macroxel.');
+    }
+    if(anterior&&anterior!==state.storeId){state.store=null;state.catalogMeta={};state.cacheLoaded=false;}
+    state.lastResolveAt=Date.now(); saveResolver(); refreshConnectionInfo(); return pub;
+  }
+
+  async function loadStore(){
+    const store=await request(`mi_farmacia/tiendas/${state.storeId}`,{timeoutMs:FIREBASE_META_TIMEOUT_MS})||{};
+    return aplicarTiendaPublica(store);
+  }
+    function applyProductsObject(source){
+    const all=Object.entries(source||{}).map(([id,p])=>normalizeProduct(p,id)).filter(p=>p.activo&&p.id&&p.nombre).sort((a,b)=>a.nombre.localeCompare(b.nombre,'es',{sensitivity:'base'}));
+    state.products=all; state.productMap=new Map(all.map(p=>[p.id,p]));
+  }
+  function applyChanges(baseProducts,changes){
+    const out={...(baseProducts||{})};
+    Object.entries(changes||{}).forEach(([id,raw])=>{if(!raw||raw.activo===false)delete out[id];else out[id]=raw;});
+    return out;
+  }
+  async function loadCatalog({quiet=false,forceNetwork=false}={}){
+    if(state.loading)return false; state.loading=true;
+    if(!quiet&&!state.cacheLoaded){$('loadingState').hidden=false;$('emptyState').hidden=true;$('productGrid').innerHTML='';}
+    try{
+      // Fuente única de conexión: macroxel-config.json. /publicacion solo es fallback antiguo.
+      if(forceNetwork||!state.firebaseUrl||!state.storeId) await resolvePublication();
+
+      let cache=loadCatalogCache();
+      if(cache?.storeId===state.storeId&&!state.cacheLoaded){
+        applyProductsObject(cache.productos); state.cacheLoaded=true; renderCategories();renderProducts();reconcileCart();$('loadingState').hidden=true; setStatus(true,'Actualizando');
+      }
+
+      const metaPath=`mi_farmacia/catalogo/${state.storeId}/meta`;
+      const productosPath=`mi_farmacia/catalogo/${state.storeId}/productos`;
+      const necesitaTienda=!state.store||state.store.id!==state.storeId;
+      const cacheValida=!!(cache?.storeId===state.storeId&&cache?.productos);
+
+      // Primera visita: tienda + meta + catálogo viajan en paralelo. Así el visor
+      // deja de encadenar 4 o 5 solicitudes antes de mostrar los productos.
+      const tiendaPromise=necesitaTienda?loadStore():Promise.resolve(state.store);
+      const metaPromise=request(metaPath,{timeoutMs:FIREBASE_META_TIMEOUT_MS});
+      const productosInicialPromise=!cacheValida?request(productosPath,{timeoutMs:FIREBASE_CATALOG_TIMEOUT_MS}).then(value=>({ok:true,value})).catch(error=>({ok:false,error})):null;
+      const [tiendaResultado,metaResultado]=await Promise.allSettled([tiendaPromise,metaPromise]);
+      if(metaResultado.status!=='fulfilled') throw metaResultado.reason;
+      if(tiendaResultado.status!=='fulfilled') throw tiendaResultado.reason;
+      const meta=metaResultado.value||{};
+      refreshConnectionInfo();
+      if(storePaused()){state.lastError='';setStatus(true,'Mantenimiento');$('loadingState').hidden=true;refreshStoreAvailability();return true;}
+
+      if(Number(meta.version||0)!==2||!Number(meta.revision||0)) {
+        // Recuperación compatible: algunas instalaciones antiguas tienen productos
+        // publicados pero aún no cuentan con meta v2. No se muestra "Sin sincronizar"
+        // si Firebase y la tienda responden. Se lee el catálogo público directamente
+        // y el sistema principal generará meta v2 en su siguiente sincronización.
+        let productosFallback=cacheValida?cache.productos:null;
+        if(forceNetwork||!productosFallback){
+          if(productosInicialPromise){const inicial=await productosInicialPromise;if(!inicial.ok)throw inicial.error;productosFallback=inicial.value||{};}
+          else productosFallback=await request(productosPath,{timeoutMs:FIREBASE_CATALOG_TIMEOUT_MS})||{};
+        }
+        const revisionFallback=Math.max(1,Number(state.publication?.revision||0)||Date.now());
+        const metaFallback={version:2,revision:revisionFallback,baseRevision:revisionFallback,actualizadoEn:text(state.publication?.actualizadoEn||state.store?.actualizadoEn||nowISO()),totalProductos:Object.keys(productosFallback||{}).length,fallback:true};
+        state.catalogMeta=metaFallback;applyProductsObject(productosFallback||{});saveCatalogCache(productosFallback||{},metaFallback);state.cacheLoaded=true;
+        $('storeName').textContent=text(state.store?.nombreActivo||state.store?.nombre||state.publication?.nombre||'Catálogo en línea');
+        state.lastError='';setStatus(true,'En línea');refreshConnectionInfo();renderCategories();renderProducts();reconcileCart();$('loadingState').hidden=true;return true;
+      }
+      let productos=cacheValida?cache.productos:null;
+      const cacheRevision=cacheValida?Number(cache.revision||0):0;
+      const revision=Number(meta.revision||0);
+      const baseRevision=Number(meta.baseRevision||revision);
+      const cacheTotal=productos&&typeof productos==='object'?Object.keys(productos).length:0;
+      const metaTotal=Number(meta.totalProductos||0);
+      const cacheIncompleta=!!(productos&&metaTotal>=0&&cacheTotal!==metaTotal);
+      let usoCache=!!productos&&!cacheIncompleta;
+      if(forceNetwork||cacheIncompleta||!productos||cacheRevision<baseRevision){
+        if(productosInicialPromise){const inicial=await productosInicialPromise;if(!inicial.ok)throw inicial.error;productos=inicial.value;}
+        else productos=await request(productosPath,{timeoutMs:FIREBASE_CATALOG_TIMEOUT_MS});
+        usoCache=false;
+      }else if(cacheRevision<revision){
+        const cambios=await request(`mi_farmacia/catalogo/${state.storeId}/cambios`,{timeoutMs:FIREBASE_META_TIMEOUT_MS})||{};
+        productos=applyChanges(productos,cambios); usoCache=true;
+      }
+      const integrity=await checkCatalogIntegrity(meta,productos||{});
+      if(integrity.available&&integrity.ok===false) console.warn('Mi Farmacia: catálogo recibido; comprobación de firma pendiente/desfasada:',integrity.reason);
+      state.catalogMeta=meta; applyProductsObject(productos||{}); saveCatalogCache(productos||{},meta); state.cacheLoaded=true;
+      $('storeName').textContent=text(state.store?.nombreActivo||state.store?.nombre||state.publication?.nombre||'Catálogo en línea');
+      state.lastError=''; setStatus(true,'En línea'); refreshConnectionInfo(); renderCategories(); renderProducts(); reconcileCart(); $('loadingState').hidden=true; return true;
+    }catch(e){
+      state.lastError=text(e?.message||e); console.warn('Mi Farmacia no pudo sincronizar:',e);
+      const usable=!!(navigator.onLine&&state.store&&state.firebaseUrl&&(state.products.length||state.cacheLoaded));setStatus(usable,usable?'En línea':'Sin sincronizar'); refreshConnectionInfo(); $('loadingState').hidden=true;
+      if(!state.products.length){$('emptyState').hidden=false;$('emptyMessage').textContent=state.lastError||'Catálogo temporalmente no disponible. La farmacia debe sincronizar desde Macroxel.';}
+      if(!quiet)toast(navigator.onLine?'No se pudo actualizar el catálogo.':'Sin conexión a internet.'); return false;
+    }finally{state.loading=false;}
+  }
+
+
+  function categories(){
+    const departamentos=Array.from(new Set(state.products.map(categoryOf))).sort((a,b)=>a.localeCompare(b,'es'));
+    return ['TODOS','OFERTAS','AGOTADOS',...departamentos];
+  }
+  function renderCategories(){
+    if(!categories().includes(state.category)) state.category='TODOS';
+    $('categoryStrip').innerHTML=categories().map(c=>{
+      const label=c==='TODOS'?'Todos':c==='OFERTAS'?'🔥 Ofertas':c==='AGOTADOS'?'Agotados':esc(c);
+      const special=c==='OFERTAS'?' special-offers':c==='AGOTADOS'?' special-out':'';
+      return `<button class="category-chip${special} ${state.category===c?'active':''}" type="button" data-category="${esc(c)}">${label}</button>`;
+    }).join('');
+    $('rxCatalogNote').hidden=state.category!=='ANTIBIOTICOS';
+  }
+  function filteredProducts(){
+    const q=norm($('searchInput').value),tokens=q.split(/\s+/).filter(Boolean);
+    return state.products.filter(p=>{
+      if(state.category==='AGOTADOS'){if(p.disponible)return false;}
+      else if(state.category==='OFERTAS'){if(!p.disponible||!productOfferInfo(p))return false;}
+      else {if(!p.disponible)return false;if(state.category!=='TODOS'&&categoryOf(p)!==state.category)return false;}
+      if(!tokens.length)return true;
+      const hay=norm(`${p.codigo} ${p.generica} ${p.distintiva} ${p.nombre} ${p.presentacion} ${p.departamento}`);return tokens.every(t=>hay.includes(t));
+    });
+  }
+  function renderProducts(){
+    const list=filteredProducts(),visible=list.slice(0,state.displayLimit),cerrada=storeClosedBySchedule();
+    $('emptyState').hidden=!!list.length;
+    if(!list.length){
+      if(!state.products.length)$('emptyMessage').textContent='No hay productos publicados por la farmacia.';
+      else if(state.category==='OFERTAS')$('emptyMessage').textContent='No hay ofertas activas en este momento.';
+      else if(state.category==='AGOTADOS')$('emptyMessage').textContent='No hay productos agotados publicados.';
+      else $('emptyMessage').textContent='No encontramos coincidencias con esos filtros.';
+    }
+    $('productGrid').innerHTML=visible.map(p=>{
+      const stock=stockInfo(p),agotado=!p.disponible,estadoDirecto=agotado?'TEMPORALMENTE SIN EXISTENCIA':stock.className==='is-low'?stock.label:'DISPONIBLE',offer=productOfferInfo(p);
+      const promo=offer?`<span class="promo-pill">🔥 ${esc(offer.rule)}</span>`:'';
+      const price=offer&&offer.offer>0?`<div class="product-prices"><span class="product-price-normal">${money(offer.normal)}</span><strong class="product-price-offer">${money(offer.offer)}</strong></div>`:`<strong class="product-price">${money(p.precio)}</strong>`;
+      const puedeAgregar=p.disponible&&!cerrada&&!storePaused();
+      return `<article class="product-card ${agotado?'is-out':''}" data-product="${esc(p.id)}" tabindex="0" aria-disabled="${puedeAgregar?'false':'true'}"><span class="stock-badge ${stock.className}">${esc(stock.label)}</span><div class="product-image" data-image-slot="${esc(p.id)}">${productImage(p)}</div><div class="product-body"><div class="product-presentation">${esc(p.presentacion||categoryOf(p)||'Producto')}</div><h2 class="product-name">${esc(p.nombre||'Producto')}</h2>${promo}<div class="stock-inline ${stock.className}">${esc(estadoDirecto)}</div>${isAntibiotic(p)?'<span class="rx-badge">⚕ Receta requerida</span>':''}<div class="product-bottom">${price}<button class="add-mini ${cerrada&&p.disponible?'closed-add':''}" type="button" data-add="${esc(p.id)}" aria-label="${puedeAgregar?'Agregar':agotado?'Agotado':'Fuera de horario'} ${esc(p.nombre)}" ${puedeAgregar?'':'disabled'}>${agotado?'—':cerrada?'◷':'+'}</button></div></div></article>`;
+    }).join('');
+    queueRealImages(visible);
+    const more=$('loadMoreProducts'),rest=Math.max(0,list.length-visible.length);more.hidden=rest===0;more.textContent=rest?`Mostrar más · ${rest.toLocaleString('es-MX')} restantes`:'Mostrar más productos';
+  }
+
+  function openQuantity(id){ if(storePaused()){toast('Tienda pausada por mantenimiento. Pronto estaremos en línea.');return;} if(storeClosedBySchedule()){toast(closedStoreMessage());return;} const p=state.productMap.get(id); if(!p)return; if(!p.disponible){toast(`${p.nombre}: AGOTADO. Este producto sigue visible porque la farmacia lo maneja, pero por ahora no tiene existencias.`);return;} state.selected=p; $('quantityImage').innerHTML=productImage(p); $('quantityPresentation').textContent=p.presentacion||categoryOf(p)||'Producto'; $('quantityTitle').textContent=p.nombre; const stock=stockInfo(p); $('quantityStock').textContent=stock.modal; $('quantityStock').classList.toggle('is-out',stock.className==='is-out'); $('quantityStock').classList.toggle('is-low',stock.className==='is-low'); const offer=productOfferInfo(p); $('quantityPrice').textContent=money(offer?.offer>0?offer.offer:p.precio); $('quantityRxNotice').hidden=!isAntibiotic(p); const current=state.cart.get(p.id)?.cantidad||0; const max=stockLimit(p,current); $('qtyInput').max=String(Math.max(1,max)); $('qtyInput').value='1'; $('quantityModal').hidden=false; document.body.style.overflow='hidden'; }
+  function closeModal(id){ $(id).hidden=true; if($('quantityModal').hidden&&$('checkoutModal').hidden&&$('successModal').hidden&&$('cartDrawer').hidden&&$('historyDrawer').hidden) document.body.style.overflow=''; }
+  function selectedMax(){ if(!state.selected)return 1; const current=state.cart.get(state.selected.id)?.cantidad||0; return Math.max(1,stockLimit(state.selected,current)); }
+  function adjustQty(delta){ const max=selectedMax(); const wanted=(Number($('qtyInput').value)||1)+delta; if(wanted>max){toast(insufficientStockMessage(state.selected,wanted));$('qtyInput').value=String(max);return;} $('qtyInput').value=String(clamp(wanted,1,max)); }
+  function addSelected(){ const p=state.selected;if(storeClosedBySchedule()){toast(closedStoreMessage());return;}if(!p||!p.disponible){toast('Este producto está agotado por el momento.');return;} const current=state.cart.get(p.id)?.cantidad||0; const max=stockLimit(p,current); const requested=Math.max(1,Math.floor(Number($('qtyInput').value)||1)); if(max<=0||requested>max){toast(insufficientStockMessage(p,current+requested));$('qtyInput').value=String(Math.max(1,max));return;} const qty=Math.min(requested,max); state.cart.set(p.id,{...p,cantidad:current+qty}); persistCart(); renderCart(); closeModal('quantityModal'); toast(`${qty} pza${qty===1?'':'s'} agregada${qty===1?'':'s'} al carrito${p.existenciaConocida&&p.existencia-current-qty<=2&&p.existencia-current-qty>0?' · quedan pocas piezas':''}`); }
+
+  function persistCart(){
+    writeJsonStorage(STORAGE_CART,Array.from(state.cart.values()).map(i=>({id:i.id,cantidad:i.cantidad,codigo:i.codigo,nombre:i.nombre,presentacion:i.presentacion,precio:i.precio,departamento:i.departamento,tipoImagen:i.tipoImagen,imagenUrl:i.imagenUrl,generica:i.generica,distintiva:i.distintiva,disponible:i.disponible,activo:i.activo,existencia:i.existencia,existenciaConocida:i.existenciaConocida})));
+  }
+  function loadCart(){ try{const a=readJsonStorage(STORAGE_CART,[]); if(Array.isArray(a))a.forEach(i=>{if(i?.id&&Number(i.cantidad)>0)state.cart.set(i.id,i)});}catch(_){} renderCart(); }
+  function reconcileCart(){
+    let retirados=0,ajustados=0; for(const [id,item] of [...state.cart]){ const p=state.productMap.get(id); if(!p||!p.activo||!p.disponible){state.cart.delete(id);retirados++;continue;} const limite=p.existenciaConocida?Math.min(MAX_ORDER_QTY,Math.max(0,Number(p.existencia||0))):MAX_ORDER_QTY; if(limite<=0){state.cart.delete(id);retirados++;continue;} const cantidad=Math.min(Math.max(1,Number(item.cantidad)||1),limite); if(cantidad!==Number(item.cantidad))ajustados++; state.cart.set(id,{...p,cantidad}); }
+    persistCart();renderCart(); if(retirados)toast(`${retirados} producto(s) fueron retirados del carrito porque ya están agotados.`); else if(ajustados)toast('Actualizamos cantidades del carrito a la existencia real disponible.');
+  }
+  function cartValues(){return Array.from(state.cart.values()).filter(i=>Number(i.cantidad)>0)}
+  function cartTotals(){const items=cartValues();return{pieces:items.reduce((a,i)=>a+Number(i.cantidad||0),0),total:items.reduce((a,i)=>a+Number(i.cantidad||0)*Number(i.precio||0),0)}}
+  function renderCart(){
+    const items=cartValues();const totals=cartTotals(); $('cartCount').textContent=totals.pieces;$('cartPieces').textContent=`${totals.pieces} pza${totals.pieces===1?'':'s'}`;$('cartTotal').textContent=money(totals.total);$('checkoutTotal').textContent=money(totals.total); $('checkoutButton').disabled=!items.length||!storeOrderingAllowed();
+    $('cartItems').innerHTML=items.length?items.map(i=>{const stock=stockInfo(i);return `<div class="cart-row" data-cart="${esc(i.id)}"><div class="cart-thumb">${productImage(i)}</div><div class="cart-info"><strong>${esc(i.nombre)}</strong><small>${esc(i.presentacion||'')} ${i.existenciaConocida?`· ${esc(stock.modal)}`:''}</small><div class="cart-price">${money(Number(i.precio)*Number(i.cantidad))}</div></div><div class="cart-controls"><button type="button" data-cart-minus="${esc(i.id)}">−</button><b>${i.cantidad}</b><button type="button" data-cart-plus="${esc(i.id)}">+</button><button class="cart-remove" type="button" data-cart-remove="${esc(i.id)}">×</button></div></div>`}).join(''):'<div class="cart-empty"><div><div class="state-icon">🛒</div><strong>Tu carrito está vacío</strong><p>Selecciona un producto y elige la cantidad.</p></div></div>';
+  }
+  function changeCart(id,delta){const item=state.cart.get(id);if(!item)return;const p=state.productMap.get(id)||item;if(!p.disponible){state.cart.delete(id);persistCart();renderCart();toast('Producto agotado retirado del carrito.');return;}const next=Number(item.cantidad)+delta;if(next<=0){state.cart.delete(id);}else{const limite=p.existenciaConocida?Math.min(MAX_ORDER_QTY,Math.max(0,Number(p.existencia||0))):MAX_ORDER_QTY;if(next>limite){toast(insufficientStockMessage(p,next));return;}state.cart.set(id,{...item,...p,cantidad:next});}persistCart();renderCart();}
+  function openHistory(){if(!$('cartDrawer').hidden)closeCart();renderOrderHistory();refreshOrderStatuses();$('historyDrawer').hidden=false;document.body.style.overflow='hidden'}
+  function closeHistory(){closeModal('historyDrawer')}
+  function openCart(){if(!$('historyDrawer').hidden)closeHistory();renderCart();$('cartDrawer').hidden=false;document.body.style.overflow='hidden'}
+  function closeCart(){closeModal('cartDrawer')}
+
+  function deliveryType(){return document.querySelector('input[name="deliveryType"]:checked')?.value||'RECOGER_SUCURSAL'}
+  function refreshDeliveryFields(){
+    const home=deliveryType()==='DOMICILIO';
+    $('pickupFields').hidden=home;
+    $('homeDeliveryFields').hidden=!home;
+    if(!home){$('checkoutMessage').textContent='';}
+    else{
+      const status=$('deliveryLocationStatus');
+      if(status)status.textContent='Solicita entrega a domicilio solo si te encuentras aproximadamente a no más de 1 km de la sucursal.';
+      const box=$('deliveryRadiusNotice');if(box){box.classList.remove('ok','error');box.classList.add('warning');}
+    }
+  }
+  function onDeliveryTypeChanged(){refreshDeliveryFields();}
+  function hasActiveLocalOrder(){return localOrders().some(o=>['NUEVO','EN_PROCESO','PREPARANDO','PREPARANDO_PEDIDO'].includes(text(o?.estado||'').toUpperCase()))}
+  function orderRateRemaining(){const rate=readJsonStorage(STORAGE_ORDER_RATE,{}),elapsed=Date.now()-Number(rate?.lastSentAt||0);return Math.max(0,ORDER_SUBMIT_COOLDOWN_MS-elapsed)}
+  function clearFacade(){state.facadeData='';$('deliveryFacade').value='';$('facadePreview').hidden=true;$('facadePreviewImage').removeAttribute('src')}
+  async function fileToCompressedDataUrl(file){
+    if(!file||!String(file.type||'').startsWith('image/'))throw new Error('Selecciona una fotografía válida de la fachada.');
+    if(file.size>15*1024*1024)throw new Error('La fotografía es demasiado grande. Usa una imagen menor a 15 MB.');
+    const source=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result||''));r.onerror=()=>reject(new Error('No se pudo leer la fotografía.'));r.readAsDataURL(file)});
+    const img=await new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(new Error('No se pudo procesar la fotografía.'));i.src=source});
+    const maxSide=720;let w=img.naturalWidth||img.width,h=img.naturalHeight||img.height;const scale=Math.min(1,maxSide/Math.max(w,h));w=Math.max(1,Math.round(w*scale));h=Math.max(1,Math.round(h*scale));
+    const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;const ctx=canvas.getContext('2d',{alpha:false});ctx.drawImage(img,0,0,w,h);
+    let quality=.72;let data=canvas.toDataURL('image/jpeg',quality);while(data.length>62000&&quality>.36){quality-=.08;data=canvas.toDataURL('image/jpeg',quality)}
+    if(data.length>76000)throw new Error('No se pudo reducir suficientemente la foto. Toma otra fotografía con menor resolución.');
+    return data;
+  }
+  async function onFacadeSelected(){const file=$('deliveryFacade').files?.[0];if(!file){clearFacade();return}try{$('checkoutMessage').textContent='Procesando fotografía…';state.facadeData=await fileToCompressedDataUrl(file);$('facadePreviewImage').src=state.facadeData;$('facadePreview').hidden=false;$('checkoutMessage').textContent='';}catch(e){clearFacade();$('checkoutMessage').textContent=e.message||String(e)}}
+  function statusToken(){const bytes=new Uint8Array(20);crypto.getRandomValues(bytes);return `ST_${Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('')}`}
+  function localDayKey(raw){const d=raw instanceof Date?raw:new Date(raw);if(!Number.isFinite(d.getTime()))return '';return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+  function historyAllowedDayKeys(){const hoy=new Date();const ayer=new Date(hoy.getFullYear(),hoy.getMonth(),hoy.getDate()-1);return new Set([localDayKey(hoy),localDayKey(ayer)])}
+  function depurarHistorialLocal(rows){const permitidos=historyAllowedDayKeys();return (Array.isArray(rows)?rows:[]).filter(o=>permitidos.has(localDayKey(o?.createdAt))).sort((a,b)=>new Date(b.createdAt||0)-new Date(a.createdAt||0)).slice(0,MAX_LOCAL_ORDERS)}
+  function localOrders(){const original=readJsonStorage(STORAGE_ORDERS,[]);const rows=depurarHistorialLocal(original);if(Array.isArray(original)&&rows.length!==original.length)writeJsonStorage(STORAGE_ORDERS,rows);return rows}
+  function saveLocalOrders(rows){writeJsonStorage(STORAGE_ORDERS,depurarHistorialLocal(rows))}
+  function localOrderDate(raw){try{return new Date(raw).toLocaleString('es-MX',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'})}catch(_){return raw||'—'}}
+  function publicOrderStatusLabel(estado=''){const e=text(estado||'NUEVO').toUpperCase();if(e==='NUEVO')return 'PEDIDO RECIBIDO';if(e==='EN_PROCESO')return 'PREPARANDO PEDIDO';if(e==='SURTIDO')return 'PEDIDO SURTIDO';if(e==='FINALIZADO')return 'PEDIDO FINALIZADO';if(e==='CANCELADO')return 'PEDIDO CANCELADO';return e.replace(/_/g,' ')}
+function orderTerminalTime(order){
+  const raw=order?.canceladoEn||order?.finalizadoEn||order?.updatedAt||order?.createdAt||'';
+  const t=new Date(raw).getTime();return Number.isFinite(t)?t:0;
+}
+function progressDismissedFor(order){
+  const d=readJsonStorage(STORAGE_PROGRESS_DISMISS,{});const e=text(order?.estado||'NUEVO').toUpperCase();
+  return !!order?.id&&d?.id===order.id&&text(d?.estado).toUpperCase()===e;
+}
+function dismissOrderProgress(order){
+  if(!order?.id)return;writeJsonStorage(STORAGE_PROGRESS_DISMISS,{id:order.id,estado:text(order.estado||'NUEVO').toUpperCase(),dismissedAt:nowISO()});renderOrderProgress();
+}
+function visibleOrderProgress(){
+  const now=Date.now();return localOrders().find(o=>{const e=text(o?.estado||'NUEVO').toUpperCase();if(progressDismissedFor(o))return false;if(!['FINALIZADO','CANCELADO'].includes(e))return true;const t=orderTerminalTime(o);return !!t&&(now-t)<ORDER_PROGRESS_TTL_MS})||null;
+}
+function renderOrderProgress(){
+  const panel=$('orderProgressPanel');if(!panel)return;const o=visibleOrderProgress();if(!o){panel.hidden=true;panel.innerHTML='';panel.className='order-progress-panel';return}
+  const e=text(o.estado||'NUEVO').toUpperCase(),terminal=e==='FINALIZADO',cancelled=e==='CANCELADO';const step=e==='NUEVO'?1:e==='EN_PROCESO'?2:e==='SURTIDO'?3:e==='FINALIZADO'?4:0;
+  const mensaje=e==='NUEVO'?'Tu pedido fue recibido por la sucursal.':e==='EN_PROCESO'?'La farmacia está preparando tu pedido.':e==='SURTIDO'?'Tu pedido ya fue surtido y está pendiente de finalizar la venta.':e==='FINALIZADO'?'Tu pedido fue finalizado por la farmacia.':e==='CANCELADO'?'Tu pedido fue cancelado por la farmacia.':(o.mensaje||'Seguimiento del pedido.');
+  const steps=[['Pedido','recibido'],['Preparando','pedido'],['Pedido','surtido'],['Pedido','finalizado']].map((parts,i)=>{const n=i+1,cls=terminal?'done':n<step?'done':n===step?'current':'';return `<div class="order-progress-step ${cls}">${parts[0]}<br>${parts[1]}</div>`}).join('');
+  panel.className=`order-progress-panel${terminal?' terminal':''}${cancelled?' cancelled':''}`;panel.innerHTML=`<button class="order-progress-close" type="button" data-close-progress="1" aria-label="Cerrar seguimiento">×</button><div class="order-progress-top"><div class="order-progress-title"><strong>Seguimiento de tu pedido</strong><small>${esc(o.id||'')}</small></div><span class="order-progress-badge ${esc(e.toLowerCase().replace(/_/g,'-'))}">${esc(publicOrderStatusLabel(e))}</span></div><div class="order-progress-message">${esc(mensaje)}</div><div class="order-progress-steps">${steps}</div>`;panel.hidden=false;
+}
+
+  function orderVoiceText(estado=''){
+    const e=text(estado).toUpperCase();
+    if(e==='EN_PROCESO')return 'Preparando pedido. La farmacia ya está preparando tus productos.';
+    if(e==='SURTIDO')return 'Pedido surtido.';
+    if(e==='FINALIZADO')return 'Pedido finalizado.';
+    if(e==='CANCELADO')return 'Tu pedido fue cancelado por la farmacia.';
+    return '';
+  }
+  function speakOrderStatus(estado=''){
+    const mensaje=orderVoiceText(estado);if(!mensaje||!('speechSynthesis'in window)||typeof SpeechSynthesisUtterance==='undefined')return;
+    try{window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(mensaje);u.lang='es-MX';u.rate=.95;u.pitch=1;u.volume=1;const voces=window.speechSynthesis.getVoices?.()||[];const voz=voces.find(v=>String(v.lang||'').toLowerCase()==='es-mx')||voces.find(v=>String(v.lang||'').toLowerCase().startsWith('es'));if(voz)u.voice=voz;window.speechSynthesis.speak(u)}catch(_){}
+  }
+  function protectedHistoryOrderIds(rows=localOrders()){
+    const protectedIds=new Set();
+    const ordered=Array.isArray(rows)?rows:[];
+    for(const o of ordered){
+      const e=text(o?.estado||'NUEVO').toUpperCase();
+      if(['EN_PROCESO','PREPARANDO','PREPARANDO_PEDIDO'].includes(e)&&o?.id)protectedIds.add(o.id);
+    }
+    const newestPending=ordered.find(o=>text(o?.estado||'NUEVO').toUpperCase()==='NUEVO'&&o?.id);
+    if(newestPending?.id)protectedIds.add(newestPending.id);
+    return protectedIds;
+  }
+  function removableHistoryOrders(rows=localOrders()){
+    const protectedIds=protectedHistoryOrderIds(rows);
+    return (Array.isArray(rows)?rows:[]).filter(o=>o?.id&&!protectedIds.has(o.id));
+  }
+  function refreshDeleteHistoryButton(){
+    const b=$('deleteOrderHistory');if(!b)return;
+    const rows=localOrders(),removable=removableHistoryOrders(rows);
+    b.disabled=!removable.length;
+    b.title=removable.length?`Eliminar ${removable.length} pedido(s) del historial`:'No hay pedidos eliminables; el pedido activo o en proceso está protegido';
+  }
+  function deleteOrderHistory(){
+    const rows=localOrders(),protectedIds=protectedHistoryOrderIds(rows),removable=rows.filter(o=>o?.id&&!protectedIds.has(o.id));
+    if(!removable.length){toast('No hay pedidos para eliminar. El pedido activo o en proceso está protegido.');refreshDeleteHistoryButton();return}
+    const protectedCount=rows.length-removable.length;
+    const msg=`¿Deseas eliminar ${removable.length} pedido(s) del historial de este dispositivo? Esta acción no se puede deshacer.${protectedCount?`\\n\\nSe conservará${protectedCount===1?'':'n'} ${protectedCount} pedido(s) activo(s) o en proceso.`:''}`;
+    if(!window.confirm(msg))return;
+    const removedIds=new Set(removable.map(o=>o.id));
+    for(const id of removedIds)closeOrderRealtimeStream(id);
+    const keep=rows.filter(o=>!removedIds.has(o.id));
+    if(state.historyOrderOpenId&&removedIds.has(state.historyOrderOpenId))state.historyOrderOpenId='';
+    saveLocalOrders(keep);
+    renderOrderHistory();renderOrderProgress();syncOrderRealtimeStreams();
+    toast(`${removable.length} pedido(s) eliminado(s) del historial.`);
+  }
+
+  function renderOrderHistory(){
+    const rows=localOrders();const cont=$('orderHistoryList');if(!cont)return;
+    if(!rows.length){cont.innerHTML='<div class="order-history-empty">Cuando envíes un pedido aparecerá aquí y podrás ver si fue surtido o cancelado.</div>';refreshDeleteHistoryButton();return}
+    cont.innerHTML=rows.map(o=>{
+      const estado=text(o.estado||'NUEVO').toUpperCase();
+      const tipo=o.entrega?.tipo==='DOMICILIO'?'Entrega a domicilio':'Recoger en sucursal';
+      const abierto=state.historyOrderOpenId===o.id;
+      const items=Array.isArray(o.items)?o.items:[];
+      const detalleItems=items.length
+        ? items.map(it=>`<div class="order-history-detail-row"><span><b>${Number(it.cantidad||0).toLocaleString('es-MX')} pza(s)</b> · ${esc(it.nombre||it.codigo||'Producto')}<br>${esc(it.presentacion||'')}</span><b>${money(Number(it.importe||0)||Number(it.precioUnitario||0)*Number(it.cantidad||0))}</b></div>`).join('')
+        : '<div class="order-history-detail-meta">Este pedido fue guardado con una versión anterior. El detalle de productos no quedó almacenado en este dispositivo.</div>';
+      const detalleEntrega=o.entrega?.tipo==='DOMICILIO'
+        ? `Entrega a domicilio`
+        : `Recoger en sucursal${o.entrega?.fechaEstimada?` · ${esc(o.entrega.fechaEstimada)}`:''}${o.entrega?.horaEstimada?` ${esc(o.entrega.horaEstimada)}`:''}`;
+      const total=Number(o.total||0);
+      const detalle=abierto?`<div class="order-history-detail"><h3>Detalle del pedido</h3>${detalleItems}<div class="order-history-detail-meta"><b>${esc(detalleEntrega)}</b>${Number(o.pieces||0)?` · ${Number(o.pieces).toLocaleString('es-MX')} pieza(s)`:''}${total?` · Total ${money(total)}`:''}</div></div>`:'';
+      return `<div class="order-history-item ${abierto?'open':''}" data-history-order="${esc(o.id)}" role="button" tabindex="0" aria-expanded="${abierto?'true':'false'}"><div><strong>${esc(o.id)}</strong><small>${esc(localOrderDate(o.createdAt))} · ${esc(tipo)}<br>${esc(o.mensaje||'Pedido enviado a la farmacia.')}</small><span class="history-hint">${abierto?'Ocultar detalle':'Ver detalle del pedido'}</span></div><span class="order-status-pill ${esc(estado.toLowerCase().replace(/_/g,'-'))}">${esc(publicOrderStatusLabel(estado))}</span>${detalle}</div>`;
+    }).join('');
+    refreshDeleteHistoryButton();
+  }
+  function toggleHistoryOrderDetail(id=''){
+    state.historyOrderOpenId=state.historyOrderOpenId===id?'':id;
+    renderOrderHistory();
+  }
+  function addLocalOrder(order){const rows=localOrders().filter(o=>o.id!==order.id);rows.unshift(order);saveLocalOrders(rows);renderOrderHistory();renderOrderProgress();syncOrderRealtimeStreams()}
+  function applyRemoteOrderStatus(order,remote={}){
+    if(!order||!remote||!remote.estado)return false;
+    const next=text(remote.estado).toUpperCase(),before=text(order.estado||'NUEVO').toUpperCase();
+    order.estado=next;order.mensaje=text(remote.mensaje)||order.mensaje;order.updatedAt=remote.actualizadoEn||nowISO();
+    if(remote.procesadoEn)order.procesadoEn=remote.procesadoEn;if(remote.surtidoEn)order.surtidoEn=remote.surtidoEn;if(remote.finalizadoEn)order.finalizadoEn=remote.finalizadoEn;if(remote.canceladoEn)order.canceladoEn=remote.canceladoEn;
+    if(next!==before){
+      const msg=order.mensaje||`El pedido ${order.id} cambió a ${publicOrderStatusLabel(next)}.`;toast(msg);speakOrderStatus(next);
+      if('Notification'in window&&Notification.permission==='granted'){try{new Notification('Mi Farmacia',{body:msg,tag:`pedido-${order.id}`})}catch(_){}}
+      return true;
+    }
+    return false;
+  }
+  function closeOrderRealtimeStream(id){const stream=realtimeOrderStreams.get(id);if(stream)closeRealtimeSource(stream);realtimeOrderStreams.delete(id)}
+  function syncOrderRealtimeStreams(){
+    if(!('EventSource'in window)||!state.firebaseUrl)return false;
+    const rows=localOrders(),wanted=new Map(rows.filter(o=>!['FINALIZADO','CANCELADO'].includes(text(o?.estado).toUpperCase())&&o?.token&&o?.storeId).slice(0,MAX_STATUS_CHECK_ORDERS).map(o=>[o.id,o]));
+    for(const id of [...realtimeOrderStreams.keys()])if(!wanted.has(id))closeOrderRealtimeStream(id);
+    for(const [id,order] of wanted){
+      if(realtimeOrderStreams.has(id))continue;
+      try{
+        const stream=new EventSource(firebaseUrl(`mi_farmacia/pedidos_estado/${order.storeId}/${order.token}`));
+        const onData=event=>{const remote=firebaseStreamData(event);if(!remote||!remote.estado)return;realtimeLastOrderEventAt=Date.now();const current=localOrders();const found=current.find(o=>o.id===id);if(!found)return;const changed=applyRemoteOrderStatus(found,remote);if(changed)saveLocalOrders(current);renderOrderHistory();renderOrderProgress();if(['FINALIZADO','CANCELADO'].includes(text(found.estado).toUpperCase()))closeOrderRealtimeStream(id)};
+        stream.addEventListener('put',onData);stream.addEventListener('patch',onData);stream.onopen=()=>{realtimeLastOrderEventAt=Date.now()};stream.onerror=()=>{};
+        realtimeOrderStreams.set(id,stream);
+      }catch(_){}
+    }
+    return true;
+  }
+  function stopRealtimeStreams(){
+    closeCatalogRealtimeStreams();for(const id of [...realtimeOrderStreams.keys()])closeOrderRealtimeStream(id);
+    clearInterval(realtimeHeartbeatTimer);realtimeHeartbeatTimer=null;clearTimeout(realtimeCatalogRefreshTimer);realtimeCatalogRefreshTimer=null;
+  }
+  function syncRealtimeStreams(){startCatalogRealtimeStreams();syncOrderRealtimeStreams();}
+  function startRealtimeHeartbeat(){
+    clearInterval(realtimeHeartbeatTimer);
+    realtimeHeartbeatTimer=setInterval(()=>{
+      renderOrderProgress();refreshStoreAvailability();renderCategories();renderProducts();renderCart();
+      if(document.visibilityState!=='visible'||!navigator.onLine)return;
+      const now=Date.now();
+      loadMasterImageCatalog().catch(()=>{});
+      if(!('EventSource'in window)||!realtimeCatalogStream||(now-realtimeLastCatalogEventAt)>REALTIME_STALE_MS)loadCatalog({quiet:true,forceNetwork:true}).then(()=>syncRealtimeStreams()).catch(()=>{});
+      const pending=localOrders().some(o=>!['FINALIZADO','CANCELADO'].includes(text(o?.estado).toUpperCase()));
+      if(pending&&(!('EventSource'in window)||!realtimeOrderStreams.size||(now-realtimeLastOrderEventAt)>REALTIME_STALE_MS))refreshOrderStatuses();
+    },REALTIME_FALLBACK_MS);
+  }
+  async function refreshOrderStatuses(){
+    if(state.orderStatusBusy||!navigator.onLine||!state.firebaseUrl)return;const rows=localOrders();if(!rows.length)return;state.orderStatusBusy=true;let changed=false;
+    const pendientes=rows.filter(o=>!['FINALIZADO','CANCELADO'].includes(text(o?.estado).toUpperCase())).slice(0,MAX_STATUS_CHECK_ORDERS);
+    try{for(const o of pendientes){if(!o.token||!o.storeId)continue;try{const remote=await request(`mi_farmacia/pedidos_estado/${o.storeId}/${o.token}`,{timeoutMs:3500});if(!remote||!remote.estado)continue;realtimeLastOrderEventAt=Date.now();if(applyRemoteOrderStatus(o,remote))changed=true;}catch(_){/* pedido antiguo/sin reglas de seguimiento */}}
+    }finally{state.orderStatusBusy=false;if(changed)saveLocalOrders(rows);renderOrderHistory();renderOrderProgress();syncOrderRealtimeStreams()}
+  }
+  async function enableOrderNotifications(){if(!('Notification'in window)){toast('Este navegador no admite avisos del sistema.');return}try{const p=await Notification.requestPermission();toast(p==='granted'?'Avisos de pedidos activados.':'Los avisos del navegador no fueron autorizados.');refreshNotificationButton()}catch(_){toast('No se pudieron activar los avisos.')}}
+  function refreshNotificationButton(){const b=$('enableOrderNotifications');if(!b)return;if(!('Notification'in window)){b.hidden=true;return}b.hidden=false;b.textContent=Notification.permission==='granted'?'🔔 Avisos activos':'🔔 Activar avisos'}
+  function openCheckout(){if(storePaused()){toast('Tienda pausada por mantenimiento. Pronto estaremos en línea.');return;}if(storeClosedBySchedule()){toast(closedStoreMessage());return;}if(!cartValues().length)return;closeCart();const c=customerProfile();$('customerName').value=c.name||'';$('customerPhone').value=c.phone||'';$('deliveryPickup').checked=true;$('deliveryHome').checked=false;$('pickupDate').min=new Date().toISOString().slice(0,10);$('pickupDate').value='';$('pickupTime').value='';$('deliveryAddress').value='';clearFacade();refreshDeliveryFields();refreshConnectionInfo();$('checkoutRxNotice').hidden=!cartValues().some(isAntibiotic);$('checkoutMessage').textContent='';$('checkoutModal').hidden=false;document.body.style.overflow='hidden';setTimeout(()=>$(c.name?'customerNote':'customerName').focus(),80);}
+  function phoneDigits(){return $('customerPhone').value.replace(/\D/g,'')}
+  function clearPrivateCustomerData(){
+    ['customerName','customerPhone','customerNote','deliveryAddress','pickupDate','pickupTime'].forEach(id=>{const el=$(id);if(el)el.value='';});
+    if($('deliveryPickup'))$('deliveryPickup').checked=true;
+    if($('deliveryHome'))$('deliveryHome').checked=false;
+    clearFacade();
+    refreshDeliveryFields();
+  }
+  function orderId(){ const d=new Date();const pad=n=>String(n).padStart(2,'0');const stamp=`${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;return `MF-${stamp}-${Math.random().toString(36).slice(2,6).toUpperCase()}`; }
+  async function verifyStockBeforeOrder(){
+    await loadCatalog({quiet:true,forceNetwork:true});
+    if(storeClosedBySchedule()) throw new Error(closedStoreMessage());
+    for(const item of cartValues()){ const p=state.productMap.get(item.id); if(!p||!p.activo||!p.disponible) throw new Error(`${item.nombre}: aparece AGOTADO. Retíralo del carrito para continuar.`); if(p.existenciaConocida&&Number(item.cantidad)>Number(p.existencia||0)) throw new Error(insufficientStockMessage(p,item.cantidad)); }
+    reconcileCart();
+  }
+  async function submitOrder(){
+    if(storePaused()){ $('checkoutMessage').textContent='Tienda pausada por mantenimiento. Pronto estaremos en línea.'; return; }
+    if(storeClosedBySchedule()){ $('checkoutMessage').textContent=closedStoreMessage(); return; }
+    if(state.loading)return;
+    const name=text($('customerName').value),phone=phoneDigits(),note=text($('customerNote').value),tipo=deliveryType();
+    if(name.length<3){$('checkoutMessage').textContent='Escribe tu nombre completo.';$('customerName').focus();return}
+    if(phone.length<10){$('checkoutMessage').textContent='Escribe un teléfono válido de al menos 10 dígitos.';$('customerPhone').focus();return}
+    if(!cartValues().length){$('checkoutMessage').textContent='El carrito está vacío.';return}
+    if(hasActiveLocalOrder()){$('checkoutMessage').textContent='Ya tienes un pedido activo. Espera a que la farmacia lo surta o cancele antes de enviar otro pedido desde este dispositivo.';return}
+    const restante=orderRateRemaining();if(restante>0){$('checkoutMessage').textContent=`Espera ${Math.ceil(restante/1000)} segundos antes de enviar otro pedido.`;return}
+    const entrega=tipo==='DOMICILIO'
+      ? {tipo:'DOMICILIO',direccion:text($('deliveryAddress').value),fachada:state.facadeData||''}
+      : {tipo:'RECOGER_SUCURSAL',fechaEstimada:text($('pickupDate').value),horaEstimada:text($('pickupTime').value)};
+    if(tipo==='DOMICILIO'&&entrega.direccion.length<8){$('checkoutMessage').textContent='Escribe la dirección completa para la entrega a domicilio.';$('deliveryAddress').focus();return}
+    if(tipo==='DOMICILIO'&&!entrega.fachada){$('checkoutMessage').textContent='Agrega una fotografía de la fachada para la entrega a domicilio.';$('deliveryFacade').focus();return}
+    state.loading=true;$('submitOrder').disabled=true;$('submitOrder').textContent='Validando disponibilidad…';$('checkoutMessage').textContent='';
+    try{
+      await verifyStockBeforeOrder();const totals=cartTotals(),id=orderId(),token=statusToken(),creadoEn=nowISO();const items=cartValues().map(i=>({idProducto:i.id,codigo:i.codigo||'',generica:i.generica||'',distintiva:i.distintiva||'',nombre:i.nombre,presentacion:i.presentacion||'',cantidad:Number(i.cantidad),precioUnitario:Number(i.precio||0),importe:Number(i.cantidad)*Number(i.precio||0)}));
+      $('submitOrder').textContent='Protegiendo datos…';const entregaPrivada=entrega;const contenidoCifrado=await encryptOrderContent({cliente:{nombre:name,telefono:phone},observaciones:note,entrega:entregaPrivada,items,piezas:totals.pieces,totalEstimado:Math.round(totals.total*100)/100});
+      const payload={version:1,origen:'MI_FARMACIA_GITHUB',id,tiendaId:state.storeId,tiendaNombre:text(state.store?.nombreActivo||state.store?.nombre||''),estado:'NUEVO',consultaToken:token,creadoEn,actualizadoEn:creadoEn,contenidoCifrado};
+      $('submitOrder').textContent='Enviando pedido…';await request(`mi_farmacia/pedidos/${state.storeId}/${id}`,{method:'PUT',body:payload});
+      const statusPayload={version:1,pedidoId:id,tiendaId:state.storeId,estado:'NUEVO',mensaje:'Pedido recibido en sucursal.',creadoEn,actualizadoEn:creadoEn};
+      try{await request(`mi_farmacia/pedidos_estado/${state.storeId}/${token}`,{method:'PUT',body:statusPayload})}catch(error){console.warn('El pedido se envió, pero el seguimiento inicial no pudo publicarse:',error)}
+      try{await request(`mi_farmacia/pedidos_meta/${state.storeId}`,{method:'PUT',body:{revision:Date.now(),actualizadoEn:nowISO()}})}catch(_){}
+      localStorage.setItem('mi_farmacia:last_order',JSON.stringify({id,storeId:state.storeId,createdAt:creadoEn}));writeJsonStorage(STORAGE_ORDER_RATE,{lastSentAt:Date.now(),orderId:id});addLocalOrder({id,storeId:state.storeId,token,createdAt:creadoEn,estado:'NUEVO',mensaje:statusPayload.mensaje,entrega:{tipo:entrega.tipo,fechaEstimada:entrega.fechaEstimada||'',horaEstimada:entrega.horaEstimada||''},items:items.map(it=>({codigo:it.codigo,nombre:it.nombre,presentacion:it.presentacion,cantidad:Number(it.cantidad||0),precioUnitario:Number(it.precioUnitario||0),importe:Number(it.importe||0)})),pieces:totals.pieces,total:Math.round(totals.total*100)/100});state.cart.clear();persistCart();renderCart();clearPrivateCustomerData();closeModal('checkoutModal');$('successOrderId').textContent=id;$('successModal').hidden=false;document.body.style.overflow='hidden';refreshOrderStatuses();
+    }catch(e){$('checkoutMessage').textContent=e.message||String(e);setStatus(false,'Revisar conexión')}
+    finally{state.loading=false;$('submitOrder').disabled=false;$('submitOrder').textContent='Enviar pedido a la farmacia'}
+  }
+
+
+
+  function bind(){
+    $('brandButton').addEventListener('click',openConnectionPanel);
+    $('storePublicCard')?.addEventListener('click',openStoreMaps);
+    $('saveWelcomeProfile').addEventListener('click',saveWelcomeProfile);
+    $('welcomePhone').addEventListener('keydown',e=>{if(e.key==='Enter')saveWelcomeProfile();});
+    $('closeConnection').addEventListener('click',closeConnectionPanel);
+    document.querySelector('[data-close="connection"]')?.addEventListener('click',closeConnectionPanel);
+    $('searchInput').addEventListener('input',()=>{state.displayLimit=60;document.querySelector('.search-box')?.classList.toggle('has-value',!!$('searchInput').value);renderProducts()});
+    $('clearSearch').addEventListener('click',()=>{$('searchInput').value='';state.displayLimit=60;document.querySelector('.search-box')?.classList.remove('has-value');renderProducts();$('searchInput').focus()});
+    $('categoryStrip').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(!b)return;state.category=b.dataset.category;state.displayLimit=60;renderCategories();renderProducts()});
+    $('productGrid').addEventListener('click',e=>{const add=e.target.closest('[data-add]');const card=e.target.closest('[data-product]');openQuantity(add?.dataset.add||card?.dataset.product||'')});$('loadMoreProducts').addEventListener('click',()=>{state.displayLimit+=60;renderProducts()});
+    $('productGrid').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-product]')){e.preventDefault();openQuantity(e.target.dataset.product)}});
+    document.querySelectorAll('[data-close="quantity"]').forEach(el=>el.addEventListener('click',()=>closeModal('quantityModal')));$('qtyMinus').addEventListener('click',()=>adjustQty(-1));$('qtyPlus').addEventListener('click',()=>adjustQty(1));$('qtyInput').addEventListener('change',()=>{const max=selectedMax(),wanted=Math.max(1,Math.floor(Number($('qtyInput').value)||1));if(wanted>max){toast(insufficientStockMessage(state.selected,wanted));$('qtyInput').value=String(max);}else $('qtyInput').value=String(clamp(wanted,1,max));});$('addToCart').addEventListener('click',addSelected);
+    $('orderProgressPanel').addEventListener('click',e=>{const close=e.target.closest('[data-close-progress]');if(close){e.preventDefault();e.stopPropagation();dismissOrderProgress(visibleOrderProgress());return}openHistory()});$('orderProgressPanel').addEventListener('keydown',e=>{if(e.target.closest?.('[data-close-progress]'))return;if(e.key==='Enter'||e.key===' '){e.preventDefault();openHistory()}});
+    $('orderHistoryButton').addEventListener('click',openHistory);$('deleteOrderHistory').addEventListener('click',deleteOrderHistory);document.querySelectorAll('[data-close="history"]').forEach(el=>el.addEventListener('click',closeHistory));$('orderHistoryList').addEventListener('click',e=>{const row=e.target.closest('[data-history-order]');if(row)toggleHistoryOrderDetail(row.dataset.historyOrder)});$('orderHistoryList').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-history-order]')){e.preventDefault();toggleHistoryOrderDetail(e.target.dataset.historyOrder)}});
+    $('cartButton').addEventListener('click',openCart);document.querySelectorAll('[data-close="cart"]').forEach(el=>el.addEventListener('click',closeCart));
+    $('cartItems').addEventListener('click',e=>{const minus=e.target.closest('[data-cart-minus]'),plus=e.target.closest('[data-cart-plus]'),remove=e.target.closest('[data-cart-remove]');if(minus)changeCart(minus.dataset.cartMinus,-1);if(plus)changeCart(plus.dataset.cartPlus,1);if(remove){state.cart.delete(remove.dataset.cartRemove);persistCart();renderCart()}});$('checkoutButton').addEventListener('click',openCheckout);
+    document.querySelectorAll('[data-close="checkout"]').forEach(el=>el.addEventListener('click',()=>closeModal('checkoutModal')));$('submitOrder').addEventListener('click',submitOrder);$('deliveryPickup').addEventListener('change',onDeliveryTypeChanged);$('deliveryHome').addEventListener('change',onDeliveryTypeChanged);$('deliveryFacade').addEventListener('change',onFacadeSelected);$('enableOrderNotifications').addEventListener('click',enableOrderNotifications);$('closeSuccess').addEventListener('click',()=>{closeModal('successModal');loadCatalog({quiet:true,forceNetwork:true});refreshOrderStatuses()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('connectionPanel').hidden)closeConnectionPanel();else if(!$('quantityModal').hidden)closeModal('quantityModal');else if(!$('historyDrawer').hidden)closeHistory();else if(!$('cartDrawer').hidden)closeCart();else if(!$('checkoutModal').hidden)closeModal('checkoutModal')}});
+    window.addEventListener('online',()=>{loadCatalog({quiet:true,forceNetwork:true}).then(()=>syncRealtimeStreams());refreshOrderStatuses()});window.addEventListener('offline',()=>setStatus(false,'Sin internet'));
+    document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){runImageQueue();refreshOrderStatuses();if(navigator.onLine){loadMasterImageCatalog();loadCatalog({quiet:true,forceNetwork:true}).then(()=>syncRealtimeStreams())}}});
+    window.addEventListener('beforeunload',stopRealtimeStreams);
+  }
+
+  async function init(){
+    loadCart();bind();renderOrderHistory();renderOrderProgress();refreshNotificationButton();refreshConnectionInfo();showWelcomeIfNeeded();
+    const cached=loadCatalogCache();
+    if(cached?.productos){
+      state.storeId=cached.storeId||state.storeId;applyProductsObject(cached.productos);state.cacheLoaded=true;
+      renderCategories();renderProducts();reconcileCart();$('loadingState').hidden=true;setStatus(false,'Actualizando');
+    }
+    try{
+      await loadRuntimeConfig();
+      loadBootstrap();
+      refreshConnectionInfo();
+      // En modo dinámico el tiendaId se resuelve desde /mi_farmacia/publicacion.
+      // No debe exigirse antes de loadCatalog(), porque loadBootstrap lo deja vacío
+      // a propósito para evitar anclar el visor a una farmacia fija.
+      if(!state.firebaseUrl)throw new Error('La conexión central de Mi Farmacia está incompleta. Genera la carpeta GitHub completa desde Macroxel.');
+      await loadCatalog({quiet:!!state.products.length,forceNetwork:true});
+      loadMasterImageCatalog({force:true}).catch(()=>{});
+      refreshOrderStatuses();
+      syncRealtimeStreams();
+      startRealtimeHeartbeat();
+    }catch(error){
+      state.lastError=text(error?.message||error);console.warn('Mi Farmacia no pudo iniciar:',error);
+      $('loadingState').hidden=true;const usable=!!(navigator.onLine&&state.store&&state.firebaseUrl&&(state.products.length||state.cacheLoaded));setStatus(usable,usable?'En línea':(navigator.onLine?'Sin sincronizar':'Sin internet'));refreshConnectionInfo();
+      if(!state.products.length){$('emptyState').hidden=false;$('emptyMessage').textContent=state.lastError;}
+      else toast('No se pudo validar la conexión nueva; se muestra el último catálogo guardado.');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded',init);
+})();
+
+  </script>
+</body>
+</html>
