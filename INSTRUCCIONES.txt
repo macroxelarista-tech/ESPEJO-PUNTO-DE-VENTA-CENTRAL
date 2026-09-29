@@ -1,0 +1,20 @@
+CORRECCIÓN GITHUB PAGES - ESPEJO-PUNTO-DE-VENTA-CENTRAL
+
+Contenido preparado para la raíz del repositorio:
+macroxelarista-tech/ESPEJO-PUNTO-DE-VENTA-CENTRAL
+
+Debe quedar así:
+README.txt
+docs/.nojekyll
+docs/index.html
+docs/macroxel-config.json
+docs/macroxel-ecosistema.json
+docs/reportes/index.html
+docs/mi-farmacia/index.html
+
+GitHub Pages debe publicar desde:
+Branch: main
+Folder: /docs
+
+URL central:
+https://macroxelarista-tech.github.io/ESPEJO-PUNTO-DE-VENTA-CENTRAL/
