@@ -1,0 +1,26 @@
+{
+  "version": 5,
+  "source": "Macroxel FarmaControl",
+  "purpose": "ecosystem-central",
+  "firebaseUrl": "https://puntosdeventaconectados-default-rtdb.firebaseio.com/macroxel_web_espejo",
+  "firebaseDatabaseUrl": "https://puntosdeventaconectados-default-rtdb.firebaseio.com/macroxel_web_espejo",
+  "githubUrl": "https://macroxelarista-tech.github.io/ESPEJO-PUNTO-DE-VENTA/",
+  "tiendaId": "FARMACIA_FARMABIEN_GARDENIAS",
+  "channelId": "FARMACIA_FARMABIEN_GARDENIAS",
+  "storeId": "FARMACIA_FARMABIEN_GARDENIAS",
+  "pharmacyName": "FARMACIA FARMABIEN GARDENIAS",
+  "pharmacyAddress": "CARRETERA PICACHO AJUSCO MZ28 LT14",
+  "pharmacyPhone": "5639741774",
+  "mapsUrl": "",
+  "modules": [
+    "web-mirror",
+    "kardex-financial-traceability",
+    "mi-farmacia"
+  ],
+  "routes": {
+    "espejo": "./",
+    "reportes": "reportes/",
+    "miFarmacia": "mi-farmacia/"
+  },
+  "updatedAt": "2026-10-01T18:43:58.954Z"
+}
