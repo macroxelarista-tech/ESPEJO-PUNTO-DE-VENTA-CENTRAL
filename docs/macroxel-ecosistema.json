@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "source": "Macroxel FarmaControl",
+  "purpose": "ecosystem-manifest",
+  "tiendaId": "FARMACIA_CASA_-_CASA",
+  "modules": [
+    {
+      "id": "espejo",
+      "name": "Espejo Web",
+      "path": "./"
+    },
+    {
+      "id": "reportes",
+      "name": "Kardex / Financiero / Trazabilidad / Facturación",
+      "path": "reportes/"
+    },
+    {
+      "id": "mi-farmacia",
+      "name": "Mi Farmacia",
+      "path": "mi-farmacia/"
+    }
+  ],
+  "updatedAt": "2026-10-01T11:28:32.156Z"
+}

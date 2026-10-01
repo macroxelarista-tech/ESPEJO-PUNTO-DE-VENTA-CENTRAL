@@ -1,0 +1,25 @@
+{
+  "version": 5,
+  "source": "Macroxel FarmaControl",
+  "purpose": "ecosystem-central",
+  "firebaseUrl": "https://puntosdeventaconectados-default-rtdb.firebaseio.com",
+  "firebaseDatabaseUrl": "https://puntosdeventaconectados-default-rtdb.firebaseio.com",
+  "githubUrl": "https://macroxelarista-tech.github.io/ESPEJO-PUNTO-DE-VENTA/",
+  "tiendaId": "FARMACIA_CASA_-_CASA",
+  "storeId": "FARMACIA_CASA_-_CASA",
+  "pharmacyName": "FARMACIA CASA",
+  "pharmacyAddress": "ARISTA 19, COL. GUERRERO, 06300, ALCALDÍA CUAUHTÉMOC, CDMX",
+  "pharmacyPhone": "5555460980",
+  "mapsUrl": "",
+  "modules": [
+    "web-mirror",
+    "kardex-financial-traceability",
+    "mi-farmacia"
+  ],
+  "routes": {
+    "espejo": "./",
+    "reportes": "reportes/",
+    "miFarmacia": "mi-farmacia/"
+  },
+  "updatedAt": "2026-10-01T11:28:30.738Z"
+}
