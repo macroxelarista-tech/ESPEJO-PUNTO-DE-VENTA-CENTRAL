@@ -49066,13 +49066,15 @@ ${error?.message || error}`); }
       const resumen = document.getElementById('corte-resumen-sistema');
       if (resumen) resumen.style.display = admin ? '' : 'none';
       const btnEliminarCorte = document.getElementById('btn-eliminar-corte-historial');
-      if (btnEliminarCorte) btnEliminarCorte.style.display = admin && window.MACROXEL_WEB_MIRROR !== true ? '' : 'none';
+      if (btnEliminarCorte) btnEliminarCorte.style.display = admin ? '' : 'none';
+      if (btnEliminarCorte && window.MACROXEL_WEB_MIRROR === true) btnEliminarCorte.style.display = 'none';
       const registrarWeb = document.getElementById('btn-registrar-corte');
       if (registrarWeb && window.MACROXEL_WEB_MIRROR === true) registrarWeb.style.display = 'none';
       const btnReimprimirCorte = document.getElementById('btn-pdf-corte-seleccionado');
       if (btnReimprimirCorte) {
         btnReimprimirCorte.style.display = '';
         btnReimprimirCorte.disabled = false;
+        btnReimprimirCorte.title = '';
       }
       const tabla = document.getElementById('tabla-cortes');
       if (tabla) {
