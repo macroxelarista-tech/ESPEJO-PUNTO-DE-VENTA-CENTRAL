@@ -2577,6 +2577,7 @@
     #tabla-config-exportaciones tbody tr{cursor:pointer;transition:background .2s,border-color .2s}
     #tabla-config-exportaciones tbody tr:hover{background:#eef6ff}
     #tabla-config-exportaciones tbody tr.fila-seleccionada{background:#dcebff;box-shadow:inset 0 0 0 2px #2d8cff}
+    .profit-toolbar.resurtido-toolbar{grid-template-columns:minmax(250px,1.1fr) minmax(170px,220px) minmax(190px,240px) minmax(185px,230px) minmax(230px,280px) auto}.p2-select-all{display:flex;align-items:center;justify-content:center;gap:5px;font-size:10px;white-space:nowrap}.p2-select-all input{width:18px;height:18px}.p2-detail-edit{display:grid;gap:10px}.p2-detail-edit-head{display:grid;grid-template-columns:minmax(220px,1fr) auto auto;gap:8px;align-items:end;margin-bottom:6px}.p2-detail-edit-lines{display:grid;gap:7px}.p2-detail-edit-line{display:grid;grid-template-columns:minmax(220px,1fr) 90px 90px 110px 90px;gap:7px;align-items:center;padding:8px;border:1px solid #d8e4ef;border-radius:10px;background:#f8fbff}.p2-detail-edit-line input,.p2-detail-edit-head select{width:100%;min-height:34px}.p2-detail-edit-line .received{font-weight:900;text-align:center}.p2-detail-edit-note{font-size:10px;color:#52667a;font-weight:800}.p2-detail .p2-edit-actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:10px}@media(max-width:1200px){.profit-toolbar.resurtido-toolbar{grid-template-columns:1fr 1fr 1fr}.p2-detail-edit-head{grid-template-columns:1fr}.p2-detail-edit-line{grid-template-columns:1fr 80px 80px 100px 80px}}@media(max-width:760px){.profit-toolbar.resurtido-toolbar,.p2-detail-edit-line{grid-template-columns:1fr}}
     .paginador[data-for="tabla-servicios-consultorio"],
     .paginador[data-for="tabla-servicios-paqueteria"],
     .paginador[data-for="tabla-servicios-recargas"],
@@ -6147,9 +6148,10 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
           <div class="profit-kpi"><span>Sin movimiento 90 d</span><strong id="profit-kpi-sinmov">0</strong></div>
           <div class="profit-kpi"><span>Sobreinventario</span><strong id="profit-kpi-sobre">0</strong></div>
         </div>
-        <div class="profit-toolbar">
+        <div class="profit-toolbar resurtido-toolbar">
           <input id="rentabilidad-buscar" placeholder="CÓDIGO, PRODUCTO, DEPARTAMENTO O PROVEEDOR">
           <select id="rentabilidad-departamento"><option value="TODOS">TODOS LOS DEPARTAMENTOS</option></select>
+          <select id="rentabilidad-proveedor-filtro"><option value="TODOS">TODOS LOS PROVEEDORES</option></select>
           <select id="rentabilidad-vista">
             <option value="COMPRAR">COMPRAR / RESURTIR</option>
             <option value="MARGEN">MARGEN BAJO</option>
@@ -6158,11 +6160,14 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
             <option value="TODOS">TODOS ACTIVOS</option>
             <option value="EXCLUIDOS">EXCLUIDOS MANUALMENTE</option>
           </select>
+          <select id="rentabilidad-proveedor-orden">
+            <option value="">SELECCIONA PROVEEDOR PARA LA ORDEN</option>
+          </select>
           <span class="profit-status" id="rentabilidad-estado">ANÁLISIS PENDIENTE</span>
         </div>
         <div class="profit-table-wrap">
           <table id="tabla-resurtido" class="profit-table"><thead><tr>
-            <th>Sel.</th><th>Código</th><th>Producto</th><th>Depto.</th><th>Exist.</th><th>Mín.</th><th>Máx.</th><th>Prom. 7d</th><th>Prom. 30d</th><th>Prom. 90d</th><th>Cobertura</th><th>En orden</th><th>Sugerido</th><th>Costo</th><th>Venta</th><th>% ganancia</th><th>Proveedor</th><th>Acciones</th>
+            <th><label class="p2-select-all"><input id="rentabilidad-seleccionar-todos" type="checkbox"> Todos</label></th><th>Código</th><th>Producto</th><th>Depto.</th><th>Exist.</th><th>Mín.</th><th>Máx.</th><th>Prom. 7d</th><th>Prom. 30d</th><th>Prom. 90d</th><th>Cobertura</th><th>En orden</th><th>Sugerido</th><th>Costo</th><th>Venta</th><th>% ganancia</th><th>Proveedor</th><th>Acciones</th>
           </tr></thead><tbody><tr class="empty-row"><td colspan="18">Calculando rentabilidad y abastecimiento...</td></tr></tbody></table>
         </div>
         <div class="p2-pager"><button class="btn secondary" id="rentabilidad-anterior" type="button">Anterior</button><strong id="rentabilidad-pagina">Página 1 / 1</strong><button class="btn secondary" id="rentabilidad-siguiente" type="button">Siguiente</button></div>
@@ -6171,7 +6176,7 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
       <section id="ordenes-compra" class="module module-rentabilidad">
         <div class="module-header">
           <div><h1>Órdenes de compra</h1><p>Pedidos sugeridos por proveedor, seguimiento de piezas recibidas y conciliación automática con Entradas.</p></div>
-          <div class="header-actions"><button class="btn success" id="btn-oc-actualizar" type="button">Actualizar</button><button class="btn secondary" id="btn-oc-pdf" type="button">Enviar PDF</button><button class="btn secondary" id="btn-oc-enviar" type="button">Marcar enviada</button><button class="btn danger" id="btn-oc-cancelar" type="button">Cancelar orden</button></div>
+          <div class="header-actions"><button class="btn success" id="btn-oc-actualizar" type="button">Actualizar</button><button class="btn secondary" id="btn-oc-pdf" type="button">Enviar PDF</button><button class="btn secondary" id="btn-oc-editar" type="button">Editar orden</button><button class="btn secondary" id="btn-oc-enviar" type="button">Marcar enviada</button><button class="btn danger" id="btn-oc-cancelar" type="button">Cancelar orden</button><button class="btn danger" id="btn-oc-eliminar" type="button">Eliminar orden</button></div>
         </div>
         <div class="profit-toolbar"><input id="oc-buscar" placeholder="FOLIO O PROVEEDOR"><select id="oc-status"><option value="TODOS">TODOS LOS ESTADOS</option><option>PENDIENTE</option><option>ENVIADA</option><option>PARCIAL</option><option>RECIBIDA</option><option>CANCELADA</option></select><span class="profit-status" id="oc-estado">SIN ÓRDENES</span></div>
         <div class="p2-split">
@@ -6872,11 +6877,11 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
   window.MACROXEL_WEB_MIRROR = true;
   window.MACROXEL_WEB_NO_LICENSE = true;
   const WEB = window.MacroxelWebMirror = {
-    build:'web-mirror-v1.2.0', config:null, ready:false, linked:false, dirty:false, readOnly:true,
+    build:'web-mirror-v1.3.0', config:null, ready:false, linked:false, dirty:false, readOnly:true,
     deviceId:'', lastRemoteRevision:'', applying:false, timer:null, syncBusy:false,
     statusText:'Iniciando espejo web…', connectedToPrincipal:false, lastPrincipalSeenAt:'', tableRows:Object.create(null)
   };
-  const CONFIG_KEY='macroxel:web_mirror_config_v1';
+  const CONFIG_KEY='macroxel:web_mirror_config_v2:'+new URL('./',location.href).href;
   const SNAPSHOT_KEY='macroxel:web_mirror_local_snapshot_v1';
   const DEVICE_KEY='macroxel:web_mirror_device_v1';
   const CONN_KEY='macroxel:conexion_url';
@@ -6892,7 +6897,7 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
   function safeId(v){return String(v||'SIN_TIENDA').trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[.#$\[\]\/\u0000-\u001F\u007F]/g,'_').replace(/\s+/g,'_').replace(/_+/g,'_').replace(/^_+|_+$/g,'').slice(0,160).toUpperCase()||'SIN_TIENDA'}
   function cleanFirebase(v){try{const u=new URL(String(v||'').trim());if(u.protocol!=='https:')return'';if(!(/firebaseio\.com$/i.test(u.hostname)||/firebasedatabase\.app$/i.test(u.hostname)))return'';u.search='';u.hash='';return u.toString().replace(/\/+$/,'')}catch(_){return''}}
   function cleanGithub(v){try{const u=new URL(String(v||'').trim());if(u.protocol!=='https:'||!/\.github\.io$/i.test(u.hostname))return'';u.search='';u.hash='';return u.toString().replace(/\/+$/,'')+'/'}catch(_){return''}}
-  function pathUrl(parts=[]){const base=cleanFirebase(WEB.config?.firebaseUrl||'');if(!base)return'';const p=['macroxel_web_espejo',safeId(WEB.config?.tiendaId),...(Array.isArray(parts)?parts:[parts])].filter(Boolean).map(x=>encodeURIComponent(String(x))).join('/');return `${base}/${p}.json`}
+  function pathUrl(parts=[],config=WEB.config){const base=cleanFirebase(config?.firebaseUrl||'');if(!base)return'';const p=['macroxel_web_espejo',safeId(config?.tiendaId),...(Array.isArray(parts)?parts:[parts])].filter(Boolean).map(x=>encodeURIComponent(String(x))).join('/');return `${base}/${p}.json`}
   function setMirrorConnectionIndicator(active, detail=''){
     const indicador=document.getElementById('firebase-connection-indicator');
     if(!indicador)return;
@@ -6919,22 +6924,48 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
   function saveConfig(c){try{localStorage.setItem(CONFIG_KEY,JSON.stringify(c));localStorage.setItem(CONN_KEY,c.firebaseUrl||'');localStorage.setItem(GH_KEY,c.githubUrl||'');localStorage.setItem(STORE_KEY,c.tiendaId||'')}catch(_){}}
   function embeddedConfig(){try{const el=document.getElementById('macroxel-web-bootstrap');if(!el)return null;const v=JSON.parse(String(el.textContent||'{}'));return v&&typeof v==='object'&&!v.unlinked?v:null}catch(_){return null}}
   function currentGithubBase(){try{return cleanGithub(new URL('./',location.href).href)||cleanGithub(location.href)}catch(_){return cleanGithub(location.href)}}
-  async function loadConfig(){
-    let data=null;
+  // Un equipo nuevo obtiene su conexión de los archivos publicados. La caché
+  // pertenece únicamente a esta página y no sustituye una configuración vacía.
+  function validConfig(data){
+    if(!data||typeof data!=='object'||data.unlinked)return null;
+    const cfg={firebaseUrl:cleanFirebase(data.firebaseUrl||data.firebaseDatabaseUrl||''),githubUrl:currentGithubBase()||cleanGithub(data.githubUrl||''),tiendaId:safeId(data.channelId||data.tiendaId||data.storeId||'')};
+    return cfg.firebaseUrl&&cfg.tiendaId!=='SIN_TIENDA'?cfg:null;
+  }
+  async function fetchPublicJson(url){
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),12000);
     try{
-      const u=new URL('macroxel-config.json',document.baseURI);
-      const sep=u.href.includes('?')?'&':'?';
-      const r=await fetch(`${u.href}${sep}mx=${Date.now()}`,{cache:'no-store',headers:{Accept:'application/json','Cache-Control':'no-store'}});
-      if(r.ok)data=await r.json();
-    }catch(_){}
-    if(!data)data=embeddedConfig();
-    if(!data)data=configFromCache();
-    const cfg={firebaseUrl:cleanFirebase(data?.firebaseUrl||data?.firebaseDatabaseUrl||''),githubUrl:currentGithubBase()||cleanGithub(data?.githubUrl||''),tiendaId:safeId(data?.channelId||data?.tiendaId||data?.storeId||'')};
-    if(!cfg.firebaseUrl||!cfg.tiendaId||cfg.tiendaId==='SIN_TIENDA'){WEB.config=cfg;WEB.linked=false;setStatus('Esperando vinculación desde Macroxel','waiting');return cfg}
-    const anterior=String(WEB.config?.tiendaId||'');
+      // Accept mantiene la lectura GET simple, sin preflight por Cache-Control.
+      const r=await fetch(url,{cache:'no-store',signal:controller.signal,headers:{Accept:'application/json'}});
+      if(!r.ok){if(r.status===404)return{ok:true,data:null};throw new Error(`HTTP ${r.status}`)}
+      return{ok:true,data:await r.json()};
+    }finally{clearTimeout(timeout)}
+  }
+  let configLoading=null;
+  async function loadConfig(){
+    if(configLoading)return configLoading;
+    configLoading=loadConfigOnce();
+    try{return await configLoading}finally{configLoading=null}
+  }
+  async function loadConfigOnce(){
+    let cfg=null,published=false;
+    const candidates=[new URL('macroxel-config.json',document.baseURI)];
+    // /reportes comparte la configuración del directorio principal del visor.
+    if(/\/reportes\/(?:index\.html)?$/i.test(location.pathname))candidates.push(new URL('../macroxel-config.json',document.baseURI));
+    for(const u of candidates){
+      try{
+        const sep=u.href.includes('?')?'&':'?';
+        const r=await fetchPublicJson(`${u.href}${sep}mx=${Date.now()}`);
+        if(r.data){published=true;cfg=validConfig(r.data);if(cfg)break}
+      }catch(_){}
+    }
+    if(!cfg)cfg=validConfig(embeddedConfig());
+    if(!cfg&&!published)cfg=validConfig(configFromCache());
+    if(!cfg){WEB.config=null;WEB.linked=false;WEB.lastRemoteRevision='';setStatus('Falta publicar la conexión del visor desde Macroxel','waiting');return null}
+    const changed=WEB.config?.firebaseUrl!==cfg.firebaseUrl||WEB.config?.tiendaId!==cfg.tiendaId;
     WEB.config=cfg;WEB.linked=true;saveConfig(cfg);
-    if(anterior&&anterior!==cfg.tiendaId)WEB.lastRemoteRevision='';
-    setStatus('Vinculado · comprobando Firebase…','checking');return cfg;
+    if(changed){WEB.lastRemoteRevision='';WEB.connectionMisses=0;setStatus('Vinculado · comprobando Firebase…','checking')}
+    return cfg;
   }
   function localData(){const out={};try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(!k||EXCLUDED_KEY.test(k)||k===SNAPSHOT_KEY||k===CONFIG_KEY)continue;const v=localStorage.getItem(k);if(v!==null&&String(v).length<3_000_000)out[k]=v}}catch(_){}return out}
   function domData(){const out={};for(const id of TABLE_IDS){const el=document.getElementById(id);if(!el)continue;const body=el.tBodies?.[0];if(!body)continue;const h=body.innerHTML||'';if(h.length<=8_000_000)out[id]=h}return out}
@@ -6981,13 +7012,25 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
     };
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(run,50),{once:true});else setTimeout(run,50);
   }
-  async function getPublic(parts){const u=pathUrl(parts);if(!u)return{ok:false,data:null};const sep=u.includes('?')?'&':'?';const r=await fetch(`${u}${sep}t=${Date.now()}`,{cache:'no-store',headers:{Accept:'application/json','Cache-Control':'no-store'}});if(!r.ok){if(r.status===404)return{ok:true,data:null};throw new Error(`Firebase HTTP ${r.status}`)}return{ok:true,data:await r.json()}}
-  async function pullV2(){
-    const mr=await getPublic(['manifest']);const m=mr.data;if(!m||Number(m.version||0)<2||!String(m.revision||''))return null;
+  // Limita las lecturas simultáneas: un navegador nuevo descarga todo el
+  // inventario y no debe agotar la conexión con cientos de bloques a la vez.
+  let publicReads=0;
+  const publicReadQueue=[];
+  function nextPublicRead(){while(publicReads<4&&publicReadQueue.length){publicReads++;publicReadQueue.shift()()}}
+  async function getPublic(parts,config=WEB.config){
+    const u=pathUrl(parts,config);if(!u)return{ok:false,data:null};
+    await new Promise(resolve=>{publicReadQueue.push(resolve);nextPublicRead()});
+    try{const sep=u.includes('?')?'&':'?';return await fetchPublicJson(`${u}${sep}t=${Date.now()}`)}
+    finally{publicReads--;nextPublicRead()}
+  }
+  async function pullV2(config){
+    const mr=await getPublic(['manifest'],config);const m=mr.data;if(!m||Number(m.version||0)<2||!String(m.revision||''))return null;
+    if(!sameConnection(config))return{ok:false,principalAvailable:false,stale:true};
     if(String(m.revision)===WEB.lastRemoteRevision)return{ok:true,applied:false,v2:true,principalAvailable:true,updatedAt:String(m.updatedAt||'')};
-    const [storeR,domR]=await Promise.all([getPublic(['store']),getPublic(['dom_tables'])]);
+    const [storeR,domR]=await Promise.all([getPublic(['store'],config),getPublic(['dom_tables'],config)]);
     const tables={};
-    await Promise.all((Array.isArray(m.tables)?m.tables:[]).map(async t=>{const id=String(t?.tableId||'');if(!id)return;const count=Math.max(0,Number(t?.chunkCount||0)||0);const parts=await Promise.all(Array.from({length:count},(_,i)=>getPublic(['tables',id,String(i)])));tables[id]=parts.flatMap(x=>Array.isArray(x?.data?.rows)?x.data.rows:[])}));
+    await Promise.all((Array.isArray(m.tables)?m.tables:[]).map(async t=>{const id=String(t?.tableId||'');if(!id)return;const count=Math.max(0,Number(t?.chunkCount||0)||0);const parts=await Promise.all(Array.from({length:count},(_,i)=>getPublic(['tables',id,String(i)],config)));tables[id]=parts.flatMap(x=>Array.isArray(x?.data?.rows)?x.data.rows:[])}));
+    if(!sameConnection(config))return{ok:false,principalAvailable:false,stale:true};
     WEB.applying=true;try{
       for(const [k,v] of Object.entries(storeR.data&&typeof storeR.data==='object'?storeR.data:{})){if(EXCLUDED_KEY.test(k))continue;if(v===null||v===undefined)localStorage.removeItem(k);else localStorage.setItem(k,String(v))}
       for(const [id,h] of Object.entries(domR.data&&typeof domR.data==='object'?domR.data:{})){const el=document.getElementById(id);if(el?.tBodies?.[0]&&typeof h==='string')el.tBodies[0].innerHTML=h}
@@ -6997,7 +7040,17 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
       refrescarInterfazTrasSnapshot();window.dispatchEvent(new CustomEvent('macroxel-webmirror-applied',{detail:{revision:m.revision||'',readOnly:true}}));return{ok:true,applied:true,v2:true,principalAvailable:true,updatedAt:String(m.updatedAt||'')};
     }finally{WEB.applying=false}
   }
-  async function pull(){if(!WEB.linked)return{ok:false,local:true,principalAvailable:false};const v2=await pullV2();if(v2)return v2;const url=pathUrl(['snapshot']);if(!url)return{ok:false,principalAvailable:false};const r=await fetch(url,{cache:'no-store',headers:{Accept:'application/json'}});if(!r.ok){if(r.status===404)return{ok:true,applied:false,principalAvailable:false};throw new Error(`Firebase HTTP ${r.status}`)}const s=await r.json();if(s&&s.revision&&s.revision!==WEB.lastRemoteRevision&&s.deviceId!==WEB.deviceId){applySnapshot(s);return{ok:true,applied:true,principalAvailable:true,updatedAt:String(s.updatedAt||'')}}return{ok:true,applied:false,principalAvailable:!!(s&&s.revision),updatedAt:String(s?.updatedAt||'')}}
+  function sameConnection(config){return WEB.linked&&WEB.config?.firebaseUrl===config?.firebaseUrl&&WEB.config?.tiendaId===config?.tiendaId}
+  async function pull(){
+    if(!WEB.linked)return{ok:false,local:true,principalAvailable:false};
+    const config=WEB.config;
+    const v2=await pullV2(config);if(v2)return v2;
+    const r=await getPublic(['snapshot'],config);
+    if(!sameConnection(config))return{ok:false,principalAvailable:false,stale:true};
+    const s=r.data;
+    if(s&&s.revision&&s.revision!==WEB.lastRemoteRevision&&s.deviceId!==WEB.deviceId){applySnapshot(s);refrescarInterfazTrasSnapshot();return{ok:true,applied:true,principalAvailable:true,updatedAt:String(s.updatedAt||'')}}
+    return{ok:true,applied:false,principalAvailable:!!(s&&s.revision),updatedAt:String(s?.updatedAt||'')};
+  }
   async function push(){WEB.dirty=false;return{ok:true,readOnly:true,skipped:true}}
   async function syncNow({forcePush=false}={}){
     if(WEB.syncBusy)return{ok:false,busy:true};
@@ -7005,10 +7058,10 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
     try{
       if(!WEB.linked){WEB.connectionMisses=0;setStatus('Modo local web · esperando vinculación desde Macroxel','local');return{ok:true,local:true}}
       let pr=null;
-      try{pr=await pull()}
+      try{pr=await pull();if(pr?.stale)return pr}
       catch(e){
         WEB.connectionMisses=Math.min(99,Number(WEB.connectionMisses||0)+1);
-        if(!WEB.connectedToPrincipal||WEB.connectionMisses>=3)setStatus('Espejo web · sistema principal no disponible','offline');
+        if(!WEB.connectedToPrincipal||WEB.connectionMisses>=3)setStatus(/HTTP (401|403)/.test(String(e.message||e))?'Firebase no permite leer el visor · revisa las reglas operativas':'Espejo web · conexión interrumpida; reintentando','offline');
         return{ok:true,local:true,error:String(e.message||e),connectionMisses:WEB.connectionMisses}
       }
       if(pr?.principalAvailable){
@@ -7326,12 +7379,14 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
   const refrescarPorActividad=()=>{refrescarEspejoWebAhora().catch(()=>{});comprobarCodigoWebActual().catch(()=>{})};
   window.addEventListener('pageshow',refrescarPorActividad);
   window.addEventListener('focus',refrescarPorActividad);
+  window.addEventListener('online',refrescarPorActividad);
+  document.addEventListener('DOMContentLoaded',()=>setMirrorConnectionIndicator(WEB.connectedToPrincipal,WEB.statusText),{once:true});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refrescarPorActividad()});
   loadConfig().then(async()=>{
     WEB.ready=true;
     try{await syncNow({forcePush:false})}catch(_){setStatus('Espejo web · sistema principal no disponible','offline')}
     WEB.timer=setInterval(()=>syncNow({forcePush:false}).catch(()=>{}),800);
-    WEB.configTimer=setInterval(()=>loadConfig().catch(()=>{}),15000);
+    WEB.configTimer=setInterval(()=>refrescarEspejoWebAhora().catch(()=>{}),15000);
     WEB.codeTimer=setInterval(()=>comprobarCodigoWebActual().catch(()=>{}),30000);
     comprobarCodigoWebActual().catch(()=>{});
     window.dispatchEvent(new CustomEvent('macroxel-webmirror-ready',{detail:{linked:WEB.linked,connectedToPrincipal:WEB.connectedToPrincipal,config:WEB.config}}));
@@ -14025,7 +14080,7 @@ window.MACROXEL_PNOS_BASE = {"version":2,"generatedFrom":"PNO Farmacia(1).zip","
       // Médicos y proveedores viven en un archivo protegido independiente. Su
       // lectura ya no compite con el login: se solicita únicamente cuando el
       // usuario abre un flujo que realmente los necesita.
-      if (['ventas','entradas','salidas','destruccion','medicos','proveedores'].includes(target)) {
+      if (['ventas','entradas','salidas','destruccion','medicos','proveedores','resurtido','ordenes-compra'].includes(target)) {
         try { inicializarPersistenciaCatalogosOperativos().catch(() => {}); } catch (_) {}
       }
       try { window.macroxelElectron?.guardarTodoPronto?.(`cambio-modulo-${moduloActivoActualId() || 'menu'}`); } catch (_) {}
@@ -34128,12 +34183,13 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
       pages: 1,
       rows: [],
       rowByCode: new Map(),
+      selectedRows: new Map(),
       settings: null,
       selectedCode: '',
       timer: 0,
       loading: false
     };
-    const p2OrdenesEstado = { selectedId: 0, rows: [] };
+    const p2OrdenesEstado = { selectedId: 0, rows: [], editing:false };
     const p2ConteoEstado = { activeId: 0, page: 1, pages: 1, count: null, rows: [], timer: 0, selectedLineId: 0, lastScan: '', filter: '' };
 
     function p2Dinero(valor) {
@@ -34252,6 +34308,59 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
       if (Array.from(select.options).some(o => o.value === actual)) select.value = actual;
     }
 
+    function proveedoresDisponiblesP2(extra = []) {
+      const nombres = new Map();
+      const agregar = valor => {
+        const nombre = String(valor || '').replace(/\s+/g,' ').trim().toUpperCase();
+        if (!nombre) return;
+        nombres.set(nombre, nombre);
+      };
+      try {
+        valoresProveedores().forEach(p => {
+          if (String(p?.estado || 'APROBADO').toUpperCase() === 'NO APROBADO') return;
+          agregar(p?.nombre);
+        });
+      } catch (_) {}
+      (Array.isArray(extra) ? extra : []).forEach(agregar);
+      return Array.from(nombres.values()).sort((a,b)=>a.localeCompare(b,'es'));
+    }
+
+    function llenarSelectProveedoresP2(suppliers = []) {
+      const filtro = document.getElementById('rentabilidad-proveedor-filtro');
+      const orden = document.getElementById('rentabilidad-proveedor-orden');
+      const lista = proveedoresDisponiblesP2(suppliers);
+      if (filtro) {
+        const actual = filtro.value || 'TODOS';
+        filtro.innerHTML = '<option value="TODOS">TODOS LOS PROVEEDORES</option>' + lista.map(p => `<option value="${escapeHTML(p)}">${escapeHTML(p)}</option>`).join('');
+        filtro.value = Array.from(filtro.options).some(o=>o.value===actual) ? actual : 'TODOS';
+      }
+      if (orden) {
+        const actual = orden.value || '';
+        const disponibles = lista.filter(p => p !== 'SIN PROVEEDOR');
+        orden.innerHTML = '<option value="">SELECCIONA PROVEEDOR PARA LA ORDEN</option>' + disponibles.map(p => `<option value="${escapeHTML(p)}">${escapeHTML(p)}</option>`).join('');
+        if (Array.from(orden.options).some(o=>o.value===actual)) orden.value = actual;
+      }
+    }
+
+    function actualizarSeleccionTodosP2() {
+      const master = document.getElementById('rentabilidad-seleccionar-todos');
+      if (!master) return;
+      const checks = Array.from(document.querySelectorAll('#tabla-resurtido tbody .p2-resurtido-check'));
+      const marcados = checks.filter(ch => ch.checked).length;
+      master.checked = checks.length > 0 && marcados === checks.length;
+      master.indeterminate = marcados > 0 && marcados < checks.length;
+      master.title = `${p2RentabilidadEstado.selectedRows.size} producto(s) seleccionado(s)`;
+    }
+
+    function alternarSeleccionVisibleP2(checked) {
+      document.querySelectorAll('#tabla-resurtido tbody .p2-resurtido-check').forEach(ch => {
+        if (ch.checked === Boolean(checked)) return;
+        ch.checked = Boolean(checked);
+        ch.dispatchEvent(new Event('change', { bubbles:true }));
+      });
+      actualizarSeleccionTodosP2();
+    }
+
     function renderKpisRentabilidad(k = {}) {
       const vals = {
         'profit-kpi-comprar': String(Number(k.comprar || 0)),
@@ -34277,13 +34386,20 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
       p2RentabilidadEstado.rowByCode = new Map(rows.map(r => [String(r.codigo || ''), r]));
       if (!rows.length) {
         tbody.innerHTML = '<tr class="empty-row"><td colspan="18">No hay productos en esta vista.</td></tr>';
+        actualizarSeleccionTodosP2();
         return;
       }
       tbody.innerHTML = rows.map(row => {
+        const codigo = String(row.codigo || '');
+        const previo = p2RentabilidadEstado.selectedRows.get(codigo);
+        if (previo) p2RentabilidadEstado.selectedRows.set(codigo, {...row, orderedQty:Number(previo.orderedQty ?? row.suggestedOrder ?? 0)});
+        const seleccionado = p2RentabilidadEstado.selectedRows.get(codigo);
+        const qtyOrden = Number(seleccionado?.orderedQty ?? row.suggestedOrder ?? 0);
         const coverage = row.coverageDays == null ? (Number(row.avg90||0) <= 0 ? 'SIN MOV.' : '—') : `${p2Numero(row.coverageDays,1)} d`;
         const gain = row.marginGainPct == null ? '—' : `${p2Numero(row.marginGainPct,1)}%`;
-        return `<tr data-code="${escapeHTML(row.codigo)}" class="${row.suggestedOrder>0?'p2-needs-order':''}">
-          <td><input class="p2-check p2-resurtido-check" type="checkbox" aria-label="Seleccionar ${escapeHTML(row.codigo)}"></td>
+        const classes = [row.suggestedOrder>0?'p2-needs-order':'', seleccionado?'p2-selected':''].filter(Boolean).join(' ');
+        return `<tr data-code="${escapeHTML(row.codigo)}" class="${classes}">
+          <td><input class="p2-check p2-resurtido-check" type="checkbox" ${seleccionado?'checked':''} aria-label="Seleccionar ${escapeHTML(row.codigo)}"></td>
           <td><strong>${escapeHTML(row.codigo)}</strong></td>
           <td>${escapeHTML(row.producto || '')}</td><td>${escapeHTML(row.departamento || '')}</td>
           <td><strong>${p2Numero(row.stock,2)}</strong></td>
@@ -34291,14 +34407,34 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
           <td><input class="p2-policy-max" type="number" min="0" step="1" value="${Number(row.maximo||0)}" aria-label="Máximo"></td>
           <td>${p2Numero(row.avg7,2)}</td><td>${p2Numero(row.avg30,2)}</td><td>${p2Numero(row.avg90,2)}</td>
           <td class="${row.coverageDays!==null && row.coverageDays<=row.leadDays?'p2-bad':''}">${coverage}</td>
-          <td>${p2Numero(row.onOrder,2)}</td><td class="${row.suggestedOrder>0?'p2-warn':''}"><input class="p2-order-qty" type="number" min="0" step="1" value="${Number(row.suggestedOrder||0)}" aria-label="Cantidad a pedir"></td>
+          <td>${p2Numero(row.onOrder,2)}</td><td class="${row.suggestedOrder>0?'p2-warn':''}"><input class="p2-order-qty" type="number" min="0" step="1" value="${qtyOrden}" aria-label="Cantidad a pedir"></td>
           <td>${p2Dinero(row.cost)}</td><td>${p2Dinero(row.price)}</td><td class="${claseMargenP2(row)}">${gain}</td>
           <td>${escapeHTML(row.supplier || row.preferredSupplier || 'SIN PROVEEDOR')}</td>
           <td><button type="button" class="btn secondary p2-product-detail" style="padding:6px 8px">Analizar</button>${row.excluded?'<button type="button" class="btn success p2-product-reactivate" style="padding:6px 8px;margin-left:4px">Reactivar</button>':''}</td>
         </tr>`;
       }).join('');
       tbody.querySelectorAll('tr[data-code]').forEach(tr => {
-        tr.querySelector('.p2-resurtido-check')?.addEventListener('change', e => tr.classList.toggle('p2-selected', e.target.checked));
+        const checkbox = tr.querySelector('.p2-resurtido-check');
+        const qtyInput = tr.querySelector('.p2-order-qty');
+        checkbox?.addEventListener('change', e => {
+          const codigo = String(tr.dataset.code || '');
+          const row = p2RentabilidadEstado.rowByCode.get(codigo);
+          tr.classList.toggle('p2-selected', e.target.checked);
+          if (e.target.checked && row) {
+            p2RentabilidadEstado.selectedRows.set(codigo, {...row, orderedQty:Math.max(0,Number(qtyInput?.value||row.suggestedOrder||0)||0)});
+          } else {
+            p2RentabilidadEstado.selectedRows.delete(codigo);
+          }
+          actualizarSeleccionTodosP2();
+        });
+        const actualizarCantidadSeleccionada = () => {
+          const codigo = String(tr.dataset.code || '');
+          if (!checkbox?.checked || !p2RentabilidadEstado.selectedRows.has(codigo)) return;
+          const row = p2RentabilidadEstado.rowByCode.get(codigo) || p2RentabilidadEstado.selectedRows.get(codigo);
+          p2RentabilidadEstado.selectedRows.set(codigo, {...row, orderedQty:Math.max(0,Number(qtyInput?.value||0)||0)});
+        };
+        qtyInput?.addEventListener('input', actualizarCantidadSeleccionada);
+        qtyInput?.addEventListener('change', actualizarCantidadSeleccionada);
         const saveQuick = async () => {
           const row = p2RentabilidadEstado.rowByCode.get(tr.dataset.code); if (!row) return;
           const minimo = Number(tr.querySelector('.p2-policy-min')?.value || 0);
@@ -34316,6 +34452,7 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
           await cargarRentabilidad({ force:true });
         });
       });
+      actualizarSeleccionTodosP2();
     }
 
     async function cargarRentabilidad({ force=false, mantenerPagina=false } = {}) {
@@ -34332,6 +34469,7 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
           pageSize:100,
           search:document.getElementById('rentabilidad-buscar')?.value || '',
           department:document.getElementById('rentabilidad-departamento')?.value || 'TODOS',
+          supplier:document.getElementById('rentabilidad-proveedor-filtro')?.value || 'TODOS',
           view:document.getElementById('rentabilidad-vista')?.value || 'COMPRAR'
         });
         if (!result?.ok) throw new Error(result?.error || 'No se pudo calcular rentabilidad.');
@@ -34339,6 +34477,7 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
         renderKpisRentabilidad(result.kpis || {});
         llenarSelectDepartamentosP2('rentabilidad-departamento', result.departments || []);
         llenarSelectDepartamentosP2('conteo-departamento', result.departments || []);
+        llenarSelectProveedoresP2(result.suppliers || []);
         renderTablaRentabilidad(result.rows || []);
         const pageInfo=document.getElementById('rentabilidad-pagina'); if(pageInfo) pageInfo.textContent=`Página ${p2RentabilidadEstado.page} / ${p2RentabilidadEstado.pages}`;
         const prev=document.getElementById('rentabilidad-anterior'), next=document.getElementById('rentabilidad-siguiente'); if(prev) prev.disabled=p2RentabilidadEstado.page<=1; if(next) next.disabled=p2RentabilidadEstado.page>=p2RentabilidadEstado.pages;
@@ -34348,11 +34487,11 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
       } finally { p2RentabilidadEstado.loading=false; }
     }
     async function obtenerRentabilidadCompletaFiltrada() {
-      const first = await window.macroxelLocalDB.profitabilitySnapshot({ force:true, page:1, pageSize:500, search:document.getElementById('rentabilidad-buscar')?.value||'', department:document.getElementById('rentabilidad-departamento')?.value||'TODOS', view:document.getElementById('rentabilidad-vista')?.value||'COMPRAR' });
+      const first = await window.macroxelLocalDB.profitabilitySnapshot({ force:true, page:1, pageSize:500, search:document.getElementById('rentabilidad-buscar')?.value||'', department:document.getElementById('rentabilidad-departamento')?.value||'TODOS', supplier:document.getElementById('rentabilidad-proveedor-filtro')?.value||'TODOS', view:document.getElementById('rentabilidad-vista')?.value||'COMPRAR' });
       if (!first?.ok) throw new Error(first?.error || 'No se pudo preparar el reporte.');
       const rows=[...(first.rows||[])];
       for(let page=2; page<=Number(first.pages||1); page++){
-        const r=await window.macroxelLocalDB.profitabilitySnapshot({ force:false, page, pageSize:500, search:document.getElementById('rentabilidad-buscar')?.value||'', department:document.getElementById('rentabilidad-departamento')?.value||'TODOS', view:document.getElementById('rentabilidad-vista')?.value||'COMPRAR' });
+        const r=await window.macroxelLocalDB.profitabilitySnapshot({ force:false, page, pageSize:500, search:document.getElementById('rentabilidad-buscar')?.value||'', department:document.getElementById('rentabilidad-departamento')?.value||'TODOS', supplier:document.getElementById('rentabilidad-proveedor-filtro')?.value||'TODOS', view:document.getElementById('rentabilidad-vista')?.value||'COMPRAR' });
         if(!r?.ok) throw new Error(r?.error||'No se pudo completar el reporte.'); rows.push(...(r.rows||[]));
       }
       return rows;
@@ -34388,19 +34527,28 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
     }
 
     async function crearOrdenDesdeSeleccion() {
-      const selected = Array.from(document.querySelectorAll('#tabla-resurtido tbody .p2-resurtido-check:checked')).map(input=>{
-        const tr=input.closest('tr'); const r=p2RentabilidadEstado.rowByCode.get(tr?.dataset?.code); if(!r) return null;
-        return {...r, orderedQty:Math.max(0,Number(tr.querySelector('.p2-order-qty')?.value||0)||0)};
-      }).filter(Boolean);
-      if (!selected.length) return alert('SELECCIONA LOS PRODUCTOS QUE QUIERES INCLUIR EN LA ORDEN DE COMPRA.');
-      const items = selected.filter(r=>Number(r.orderedQty||0)>0).map(r=>({ codigo:r.codigo, producto:r.producto, supplier:r.supplier || r.preferredSupplier || 'SIN PROVEEDOR', suggestedQty:r.suggestedOrder, orderedQty:r.orderedQty, unitCost:r.lastPurchaseCost || r.cost || 0, stock:r.stock, minimo:r.minimo, maximo:r.maximo }));
-      if (!items.length) return alert('LOS PRODUCTOS SELECCIONADOS NO TIENEN CANTIDAD SUGERIDA POR COMPRAR.');
-      if (!(await confirmarSistema(`¿CREAR ORDEN(ES) DE COMPRA PARA ${items.length} PRODUCTO(S)? SE AGRUPARÁN AUTOMÁTICAMENTE POR PROVEEDOR.`))) return;
+      const targetSupplier = String(document.getElementById('rentabilidad-proveedor-orden')?.value || '').trim().toUpperCase();
+      if (!targetSupplier || targetSupplier === 'SIN PROVEEDOR') return alert('SELECCIONA EL PROVEEDOR AL QUE VA DIRIGIDA LA ORDEN DE COMPRA.');
+      const selectedMap = p2RentabilidadEstado.selectedRows;
+      const selectedCodes = Array.from(selectedMap.keys()).filter(Boolean);
+      if (!selectedCodes.length) return alert('SELECCIONA LOS PRODUCTOS QUE QUIERES INCLUIR EN LA ORDEN DE COMPRA.');
       try {
-        const r=await window.macroxelLocalDB.purchaseOrdersCreate({ items, user:p2Usuario() });
+        const latest = await window.macroxelLocalDB.profitabilitySnapshot({ force:true, codes:selectedCodes });
+        if (!latest?.ok) throw new Error(latest?.error || 'No se pudieron validar los productos seleccionados.');
+        const items = (latest.rows || []).map(r => {
+          const selected = selectedMap.get(String(r.codigo || '')) || {};
+          const orderedQty = Math.max(0,Number(selected.orderedQty ?? r.suggestedOrder ?? 0)||0);
+          return { codigo:r.codigo, producto:r.producto, supplier:targetSupplier, suggestedQty:r.suggestedOrder, orderedQty, unitCost:r.lastPurchaseCost || r.cost || 0, stock:r.stock, minimo:r.minimo, maximo:r.maximo };
+        }).filter(r=>Number(r.orderedQty||0)>0);
+        if (!items.length) return alert('LOS PRODUCTOS SELECCIONADOS NO TIENEN UNA CANTIDAD MAYOR A CERO PARA COMPRAR.');
+        if (!(await confirmarSistema(`¿CREAR UNA ORDEN DE COMPRA PARA ${targetSupplier} CON ${items.length} PRODUCTO(S)?`))) return;
+        const r=await window.macroxelLocalDB.purchaseOrdersCreate({ items, user:p2Usuario(), targetSupplier, requireSupplier:true });
         if(!r?.ok) throw new Error(r?.error||'No se pudo crear la orden.');
-        await notificarSistema(`SE CREARON ${r.orders?.length||0} ORDEN(ES) DE COMPRA.`, 'Órdenes de compra');
-        await cargarRentabilidad({ force:true });
+        p2RentabilidadEstado.selectedRows.clear();
+        actualizarSeleccionTodosP2();
+        const folios=(r.orders||[]).map(o=>o.folio).filter(Boolean).join(', ');
+        await notificarSistema(`ORDEN DE COMPRA ${folios || ''} CREADA PARA ${targetSupplier}.`, 'Órdenes de compra');
+        await cargarRentabilidad({ force:true, mantenerPagina:true });
         await cargarOrdenesCompra();
       } catch(error){ await notificarSistema(error?.message||error,'Órdenes de compra'); }
     }
@@ -34473,7 +34621,7 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
       }catch(error){await notificarSistema(error?.message||error,'Órdenes de compra');}
     }
     async function seleccionarOrdenCompra(id, recargarLista=true){
-      p2OrdenesEstado.selectedId=Number(id||0); if(!id) return;
+      p2OrdenesEstado.selectedId=Number(id||0); p2OrdenesEstado.editing=false; if(!id) return;
       try{
         const r=await window.macroxelLocalDB.purchaseOrderDetail({id}); if(!r?.ok) throw new Error(r?.error||'No se pudo abrir la orden.');
         const o=r.order; const detail=document.getElementById('oc-detalle'); const sinFinanzas=false;
@@ -34481,6 +34629,78 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
         if(recargarLista) await cargarOrdenesCompra();
       }catch(error){await notificarSistema(error?.message||error,'Órdenes de compra');}
     }
+
+    async function editarOrdenCompra(){
+      if(!p2OrdenesEstado.selectedId) return alert('SELECCIONA UNA ORDEN DE COMPRA.');
+      if(!window.macroxelLocalDB?.purchaseOrderDetail) return;
+      try{
+        const r=await window.macroxelLocalDB.purchaseOrderDetail({id:p2OrdenesEstado.selectedId});
+        if(!r?.ok || !r.order) throw new Error(r?.error||'No se pudo abrir la orden.');
+        const o=r.order;
+        if(['RECIBIDA','CANCELADA'].includes(String(o.status||'').toUpperCase())) return alert('UNA ORDEN RECIBIDA O CANCELADA YA NO PUEDE EDITARSE.');
+        const detail=document.getElementById('oc-detalle');
+        const proveedores=proveedoresDisponiblesP2([o.supplier]).filter(p=>p!=='SIN PROVEEDOR');
+        const opciones=proveedores.map(p=>`<option value="${escapeHTML(p)}" ${String(p)===String(o.supplier)?'selected':''}>${escapeHTML(p)}</option>`).join('');
+        p2OrdenesEstado.editing=true;
+        detail.innerHTML=`<div class="p2-detail-edit">
+          <h3>EDITAR ${escapeHTML(o.folio||'ORDEN')}</h3>
+          <div class="p2-detail-edit-head">
+            <div><label><strong>Proveedor</strong></label><select id="oc-edit-supplier"><option value="">SELECCIONA PROVEEDOR</option>${opciones}</select></div>
+            <button type="button" class="btn success" id="btn-oc-edit-guardar">Guardar cambios</button>
+            <button type="button" class="btn secondary" id="btn-oc-edit-cancelar">Cancelar edición</button>
+          </div>
+          <div class="p2-detail-edit-note">Puedes cambiar proveedor, cantidad ordenada y costo. Una partida con piezas recibidas no puede eliminarse ni quedar con una cantidad menor a lo ya recibido.</div>
+          <div class="p2-detail-edit-lines">${(o.lines||[]).map(l=>`<div class="p2-detail-edit-line" data-line-id="${Number(l.id||0)}">
+            <span><strong>${escapeHTML(l.codigo||'')}</strong><br>${escapeHTML(l.producto||'')}</span>
+            <input class="oc-edit-qty" type="number" min="${Math.max(0,Number(l.receivedQty||0)||0)}" step="1" value="${Number(l.orderedQty||0)}" title="Cantidad ordenada">
+            <span class="received">REC. ${p2Numero(l.receivedQty||0)}</span>
+            <input class="oc-edit-cost" type="number" min="0" step="0.01" value="${Number(l.unitCost||0)}" title="Costo unitario">
+            <button type="button" class="btn danger oc-edit-remove" ${Number(l.receivedQty||0)>0?'disabled title="No puede quitarse porque ya tiene piezas recibidas"':''}>Quitar</button>
+          </div>`).join('')}</div>
+        </div>`;
+        detail.querySelectorAll('.oc-edit-remove').forEach(btn=>btn.addEventListener('click',()=>btn.closest('.p2-detail-edit-line')?.remove()));
+        document.getElementById('btn-oc-edit-guardar')?.addEventListener('click',guardarEdicionOrdenCompra);
+        document.getElementById('btn-oc-edit-cancelar')?.addEventListener('click',()=>seleccionarOrdenCompra(p2OrdenesEstado.selectedId,false));
+      }catch(error){await notificarSistema(error?.message||error,'Órdenes de compra');}
+    }
+
+    async function guardarEdicionOrdenCompra(){
+      if(!p2OrdenesEstado.selectedId) return;
+      const supplier=String(document.getElementById('oc-edit-supplier')?.value||'').trim().toUpperCase();
+      if(!supplier || supplier==='SIN PROVEEDOR') return alert('SELECCIONA UN PROVEEDOR VÁLIDO.');
+      const lines=Array.from(document.querySelectorAll('#oc-detalle .p2-detail-edit-line')).map(row=>({
+        id:Number(row.dataset.lineId||0),
+        orderedQty:Math.max(0,Number(row.querySelector('.oc-edit-qty')?.value||0)||0),
+        unitCost:Math.max(0,Number(row.querySelector('.oc-edit-cost')?.value||0)||0)
+      })).filter(x=>x.id);
+      if(!lines.length) return alert('LA ORDEN DEBE CONSERVAR AL MENOS UNA PARTIDA.');
+      try{
+        const r=await window.macroxelLocalDB.purchaseOrderUpdate({id:p2OrdenesEstado.selectedId,supplier,lines,user:p2Usuario()});
+        if(!r?.ok) throw new Error(r?.error||'No se pudo actualizar la orden.');
+        p2OrdenesEstado.editing=false;
+        await notificarSistema('ORDEN DE COMPRA ACTUALIZADA CORRECTAMENTE.','Órdenes de compra');
+        await cargarOrdenesCompra();
+        await cargarRentabilidad({force:true,mantenerPagina:true});
+      }catch(error){await notificarSistema(error?.message||error,'Órdenes de compra');}
+    }
+
+    async function eliminarOrdenCompra(){
+      if(!p2OrdenesEstado.selectedId) return alert('SELECCIONA UNA ORDEN DE COMPRA.');
+      if(!(await confirmarSistema('¿ELIMINAR DEFINITIVAMENTE LA ORDEN DE COMPRA SELECCIONADA? SOLO SE PERMITE SI NO TIENE PIEZAS RECIBIDAS.'))) return;
+      try{
+        const r=await window.macroxelLocalDB.purchaseOrderDelete({id:p2OrdenesEstado.selectedId,user:p2Usuario()});
+        if(!r?.ok) throw new Error(r?.error||'No se pudo eliminar la orden.');
+        const folio=r.folio||'';
+        p2OrdenesEstado.selectedId=0;
+        p2OrdenesEstado.editing=false;
+        const detail=document.getElementById('oc-detalle');
+        if(detail) detail.innerHTML='<h3>Detalle de orden</h3><p>Selecciona una orden para consultar sus partidas.</p>';
+        await notificarSistema(`ORDEN ${folio} ELIMINADA CORRECTAMENTE.`,'Órdenes de compra');
+        await cargarOrdenesCompra();
+        await cargarRentabilidad({force:true,mantenerPagina:true});
+      }catch(error){await notificarSistema(error?.message||error,'Órdenes de compra');}
+    }
+
     async function exportarOrdenCompraPDF(){
       if(!p2OrdenesEstado.selectedId) return alert('SELECCIONA UNA ORDEN DE COMPRA PARA GENERAR EL PDF.');
       try{
@@ -34694,13 +34914,15 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
       document.getElementById('btn-rentabilidad-config')?.addEventListener('click',abrirConfigRentabilidad);document.getElementById('btn-rentabilidad-excel')?.addEventListener('click',exportarRentabilidadExcelP2);document.getElementById('btn-rentabilidad-pdf')?.addEventListener('click',exportarRentabilidadPdfP2);
       document.getElementById('rentabilidad-buscar')?.addEventListener('input',()=>p2Debounce('timer',()=>cargarRentabilidad({force:false}),220));
       document.getElementById('rentabilidad-departamento')?.addEventListener('change',()=>cargarRentabilidad({force:false}));
+      document.getElementById('rentabilidad-proveedor-filtro')?.addEventListener('change',()=>cargarRentabilidad({force:false}));
       document.getElementById('rentabilidad-vista')?.addEventListener('change',()=>cargarRentabilidad({force:false}));
+      document.getElementById('rentabilidad-seleccionar-todos')?.addEventListener('change',e=>alternarSeleccionVisibleP2(e.target.checked));
       document.getElementById('rentabilidad-anterior')?.addEventListener('click',()=>{if(p2RentabilidadEstado.page>1){p2RentabilidadEstado.page--;cargarRentabilidad({mantenerPagina:true});}});
       document.getElementById('rentabilidad-siguiente')?.addEventListener('click',()=>{if(p2RentabilidadEstado.page<p2RentabilidadEstado.pages){p2RentabilidadEstado.page++;cargarRentabilidad({mantenerPagina:true});}});
       document.getElementById('btn-rentabilidad-producto-cerrar')?.addEventListener('click',cerrarDetalleRentabilidad);document.getElementById('btn-rentabilidad-producto-guardar')?.addEventListener('click',guardarDetalleRentabilidad);document.getElementById('btn-rentabilidad-historial')?.addEventListener('click',mostrarHistorialPrecioP2);document.getElementById('btn-rentabilidad-proveedores')?.addEventListener('click',mostrarComparacionProveedoresP2);
       document.getElementById('btn-rentabilidad-config-cerrar')?.addEventListener('click',cerrarConfigRentabilidad);document.getElementById('btn-rentabilidad-config-guardar')?.addEventListener('click',guardarConfigRentabilidad);
       document.getElementById('modal-rentabilidad-producto')?.addEventListener('click',e=>{if(e.target.id==='modal-rentabilidad-producto')cerrarDetalleRentabilidad();});document.getElementById('modal-rentabilidad-config')?.addEventListener('click',e=>{if(e.target.id==='modal-rentabilidad-config')cerrarConfigRentabilidad();});
-      document.getElementById('btn-oc-actualizar')?.addEventListener('click',cargarOrdenesCompra);document.getElementById('oc-status')?.addEventListener('change',cargarOrdenesCompra);document.getElementById('oc-buscar')?.addEventListener('input',()=>setTimeout(cargarOrdenesCompra,150));document.getElementById('btn-oc-pdf')?.addEventListener('click',exportarOrdenCompraPDF);document.getElementById('btn-oc-enviar')?.addEventListener('click',()=>cambiarEstadoOrden('ENVIADA'));document.getElementById('btn-oc-cancelar')?.addEventListener('click',()=>cambiarEstadoOrden('CANCELADA'));
+      document.getElementById('btn-oc-actualizar')?.addEventListener('click',cargarOrdenesCompra);document.getElementById('oc-status')?.addEventListener('change',cargarOrdenesCompra);document.getElementById('oc-buscar')?.addEventListener('input',()=>setTimeout(cargarOrdenesCompra,150));document.getElementById('btn-oc-pdf')?.addEventListener('click',exportarOrdenCompraPDF);document.getElementById('btn-oc-editar')?.addEventListener('click',editarOrdenCompra);document.getElementById('btn-oc-enviar')?.addEventListener('click',()=>cambiarEstadoOrden('ENVIADA'));document.getElementById('btn-oc-cancelar')?.addEventListener('click',()=>cambiarEstadoOrden('CANCELADA'));document.getElementById('btn-oc-eliminar')?.addEventListener('click',eliminarOrdenCompra);
       document.getElementById('btn-conteo-iniciar')?.addEventListener('click',iniciarConteoFisico);document.getElementById('btn-conteo-finalizar')?.addEventListener('click',finalizarConteoFisico);document.getElementById('btn-conteo-cancelar')?.addEventListener('click',cancelarConteoFisico);document.getElementById('btn-conteo-limpiar-filtro')?.addEventListener('click',limpiarFiltroConteo);document.getElementById('conteo-buscar')?.addEventListener('input',ev=>{clearTimeout(p2ConteoEstado.timer);const term=String(ev.target?.value||'').trim();if(!term)return;p2ConteoEstado.timer=setTimeout(()=>{p2ConteoEstado.filter=term;p2ConteoEstado.page=1;p2ConteoEstado.selectedLineId=0;actualizarFiltroActivoConteo();cargarConteoActivo();},180);});document.getElementById('conteo-buscar')?.addEventListener('keydown',ev=>{if(ev.key==='Enter'){ev.preventDefault();escanearConteoFisico();}});document.getElementById('conteo-anterior')?.addEventListener('click',()=>{if(p2ConteoEstado.page>1){p2ConteoEstado.page--;cargarConteoActivo();}});document.getElementById('conteo-siguiente')?.addEventListener('click',()=>{if(p2ConteoEstado.page<p2ConteoEstado.pages){p2ConteoEstado.page++;cargarConteoActivo();}});
       // La migración legacy de Resurtido toca SQLite. Se ejecuta al abrir
       // Rentabilidad/Abastecimiento, nunca durante el login.
