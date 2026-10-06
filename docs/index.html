@@ -6867,7 +6867,7 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
 })();
 
 </script>
-  <script id="macroxel-web-bootstrap" type="application/json">{"version":0,"source":"Macroxel FarmaControl","purpose":"web-mirror","unlinked":true}</script>
+  <script id="macroxel-web-bootstrap" type="application/json">{"version":5,"source":"Macroxel FarmaControl","purpose":"ecosystem-central","firebaseUrl":"https://puntosdeventaconectados-default-rtdb.firebaseio.com","firebaseDatabaseUrl":"https://puntosdeventaconectados-default-rtdb.firebaseio.com","githubUrl":"https://macroxelarista-tech.github.io/ESPEJO-PUNTO-DE-VENTA/","tiendaId":"FARMACIA_DE_LA_CALLE_DE_ARISTA,_S_A_DE_C_V","channelId":"FARMACIA_DE_LA_CALLE_DE_ARISTA,_S_A_DE_C_V","storeId":"FARMACIA_DE_LA_CALLE_DE_ARISTA,_S_A_DE_C_V","pharmacyName":"FARMACIA DE LA CALLE DE ARISTA, S.A. DE C.V.","pharmacyAddress":"ARISTA 19, COL. GUERRERO, 06300, ALCALDÍA CUAUHTÉMOC, CDMX","pharmacyPhone":"5555460980","mapsUrl":"","modules":["web-mirror","kardex-financial-traceability","mi-farmacia"],"routes":{"espejo":"./","reportes":"reportes/","miFarmacia":"mi-farmacia/"},"updatedAt":"2026-10-03T19:17:50.982Z"}</script>
 <script>
 /* MACROXEL WEB MIRROR · GitHub Pages
    No muestra ni solicita API Key. La configuración se descubre desde macroxel-config.json
@@ -6877,7 +6877,7 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
   window.MACROXEL_WEB_MIRROR = true;
   window.MACROXEL_WEB_NO_LICENSE = true;
   const WEB = window.MacroxelWebMirror = {
-    build:'web-mirror-v1.3.0', config:null, ready:false, linked:false, dirty:false, readOnly:true,
+    build:'web-mirror-v1.3.1', config:null, ready:false, linked:false, dirty:false, readOnly:true,
     deviceId:'', lastRemoteRevision:'', applying:false, timer:null, syncBusy:false,
     statusText:'Iniciando espejo web…', connectedToPrincipal:false, lastPrincipalSeenAt:'', tableRows:Object.create(null)
   };
@@ -6969,8 +6969,12 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
   }
   function localData(){const out={};try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(!k||EXCLUDED_KEY.test(k)||k===SNAPSHOT_KEY||k===CONFIG_KEY)continue;const v=localStorage.getItem(k);if(v!==null&&String(v).length<3_000_000)out[k]=v}}catch(_){}return out}
   function domData(){const out={};for(const id of TABLE_IDS){const el=document.getElementById(id);if(!el)continue;const body=el.tBodies?.[0];if(!body)continue;const h=body.innerHTML||'';if(h.length<=8_000_000)out[id]=h}return out}
+  function recordarCortesPublicados(store, tablas){
+    WEB.tablasDomPublicadas=tablas&&typeof tablas==='object'?{...tablas}:{};
+    WEB.cortesRegistrosPublicados=Object.prototype.hasOwnProperty.call(store||{},'macroxelCortesCaja');
+  }
   function applySnapshot(s){
-    if(!s||typeof s!=='object')return false;WEB.applying=true;try{const data=s.localStorage||s.store||{};for(const [k,v] of Object.entries(data)){if(EXCLUDED_KEY.test(k))continue;if(v===null||v===undefined)localStorage.removeItem(k);else localStorage.setItem(k,String(v))}for(const [id,h] of Object.entries(s.tables||s.domTables||{})){const el=document.getElementById(id);if(el?.tBodies?.[0]&&typeof h==='string')el.tBodies[0].innerHTML=h}WEB.lastRemoteRevision=String(s.revision||'');try{localStorage.setItem(SNAPSHOT_KEY,JSON.stringify({revision:s.revision||'',updatedAt:s.updatedAt||'',deviceId:s.deviceId||''}))}catch(_){}window.dispatchEvent(new CustomEvent('macroxel-webmirror-applied',{detail:{revision:s.revision||'',deviceId:s.deviceId||''}}));return true}finally{WEB.applying=false}}
+    if(!s||typeof s!=='object')return false;WEB.applying=true;try{const data=s.localStorage||s.store||{};recordarCortesPublicados(data,s.tables||s.domTables||{});for(const [k,v] of Object.entries(data)){if(EXCLUDED_KEY.test(k))continue;if(v===null||v===undefined)localStorage.removeItem(k);else localStorage.setItem(k,String(v))}for(const [id,h] of Object.entries(s.tables||s.domTables||{})){const el=document.getElementById(id);if(el?.tBodies?.[0]&&typeof h==='string')el.tBodies[0].innerHTML=h}WEB.lastRemoteRevision=String(s.revision||'');try{localStorage.setItem(SNAPSHOT_KEY,JSON.stringify({revision:s.revision||'',updatedAt:s.updatedAt||'',deviceId:s.deviceId||''}))}catch(_){}window.dispatchEvent(new CustomEvent('macroxel-webmirror-applied',{detail:{revision:s.revision||'',deviceId:s.deviceId||''}}));return true}finally{WEB.applying=false}}
   function renderSerializedRows(tableId,rows){
     const table=document.getElementById(tableId),body=table?.tBodies?.[0];if(!body)return false;
     body.innerHTML='';
@@ -7005,6 +7009,7 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
       try{window.aplicarPermisosUsuarioActual?.()}catch(_){}
       try{window.marcarResumenDiaPendiente?.();window.actualizarResumenDiaSiActivo?.()}catch(_){}
       try{window.marcarDashboardPendiente?.();if(window.moduloActivoId?.('dashboard'))window.renderDashboard?.()}catch(_){}
+      try{window.renderCortes?.({forzar:window.moduloActivoId?.('corte')===true})}catch(_){}
       try{if(window.moduloActivoId?.('financiero'))window.renderReportesFinancieros?.()}catch(_){}
       try{if(window.moduloActivoId?.('bitacora-limpieza'))window.renderBitacoraLimpieza?.()}catch(_){}
       try{if(window.moduloActivoId?.('temperatura'))window.renderTemperatura?.()}catch(_){}
@@ -7032,6 +7037,7 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
     await Promise.all((Array.isArray(m.tables)?m.tables:[]).map(async t=>{const id=String(t?.tableId||'');if(!id)return;const count=Math.max(0,Number(t?.chunkCount||0)||0);const parts=await Promise.all(Array.from({length:count},(_,i)=>getPublic(['tables',id,String(i)],config)));tables[id]=parts.flatMap(x=>Array.isArray(x?.data?.rows)?x.data.rows:[])}));
     if(!sameConnection(config))return{ok:false,principalAvailable:false,stale:true};
     WEB.applying=true;try{
+      recordarCortesPublicados(storeR.data,domR.data);
       for(const [k,v] of Object.entries(storeR.data&&typeof storeR.data==='object'?storeR.data:{})){if(EXCLUDED_KEY.test(k))continue;if(v===null||v===undefined)localStorage.removeItem(k);else localStorage.setItem(k,String(v))}
       for(const [id,h] of Object.entries(domR.data&&typeof domR.data==='object'?domR.data:{})){const el=document.getElementById(id);if(el?.tBodies?.[0]&&typeof h==='string')el.tBodies[0].innerHTML=h}
       WEB.tableRows=tables;
@@ -48603,6 +48609,7 @@ ${error?.message || error}`); }
 
     function guardarCortes(datos) {
       localStorage.setItem(CORTES_KEY, JSON.stringify(Array.isArray(datos) ? datos : []));
+      if (window.MACROXEL_WEB_MIRROR !== true) programarPublicacionEspejoWebPrincipal('HISTORIAL_CORTES', { inmediato:true });
     }
 
     function obtenerSiguienteNumeroCorte(fechaISO, usuario, datos = null) {
@@ -49059,7 +49066,9 @@ ${error?.message || error}`); }
       const resumen = document.getElementById('corte-resumen-sistema');
       if (resumen) resumen.style.display = admin ? '' : 'none';
       const btnEliminarCorte = document.getElementById('btn-eliminar-corte-historial');
-      if (btnEliminarCorte) btnEliminarCorte.style.display = admin ? '' : 'none';
+      if (btnEliminarCorte) btnEliminarCorte.style.display = admin && window.MACROXEL_WEB_MIRROR !== true ? '' : 'none';
+      const registrarWeb = document.getElementById('btn-registrar-corte');
+      if (registrarWeb && window.MACROXEL_WEB_MIRROR === true) registrarWeb.style.display = 'none';
       const btnReimprimirCorte = document.getElementById('btn-pdf-corte-seleccionado');
       if (btnReimprimirCorte) {
         btnReimprimirCorte.style.display = '';
@@ -49145,10 +49154,46 @@ ${error?.message || error}`); }
       return corteHistorialMesFiltro;
     }
 
+    function renderCortesPublicadosWeb(opciones = {}) {
+      const espejo = window.MacroxelWebMirror;
+      if (window.MACROXEL_WEB_MIRROR !== true || !espejo || espejo.cortesRegistrosPublicados === true) return false;
+      const publicado = espejo.tablasDomPublicadas?.['tabla-cortes'];
+      if (typeof publicado !== 'string') return false;
+      const tbody = document.querySelector('#tabla-cortes tbody');
+      if (!tbody) return false;
+      const fuente = document.createElement('tbody');
+      fuente.innerHTML = publicado;
+      const registros = Array.from(fuente.rows).filter(tr => tr.cells.length >= 19 && !tr.classList.contains('empty-row')).map(tr => ({
+        fecha: String(tr.cells[1]?.textContent || '').trim(),
+        usuario: String(tr.cells[2]?.textContent || '').trim(),
+        fila: tr
+      }));
+      actualizarFiltroMesHistorialCortes(registros);
+      const filas = registros.filter(item => corteHistorialMesFiltro === 'TODOS' || mesHistorialCorte(item) === corteHistorialMesFiltro);
+      tbody.innerHTML = '';
+      for (const item of filas) {
+        const tr = item.fila.cloneNode(true);
+        tr.removeAttribute('data-corte-index');
+        tr.classList.remove('fila-seleccionada');
+        tbody.appendChild(tr);
+      }
+      if (!filas.length) tbody.innerHTML = `<tr class="empty-row"><td colspan="19">Sin cortes registrados en ${escapeHTML(etiquetaMesHistorialCorte(corteHistorialMesFiltro))}</td></tr>`;
+      corteSeleccionadoIndex = null;
+      actualizarResumenCortePantalla({ forzarResumen: !!opciones.forzarResumen });
+      aplicarPrivacidadCortes();
+      const reimprimir = document.getElementById('btn-pdf-corte-seleccionado');
+      if (reimprimir) {
+        reimprimir.disabled = true;
+        reimprimir.title = 'La reimpresión completa estará disponible cuando el principal sincronice los registros completos del corte.';
+      }
+      return true;
+    }
+
     function renderCortes(opciones = {}) {
       if (!opciones.forzar && !moduloActivoId('corte')) { marcarPaginacionPendiente('tabla-cortes'); return; }
       const tbody = document.querySelector('#tabla-cortes tbody');
       if (!tbody) return;
+      if (renderCortesPublicadosWeb(opciones)) return;
       const datos = leerCortes();
       actualizarFiltroMesHistorialCortes(datos);
       if (!datos.length) {
@@ -56405,3 +56450,4 @@ EN FARMACIA COMUNITARIA NO DEBEN DISPENSARSE COMO VENTA ORDINARIA.`, 'Antimicrob
 </script>
 </body>
 </html>
+
