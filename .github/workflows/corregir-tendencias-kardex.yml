@@ -1,0 +1,69 @@
+name: Corregir calculo de Tendencias Kardex
+on:
+  push:
+    paths:
+      - '.github/workflows/corregir-tendencias-kardex.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  correccion:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Aplicar correccion puntual sin cambiar datos
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess
+          p=Path('docs/index.html')
+          code=p.read_text(encoding='utf-8')
+          if 'function webKardexPrecioFinal(c)' in code:
+              print('Correccion ya aplicada.')
+              raise SystemExit(0)
+          current=subprocess.check_output(['git','hash-object','docs/index.html'],text=True).strip()
+          if current!='4be9c84504c109f2edf4573ea6249db78bfe1c24':
+              raise SystemExit('Version distinta detectada; no se modifica sin revision.')
+          def change(before,after):
+              global code
+              n=code.count(before)
+              if n!=1:raise RuntimeError('Se esperaba una coincidencia, hay '+str(n)+' para '+repr(before[:80]))
+              code=code.replace(before,after,1)
+          change("function webRows(tableId){return Array.isArray(WEB.tableRows?.[tableId])?WEB.tableRows[tableId]:[]}", """function webRows(tableId){
+            // Soporta el formato de publicacion V2 y tambien V1 (tablas HTML).
+            const published=WEB.tableRows?.[tableId];
+            if(Array.isArray(published)&&published.length)return published;
+            const table=document.getElementById(tableId);
+            if(!table?.tBodies?.[0])return Array.isArray(published)?published:[];
+            const rows=Array.from(table.tBodies[0].rows).filter(r=>!r.classList.contains('empty-row'))
+              .map(r=>({cells:Array.from(r.cells).map(c=>String(c.textContent||'').trim()),attrs:{dataset:{...r.dataset}}}));
+            return rows.length?rows:(Array.isArray(published)?published:[]);
+          }""")
+          change('  function webKardexRows(payload={}){',"""  // Kardex antiguo: 17 columnas. Nuevo: 18 (incluye precio maximo).
+          function webKardexPrecioFinal(c){return c?.[Array.isArray(c)&&c.length>=18?14:13]}
+          function webKardexUsuario(c){return c?.[Array.isArray(c)&&c.length>=18?15:14]}
+          function webKardexRows(payload={}){""")
+          change('!webNorm(c[14]).includes(usr)','!webNorm(webKardexUsuario(c)).includes(usr)')
+          change("const movement=webNorm(c[7]),user=webNorm(c[14])||'ADMIN'","const movement=webNorm(c[7]),user=webNorm(webKardexUsuario(c))||'ADMIN'")
+          change('const qty=Math.abs(webNum(c[8])||1),price=webNum(c[13]),unitCost=webNum(c[12]),folio=webNorm(c[1]);',
+                 'const qty=Math.abs(webNum(c[8])),price=webNum(webKardexPrecioFinal(c)),unitCost=webNum(c[12]),folio=webNorm(c[1]);if(!qty)continue;')
+          change('allK.map(r=>webNorm(webCells(r)[14]))','allK.map(r=>webNorm(webKardexUsuario(webCells(r))))')
+          p.write_text(code,encoding='utf-8')
+          print('Cambiado el calculo de ventas, sin alterar ningun dato de operacion.')
+          PY
+      - name: Guardar correccion en rama principal
+        shell: bash
+        run: |
+          if git diff --quiet -- docs/index.html; then
+            echo "Sin cambios adicionales."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/index.html
+            git commit -m "Fix: calculo tendencias desde Kardex compatible con V1 y V2"
+            git push origin HEAD:main
+          fi
