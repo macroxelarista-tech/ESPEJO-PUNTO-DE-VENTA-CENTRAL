@@ -587,3 +587,16 @@
 
   global.MacroxelFarmacoterapeutica = Object.freeze({ prepare, refresh, exportCatalog, exportSelected, version:'1.0.0' });
 })(window);
+
+/* Macroxel visor web | Tendencias proveedor 2026-11-16
+   Complemento de sólo lectura. No modifica el origen de datos del punto de venta. */
+;(function cargarMacroxelTendenciasWeb(){
+  if(window.__macroxelTrendWebPatchRequested)return;
+  window.__macroxelTrendWebPatchRequested=true;
+  const script=document.createElement('script');
+  const from=document.currentScript?.src||document.baseURI;
+  script.src=new URL('./macroxel-tendencias-web-20261116.js?v=20261116-2',from).href;
+  script.async=true;
+  script.onerror=()=>console.warn('Macroxel: no se pudo cargar el complemento de Tendencias.');
+  document.head.appendChild(script);
+})();
