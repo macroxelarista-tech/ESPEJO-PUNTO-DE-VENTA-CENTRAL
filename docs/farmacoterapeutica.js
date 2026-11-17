@@ -595,7 +595,7 @@
   window.__macroxelTrendWebPatchRequested=true;
   const script=document.createElement('script');
   const from=document.currentScript?.src||document.baseURI;
-  script.src=new URL('./macroxel-tendencias-web-20261116.js?v=20261116-2',from).href;
+  script.src=new URL('./macroxel-tendencias-web-20261116.js?v=20261117-weekly-fix',from).href;
   script.async=true;
   script.onerror=()=>console.warn('Macroxel: no se pudo cargar el complemento de Tendencias.');
   document.head.appendChild(script);
