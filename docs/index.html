@@ -7005,7 +7005,12 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
       try{window.prepararFilasInventario?.();window.actualizarOpcionesDepartamentoInventario?.();window.filtrarInventario?.(true)}catch(_){}
       try{window.filtrarKardex?.(true)}catch(_){}
       try{window.recalcularTotalesInventario?.()}catch(_){}
-      try{window.refrescarResurtidoAutomatico?.()}catch(_){}
+      try{if(window.moduloActivoId?.('resurtido'))window.cargarRentabilidad?.({force:true})}catch(_){}
+      try{if(window.moduloActivoId?.('ordenes-compra'))window.cargarOrdenesCompra?.()}catch(_){}
+      try{if(window.moduloActivoId?.('inventario-fisico'))window.cargarConteosRecientes?.()}catch(_){}
+      try{if(window.moduloActivoId?.('gastos'))window.renderGastos?.({forzar:true})}catch(_){}
+      try{window.aplicarCatalogosOperativosPersistidos?.(webCatalogosPublicados())}catch(_){}
+      try{if(window.moduloActivoId?.('monedero'))window.renderTablaMonedero?.()}catch(_){}
       try{window.aplicarPermisosUsuarioActual?.()}catch(_){}
       try{window.marcarResumenDiaPendiente?.();window.actualizarResumenDiaSiActivo?.()}catch(_){}
       try{window.marcarDashboardPendiente?.();if(window.moduloActivoId?.('dashboard'))window.renderDashboard?.()}catch(_){}
@@ -7040,6 +7045,11 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
       recordarCortesPublicados(storeR.data,domR.data);
       for(const [k,v] of Object.entries(storeR.data&&typeof storeR.data==='object'?storeR.data:{})){if(EXCLUDED_KEY.test(k))continue;if(v===null||v===undefined)localStorage.removeItem(k);else localStorage.setItem(k,String(v))}
       for(const [id,h] of Object.entries(domR.data&&typeof domR.data==='object'?domR.data:{})){const el=document.getElementById(id);if(el?.tBodies?.[0]&&typeof h==='string')el.tBodies[0].innerHTML=h}
+      for(const id of Object.keys(domR.data||{})){
+        if(tables[id])continue;
+        const body=document.getElementById(id)?.tBodies?.[0];
+        if(body)tables[id]=Array.from(body.rows).filter(r=>!r.classList.contains('empty-row')).map(r=>({cells:Array.from(r.cells,c=>String(c.textContent||'').trim()),attrs:{dataset:{...r.dataset}}}));
+      }
       WEB.tableRows=tables;
       for(const [id,rows] of Object.entries(tables))renderSerializedRows(id,rows);
       WEB.lastRemoteRevision=String(m.revision||'');try{localStorage.setItem(SNAPSHOT_KEY,JSON.stringify({revision:m.revision||'',updatedAt:m.updatedAt||'',readOnly:true}))}catch(_){}
@@ -7213,6 +7223,74 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
     if(match==='inventorySemaphore')return true;
     return a.includes(b);
   }
+  const WEB_OPERATIVO_KEY='macroxel:webmirror:operativo:v1';
+  const WEB_MONEDERO_KEY='macroxel:webmirror:monedero_resumen:v1';
+  function webProyeccion(key){try{return JSON.parse(localStorage.getItem(key)||'null')}catch(_){return null}}
+  function webRentabilidad(payload={}){
+    const base=webProyeccion(WEB_OPERATIVO_KEY)?.resurtido;
+    if(!base?.available)return{ok:false,readOnly:true,error:'Resurtido pendiente de publicación desde Macroxel principal.'};
+    const norm=v=>String(v??'').trim().toUpperCase();
+    const search=norm(payload.search),dept=norm(payload.department||'TODOS');
+    const supplier=norm(payload.supplier||'TODOS'),view=norm(payload.view||'COMPRAR');
+    const codes=Array.isArray(payload.codes)?new Set(payload.codes.map(norm)):null;
+    const rows=(base.rows||[]).filter(row=>{
+      if(codes?.size && !codes.has(norm(row.codigo)))return false;
+      if(dept!=='TODOS' && norm(row.departamento)!==dept)return false;
+      if(supplier!=='TODOS' && norm(row.supplier||row.preferredSupplier||'SIN PROVEEDOR')!==supplier)return false;
+      if(search && ![row.codigo,row.producto,row.departamento,row.supplier,row.preferredSupplier].some(v=>norm(v).includes(search)))return false;
+      if(codes?.size)return true;
+      if(view==='EXCLUIDOS')return !!row.excluded;
+      if(row.excluded)return false;
+      if(view==='COMPRAR')return Number(row.suggestedOrder||0)>0;
+      if(view==='MARGEN')return !!(row.marginAlert||row.lossAlert);
+      if(view==='SOBREINVENTARIO')return !!row.overstock;
+      if(view==='SIN MOVIMIENTO')return !!row.noMovement;
+      return true;
+    });
+    const pageSize=Math.max(20,Math.min(500,Number(payload.pageSize||100)||100));
+    const pages=Math.max(1,Math.ceil(rows.length/pageSize));
+    const page=Math.max(1,Math.min(pages,Number(payload.page||1)||1));
+    return{ok:true,webMirror:true,readOnly:true,rows:codes?.size?rows:rows.slice((page-1)*pageSize,page*pageSize),
+      total:rows.length,page,pages,pageSize,exactCodes:!!codes?.size,
+      generatedAt:webProyeccion(WEB_OPERATIVO_KEY)?.generatedAt,kpis:base.kpis||{},settings:base.settings||{},departments:base.departments||[],
+      suppliers:base.suppliers||[],truncated:!!base.truncated};
+  }
+  function webOrdenesCompra(payload={}){
+    const base=webProyeccion(WEB_OPERATIVO_KEY)?.ordenes;
+    if(!base?.available)return{ok:false,readOnly:true,error:'Órdenes pendientes de publicación desde Macroxel principal.'};
+    const q=String(payload.search||'').trim().toUpperCase(),status=String(payload.status||'TODOS').toUpperCase();
+    const rows=(base.rows||[]).filter(x=>(status==='TODOS'||String(x.status||'').toUpperCase()===status)
+      &&(!q||[x.folio,x.supplier,x.status].some(v=>String(v||'').toUpperCase().includes(q))));
+    return{ok:true,rows:rows.slice(0,Math.max(1,Number(payload.limit||300))),total:rows.length,
+      truncated:!!base.truncated,readOnly:true,webMirror:true};
+  }
+
+
+  function webConteos(payload={}) {
+    const base=webProyeccion(WEB_OPERATIVO_KEY)?.conteos;
+    if(!base?.available)return {ok:false,error:'Conteos pendientes de publicación. Actualiza el principal y sincroniza.'};
+    return {ok:true,readOnly:true,rows:(base.rows||[]).slice(0,Number(payload.limit||100))};
+  }
+  function webConteoLineas(payload={}) {
+    const d=webProyeccion(WEB_OPERATIVO_KEY)?.conteos?.details?.[payload.id];
+    if(!d)return {ok:false,error:'Detalle del conteo pendiente de publicación desde el principal.'};
+    const search=webNorm(payload.search||'');
+    const rows=(d.rows||[]).filter(x=>!search||webNorm([x.codigo,x.producto,x.lote].join(' ')).includes(search));
+    const pageSize=Math.max(1,Number(payload.pageSize||100)),pages=Math.max(1,Math.ceil(rows.length/pageSize)),page=Math.max(1,Math.min(pages,Number(payload.page||1)));
+    return {ok:true,readOnly:true,count:d.count,rows:rows.slice((page-1)*pageSize,page*pageSize),page,pages,total:rows.length};
+  }
+  async function webDetalleOrden(payload={}) {
+    const base=webProyeccion(WEB_OPERATIVO_KEY)?.ordenes;
+    const order=(base?.rows||[]).find(x=>String(x.id)===String(payload.id));
+    if(!order)return {ok:false,error:'Orden no encontrada en la publicación del principal.'};
+    if(!Array.isArray(order.lines))return {ok:false,error:'La orden está sincronizada, pero sus partidas aún no fueron publicadas. Actualiza el sistema principal con el ZIP corregido y sincroniza.'};
+    return {ok:true,readOnly:true,order};
+  }
+  function webCatalogosPublicados() {
+    const rows=id=>webRows(id).map(webCells);
+    return {ok:true,medicos:rows('tabla-medicos').map(c=>({nombre:c[0]||'',cedula:c[1]||'',domicilio:c[2]||'',institucion:c[3]||''})),
+      proveedores:rows('tabla-proveedores').map(c=>({nombre:c[0]||'',domicilio:c[1]||'',rfc:c[2]||'',telefono:c[3]||'',estado:c[4]||'APROBADO'}))};
+  }
   function webQuery(payload={}){
     const tableId=String(payload.tableId||''),source=webRows(tableId);
     const search=webNorm(payload.search||'');
@@ -7235,9 +7313,9 @@ body::after{content:"WEB";position:fixed;right:18px;top:48px;z-index:99999;backg
     rows=rows.slice(start,start+pageSize);
     return {ok:true,available:true,rows,total,page,pageSize,webMirror:true};
   }
-  // Kardex antiguo: 17 columnas. Nuevo: 18 (incluye precio maximo).
-function webKardexPrecioFinal(c){return c?.[Array.isArray(c)&&c.length>=18?14:13]}
-function webKardexUsuario(c){return c?.[Array.isArray(c)&&c.length>=18?15:14]}
+  // Kardex serializado: precio=13, usuario=14; precio máximo e IVA se anexan al final.
+function webKardexPrecioFinal(c){return c?.[13]}
+function webKardexUsuario(c){return c?.[14]}
 function webKardexRows(payload={}){
     let rows=webRows('tabla-kardex').slice();
     const fol=webNorm(payload.folio||payload.search||''),mov=webNorm(payload.movimiento||''),usr=webNorm(payload.usuario||''),prod=webNorm(payload.producto||payload.codigo||payload.lote||'');
@@ -7325,7 +7403,7 @@ function webKardexRows(payload={}){
         case 'macroxel-mirror-sync-now': return await syncNow({forcePush:false});
         case 'macroxel-mirror-reserve-folio': return await reserveFolio(p.prefix,p.localMax);
         case 'macroxel-menu-session': return {ok:true};
-        case 'macroxel-catalogos-load': {try{return{ok:true,...JSON.parse(localStorage.getItem('macroxel:web_catalogos_v1')||'{"medicos":[],"proveedores":[]}')}}catch(_){return{ok:true,medicos:[],proveedores:[]}}}
+        case 'macroxel-catalogos-load': return webCatalogosPublicados();
         case 'macroxel-catalogos-save': localStorage.setItem('macroxel:web_catalogos_v1',JSON.stringify(p||{}));WEB.dirty=true;return{ok:true,...(p||{})};
         case 'macroxel-catalogos-reset-total': {const vacio={initialized:true,reason:'reset-total-confirmado',medicos:[],proveedores:[]};localStorage.setItem('macroxel:web_catalogos_v1',JSON.stringify(vacio));WEB.dirty=true;return{ok:true,...vacio};}
         case 'macroxel-print-html': {const w=open('','_blank');if(w){w.document.write(String(p.html||''));w.document.close();setTimeout(()=>w.print(),250)}return{ok:!!w,web:true}}
@@ -7372,7 +7450,7 @@ function webKardexRows(payload={}){
     appInfo:()=>ipc.invoke('macroxel-app-info'),appInfoSync:()=>ipc.sendSync('macroxel-app-info-sync'),identidadEquipo:()=>ipc.invoke('macroxel-device-identity'),identidadEquipoSync:()=>ipc.sendSync('macroxel-device-identity-sync'),clasificarUrlFirebaseSync:u=>ipc.sendSync('macroxel-firebase-url-classify-sync',{baseUrl:u}),cargarConexionesCifradasSync:()=>connectionBundle(),guardarConexionCifradaSync:()=>({ok:false,web:true}),borrarConexionCifradaSync:()=>({ok:false,web:true}),firebaseRequest:p=>ipc.invoke('macroxel-firebase-request',p),bootstrapLicencia:p=>ipc.invoke('macroxel-license-bootstrap',p),validarLicenciaOffline:id=>ipc.invoke('macroxel-license-offline-check',{deviceId:id}),limpiarLicenciaOffline:()=>ipc.invoke('macroxel-license-offline-clear'),guardarAccesoFirebase:p=>ipc.invoke('macroxel-firebase-auth-save',p),estadoAccesoFirebase:()=>ipc.invoke('macroxel-firebase-auth-status'),borrarAccesoFirebase:()=>ipc.invoke('macroxel-firebase-auth-clear'),configurarEspejoFirebase:p=>ipc.invoke('macroxel-mirror-configure',p),sincronizarEspejoFirebase:()=>syncNow({forcePush:false}),estadoEspejoFirebase:()=>ipc.invoke('macroxel-mirror-status'),resetearEspejoFirebase:async()=>({ok:false,web:true,error:'Reset Firebase sólo está disponible en el sistema principal.'}),actualizarMenuSesion:async()=>({ok:true}),reservarFolioEspejo:(prefix,localMax)=>reserveFolio(prefix,localMax),guardarPdfHtml:async()=>({ok:false,unsupported:true,error:'Usa Imprimir > Guardar como PDF.'}),imprimirHtml:async(html,op={})=>ipc.invoke('macroxel-print-html',{html,...op}),listarImpresoras:()=>ipc.invoke('macroxel-printer-list'),probarImpresora:d=>ipc.invoke('macroxel-printer-test',{deviceName:d}),guardarClaveCriticaSync:()=>{WEB.dirty=true;return{ok:true,verified:true}},rutas:()=>null,estadoInicial:()=>null
   };
   window.macroxelCatalogos={cargar:()=>ipc.invoke('macroxel-catalogos-load'),guardar:p=>ipc.invoke('macroxel-catalogos-save',p),resetTotal:p=>ipc.invoke('macroxel-catalogos-reset-total',p||{})};window.macroxelElectron.catalogos=window.macroxelCatalogos;
-  window.macroxelLocalDB={status:()=>ipc.invoke('macroxel-db-status'),statusSync:()=>ipc.sendSync('macroxel-db-status-sync'),awaitIdle:async()=>({ok:true}),query:async p=>webQuery(p||{}),querySync:p=>webQuery(p||{}),kardexRows:async p=>webKardexRows(p||{}),kardexRowsSync:p=>webKardexRows(p||{}),rowsByDataset:async p=>webQuery(p||{}),salesTrends:async p=>webSalesTrends(p||{}),maxFolios:async()=>webMaxFolios(),maxFoliosSync:()=>webMaxFolios(),distinctColumnSync:p=>webDistinct(p||{}),importRows:async()=>({ok:false,available:true,readOnly:true,web:true}),upsertRows:async()=>({ok:false,available:true,readOnly:true,web:true}),commitOperation:async()=>({ok:false,available:true,readOnly:true,web:true}),finalizeOperation:async()=>({ok:true}),rollbackOperation:async()=>({ok:true}),clearTable:async()=>({ok:false,readOnly:true,web:true}),clearTables:async()=>({ok:false,readOnly:true,web:true}),deleteRows:async()=>({ok:false,readOnly:true,web:true}),flush:async()=>({ok:true,web:true,virtual:true})};window.macroxelElectron.db=window.macroxelLocalDB;
+  window.macroxelLocalDB={stockCountList:async p=>webConteos(p||{}),stockCountLines:async p=>webConteoLineas(p||{}),stockCountDepartments:async()=>({ok:true,departments:webProyeccion(WEB_OPERATIVO_KEY)?.resurtido?.departments||[]}),profitabilitySnapshot:async p=>webRentabilidad(p||{}),purchaseOrdersList:async p=>webOrdenesCompra(p||{}),purchaseOrderDetail:webDetalleOrden,status:()=>ipc.invoke('macroxel-db-status'),statusSync:()=>ipc.sendSync('macroxel-db-status-sync'),awaitIdle:async()=>({ok:true}),query:async p=>webQuery(p||{}),querySync:p=>webQuery(p||{}),kardexRows:async p=>webKardexRows(p||{}),kardexRowsSync:p=>webKardexRows(p||{}),rowsByDataset:async p=>webQuery(p||{}),salesTrends:async p=>webSalesTrends(p||{}),maxFolios:async()=>webMaxFolios(),maxFoliosSync:()=>webMaxFolios(),distinctColumnSync:p=>webDistinct(p||{}),importRows:async()=>({ok:false,available:true,readOnly:true,web:true}),upsertRows:async()=>({ok:false,available:true,readOnly:true,web:true}),commitOperation:async()=>({ok:false,available:true,readOnly:true,web:true}),finalizeOperation:async()=>({ok:true}),rollbackOperation:async()=>({ok:true}),clearTable:async()=>({ok:false,readOnly:true,web:true}),clearTables:async()=>({ok:false,readOnly:true,web:true}),deleteRows:async()=>({ok:false,readOnly:true,web:true}),flush:async()=>({ok:true,web:true,virtual:true})};window.macroxelElectron.db=window.macroxelLocalDB;
   window.guardarEstadoElectronDebounced=()=>{WEB.dirty=true};window.guardarEstadoElectronAhora=()=>{WEB.dirty=true;return{ok:true}};
   window.__macroxelPersistenceRestored=true;
   document.addEventListener('DOMContentLoaded',()=>document.dispatchEvent(new CustomEvent('macroxel-persistence-ready',{detail:{ok:true,web:true}})),{once:true});
@@ -32460,6 +32538,21 @@ ${errorPromo?.message || errorPromo}`, 'Promociones');
       await notificarSistema('CLIENTE REGISTRADO EN MONEDERO.', 'Monedero');
     }
     function renderTablaMonedero(filtro = '') {
+      if (window.MACROXEL_WEB_MIRROR) {
+        const resumen = (()=>{try{return JSON.parse(localStorage.getItem('macroxel:webmirror:monedero_resumen:v1')||'null')}catch(_){return null}})();
+        if (resumen) {
+          const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v};
+          const money=n=>Number(n||0).toLocaleString('es-MX',{style:'currency',currency:'MXN'});
+          set('monedero-total-clientes',String(Number(resumen.clientes||0)));
+          set('monedero-saldo-total',money(resumen.saldoTotal));
+          const usado=Number(localStorage.getItem('monederoUsadoHoyFarmacia')||0);
+          set('monedero-usado-hoy',money(Number.isFinite(usado)?usado:0));
+          const body=document.querySelector('#tabla-monedero tbody');
+          if(body)body.innerHTML='<tr><td colspan="5">Resumen sincronizado. El detalle nominal de clientes no se publica en el espejo de acceso público por protección de datos personales.</td></tr>';
+          return;
+        }
+      }
+
       const tbody = document.querySelector('#tabla-monedero tbody');
       if (!tbody) return;
       const q = filtro.toUpperCase().trim();
@@ -47850,6 +47943,10 @@ REVISA EL ACCESO SEGURO Y LAS REGLAS DE FIREBASE. SI APARECE HTTP 401/403, PUBLI
     }
 
     function leerGastos() {
+      if(window.MACROXEL_WEB_MIRROR && localStorage.getItem('macroxelGastosCaja')===null) {
+        const rows=window.macroxelLocalDB?.querySync?.({tableId:'tabla-gastos',page:1,pageSize:10000})?.rows||[];
+        return rows.map(r=>{const c=r.cells||[];return normalizarGastoGuardado({fecha:c[0],cantidad:c[1],descripcion:c[2],medioPago:c[3],usuario:c[4]})}).filter(g=>g.cantidad>0&&g.descripcion);
+      }
       try {
         const datos = JSON.parse(localStorage.getItem(GASTOS_KEY) || '[]');
         return Array.isArray(datos) ? datos.map(normalizarGastoGuardado).filter(g => g.cantidad > 0 && g.descripcion) : [];
@@ -47882,7 +47979,7 @@ REVISA EL ACCESO SEGURO Y LAS REGLAS DE FIREBASE. SI APARECE HTTP 401/403, PUBLI
       if (!tbody) return;
       const datos = leerGastos();
       if (!datos.length) {
-        tbody.innerHTML = '<tr class="empty-row"><td colspan="5">Sin gastos registrados</td></tr>';
+        tbody.innerHTML = '<tr class="empty-row"><td colspan="5">'+(window.MACROXEL_WEB_MIRROR && localStorage.getItem('macroxelGastosCaja')===null?'El sistema principal aún no ha publicado gastos. Actualiza el principal y sincroniza.':'Sin gastos registrados')+'</td></tr>';
         gastoSeleccionadoIndex = null;
       } else {
         if (gastoSeleccionadoIndex !== null && !datos[gastoSeleccionadoIndex]) gastoSeleccionadoIndex = null;
